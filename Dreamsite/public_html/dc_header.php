@@ -16,7 +16,7 @@
 
 	                <!-- Main Title Image -->
 	                <tr bgcolor="#CCCCCC">
-	                    <th align="center"><img src="images/title.png" alt="" align="center" width="500" height="50"></th>
+	                    <th align="center"><img src="images/title_dc.png" alt="" align="center" width="500" height="50"></th>
 	                </tr>
 
 	                <!-- Body -->
