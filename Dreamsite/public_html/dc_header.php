@@ -42,19 +42,19 @@
 	                                    <tr bgcolor="#CEEBF5">
 	                                        <td><a href="#dlc"><font color="red">DLC</font></a></td>
 	                                    </tr>
+	                                    <tr bgcolor="#FFFFFF">
+	                                        <td><a href="#gweb">DC Sites</a></td>
+	                                    </tr>
 	                                    <tr align="center" bgcolor="#DDDDDD">
-	                                        <td>DC Websites</td>
+	                                        <td>Other</td>
 	                                    </tr>
 	                                    <tr bgcolor="#CEEBF5">
-	                                        <td><a href="#gweb">Original Sega</a></td>
+	                                        <td><a href="#gweb">PC Site</a></td>
 	                                    </tr>
 	                                    <tr bgcolor="#FFFFFF">
 	                                        <td><a href="sonic.dricas.ne.jp">Sonic</a></td>
 	                                    </tr>
 	                                    <tr bgcolor="#CEEBF5">
-	                                        <td><a href="#gweb">Crazy Taxi</a></td>
-	                                    </tr>
-	                                    <tr bgcolor="#FFFFFF">
 	                                        <td><a href="#gweb">Shenmue</a></td>
 	                                    </tr>
 	                                </table>
