@@ -8,16 +8,20 @@
 
     $col = "$C1";
 
-    function memoryEntry( $byte, $hex, $size, $type, $contents ) {
+    function fiveEntry( $one, $two, $three, $four, $five ) {
         echo "
             <tr bgcolor='" . ac($col) . "'>;
-                <td>$byte</td>
-                <td><pre>$hex</pre></td>
-                <td align='center'>$size</td>
-                <td>$type</td>
-                <td>$contents</td>
+                <td>$one</td>
+                <td><pre>$two</pre></td>
+                <td align='center'>$three</td>
+                <td>$four</td>
+                <td>$five</td>
             </tr>
         ";
+    }
+
+    function memoryEntry( $hex, $size, $type, $contents ) {
+        fiveEntry( hexdex( $hex ), $hex, $size, $type, $contents );
     }
 ?>
 
@@ -82,19 +86,19 @@ directory, which should contain 1 for VMU game files, and 0 for data files.</p>
                 <th>Byte</th><th>Hex</th>
               </tr>
             <?php
-                memoryEntry( '0', '0x00', 16, 'Text', 'Description of file (shown in VMS file menu)' );
-                memoryEntry( '16', '0x10', 32, 'Text', 'Description of file (shown in DC boot ROM file manager)' );
-                memoryEntry( '48', '0x30', 16, 'String', 'Identifier of application that created the file' );
-                memoryEntry( '64', '0x40', 2, 'Integer', 'Number of icons (&gt;1 for animated icons; max 3)' );
-                memoryEntry( '66', '0x42', 2, 'Integer', 'Icon animation speed<br>
+                memoryEntry( '0x00', 16, 'Text', 'Description of file (shown in VMS file menu)' );
+                memoryEntry( '0x10', 32, 'Text', 'Description of file (shown in DC boot ROM file manager)' );
+                memoryEntry( '0x30', 16, 'String', 'Identifier of application that created the file' );
+                memoryEntry( '0x40',  2, 'Integer', 'Number of icons (&gt;1 for animated icons; max 3)' );
+                memoryEntry( '0x42',  2, 'Integer', 'Icon animation speed<br>
                     Time between each frame is ~33ms x Animation Speed' );
-                memoryEntry( '68', '0x44', 2, 'Integer', '<a href="#eyecatch">Graphic eyecatch</a> type (0 = none)' );
-                memoryEntry( '70', '0x46', 2, 'Integer', 'CRC (Ignored for game files.)' );
-                memoryEntry( '72', '0x48', 4, 'Integer', 'Number of bytes of actual file data following header, icon(s) and graphic eyecatch.  (Ignored for game files.)' );
-                memoryEntry( '76', '0x4C', 20, '', 'Reserved (fill with zeros)' );
-                memoryEntry( '96', '0x60', 32, 'Integer', 'Icon palette (16 16-bit integers)' );
-                memoryEntry( '128', '0x80', '512*n', 'Nybbles', 'Icon bitmaps. n = Number of Icons (<code>0x40</code>)' );
-                memoryEntry( '...', '...', 'depends on type', '...', 'Graphic eyecatch palette and bitmap' );
+                memoryEntry( '0x44',  2, 'Integer', '<a href="#eyecatch">Graphic eyecatch</a> type (0 = none)' );
+                memoryEntry( '0x46',  2, 'Integer', 'CRC (Ignored for game files.)' );
+                memoryEntry( '0x48',  4, 'Integer', 'Number of bytes of actual file data following header, icon(s) and graphic eyecatch.  (Ignored for game files.)' );
+                memoryEntry( '0x4C', 20, '', 'Reserved (fill with zeros)' );
+                memoryEntry( '0x60', 32, 'Integer', 'Icon palette (16 16-bit integers)' );
+                memoryEntry( '0x80', '512*n', 'Nybbles', 'Icon bitmaps. n = Number of Icons (<code>0x40</code>)' );
+                memoryEntry( '...', 'depends on type', '...', 'Graphic eyecatch palette and bitmap' );
             ?>
             </table>
           </p>
@@ -241,34 +245,12 @@ for the eyecatch is stored immediately after the last icon bitmap.</p>
               <tr bgcolor="#CCCCCC">
                 <th>Total</th><th>Palette</th><th>Bitmap</th>
               </tr>
-              <tr bgcolor="#CEEBF5">
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>None</td>
-              </tr>
-              <tr bgcolor="#FFFFFF">
-                <td>1</td>
-                <td>8064</td>
-                <td>0</td>
-                <td>8064</td>
-                <td>16-bit true color, see Icon palette for pixel format.</td>
-              </tr>
-              <tr bgcolor="#CEEBF5">
-                <td>2</td>
-                <td>4544</td>
-                <td>512</td>
-                <td>4032</td>
-                <td>256 color palette based.  Begins with a palette in the same format as the Icon palette, but with 256 entries.  Then the bitmap has one byte per pixel, giving the index into the palette.</td>
-              </tr>
-              <tr bgcolor="#FFFFFF">
-                <td>3</td>
-                <td>2048</td>
-                <td>32</td>
-                <td>2016</td>
-                <td>16 color palette based.  Format is just like the Icon palette and bitmap, except for the width and height of the bitmap of course.</td>
-              </tr>
+                <?php
+                fiveEntry( 0, 0, 0, 0, 'None' );
+                fiveEntry( 1, 8064, 0, 8064, '16-bit true color, see Icon palette for pixel format.' );
+                fiveEntry( 2, 4544, 512, 4032, '256 color palette based.  Begins with a palette in the same format as the Icon palette, but with 256 entries.  Then the bitmap has one byte per pixel, giving the index into the palette.' );
+                fiveEntry( 3, 2048, 32, 2016, '16 color palette based.  Format is just like the Icon palette and bitmap, except for the width and height of the bitmap of course.' );
+                ?>
             </table>
           </p>
 
