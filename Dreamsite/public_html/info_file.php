@@ -1,5 +1,6 @@
 <?php
 // info_file.php
+$col;
 
 function printFileBar() {
 	echo "
@@ -9,10 +10,44 @@ function printFileBar() {
 	";
 }
 
+function shenmuePrintSlotTime( $vms, $name, $o ) {
+	global $col;
+	$finalDay = new DateTime("1987-04-15");
+	$gY = $vms->get($o + 0x8);
+	if ( $gY != 0 ) {
+		$gM = $vms->get($o + 0xA);
+		$gD = $vms->get($o + 0xB);
+		$gH = $vms->get($o + 0xC);
+		$gm = $vms->get($o + 0xD);
+		$gs = $vms->get($o + 0xE);
+		$curDay = new DateTime("19$gY-$gM-$gD");
+		$diff = $finalDay->diff($curDay)->format("%a");
+		echo "
+		<tr bgcolor='" . ac($col) . "'>
+			<th>$name Date</th>
+			<th>19$gY-$gM-$gD $gH:$gm:$gs</th>
+		</tr>
+		<tr bgcolor='" . ac($col) . "'>
+			<th>Time Left</th>
+			<th>$diff Days</th>
+		</tr>
+		";
+		return true;
+	} else {
+		echo "
+		<tr bgcolor='#CCCCCC'>
+			<th colspan='2'>$name not in use</th>
+		</tr>
+		";
+		return false;
+	}
+}
+
 // Function to display unique game
 // information about a save file.
 function getUniqueInfo( $vms ) {
-	include 'dc_tools.php';
+	include_once 'dc_tools.php';
+	global $col;
 
 	if ( strpos( $vms->getVMStext(), "PSO/SCREEN_IMAGE" ) !== false ) {
 		$imgName = createVMSpso( $vms );
@@ -24,99 +59,42 @@ function getUniqueInfo( $vms ) {
 		</tr>
 		";
 	} else if ( strpos( $vms->getVMStext(), "SHENMUE" ) !== false ) {
-		$finalDay = new DateTime("1987-04-15");
-		$gY = $vms->get(0x708);
-		$gM = $vms->get(0x70A);
-		$gD = $vms->get(0x70B);
-		$gH = $vms->get(0x70C);
-		$gm = $vms->get(0x70D);
-		$gs = $vms->get(0x70E);
-		$curDay = new DateTime("19$gY-$gM-$gD");
-		$diff = $finalDay->diff($curDay)->format("%a");
-		$money = $vms->readInt_16(0x818);
-		echo "
-		<tr bgcolor='" . ac($col) . "'>
-			<th>Resume Game Date</th>
-			<th>19$gY-$gM-$gD $gH:$gm:$gs</th>
-		</tr>
-		<tr bgcolor='" . ac($col) . "'>
-			<th>Time Left</th>
-			<th>$diff Days</th>
-		</tr>
-		<tr bgcolor='" . ac($col) . "'>
-			<th>Money</th>
-			<th>\$$money</th>
-		</tr>
-		";
-		$gY = $vms->get(0x748);
-		$gM = $vms->get(0x74A);
-		$gD = $vms->get(0x74B);
-		$gH = $vms->get(0x74C);
-		$gm = $vms->get(0x74D);
-		$gs = $vms->get(0x74E);
-		$curDay = new DateTime("19$gY-$gM-$gD");
-		$diff = $finalDay->diff($curDay)->format("%a");
-		$money = $vms->readInt_16(0x2018);
-		echo "
-		<tr bgcolor='" . ac($col) . "'>
-			<th>Slot 1 Game Date</th>
-			<th>19$gY-$gM-$gD $gH:$gm:$gs</th>
-		</tr>
-		<tr bgcolor='" . ac($col) . "'>
-			<th>Time Left</th>
-			<th>$diff Days</th>
-		</tr>
-		<tr bgcolor='" . ac($col) . "'>
-			<th>Money</th>
-			<th>\$$money</th>
-		</tr>
-		";
-		$gY = $vms->get(0x788);
-		$gM = $vms->get(0x78A);
-		$gD = $vms->get(0x78B);
-		$gH = $vms->get(0x78C);
-		$gm = $vms->get(0x78D);
-		$gs = $vms->get(0x78E);
-		$curDay = new DateTime("19$gY-$gM-$gD");
-		$diff = $finalDay->diff($curDay)->format("%a");
-		$money = $vms->readInt_16(0x3818);
-		echo "
-		<tr bgcolor='" . ac($col) . "'>
-			<th>Slot 2 Game Date</th>
-			<th>19$gY-$gM-$gD $gH:$gm:$gs</th>
-		</tr>
-		<tr bgcolor='" . ac($col) . "'>
-			<th>Time Left</th>
-			<th>$diff Days</th>
-		</tr>
-		<tr bgcolor='" . ac($col) . "'>
-			<th>Money</th>
-			<th>\$$money</th>
-		</tr>
-		";
-		$gY = $vms->get(0x7C8);
-		$gM = $vms->get(0x7CA);
-		$gD = $vms->get(0x7CB);
-		$gH = $vms->get(0x7CC);
-		$gm = $vms->get(0x7CD);
-		$gs = $vms->get(0x7CE);
-		$curDay = new DateTime("19$gY-$gM-$gD");
-		$diff = $finalDay->diff($curDay)->format("%a");
+		if ( shenmuePrintSlotTime( $vms, "Resume Game", 0x700 ) ) {
+			$money = $vms->readInt_16(0x818);
+			echo "
+			<tr bgcolor='" . ac($col) . "'>
+				<th>Money</th>
+				<th>\$$money</th>
+			</tr>
+			";
+		}
+		if ( shenmuePrintSlotTime( $vms, "Slot 1", 0x740 ) ) {
+			$money = $vms->readInt_16(0x2018);
+			echo "
+			<tr bgcolor='" . ac($col) . "'>
+				<th>Money</th>
+				<th>\$$money</th>
+			</tr>
+			";
+		}
+		if ( shenmuePrintSlotTime( $vms, "Slot 2", 0x780 ) ) {
+			$money = $vms->readInt_16(0x3818);
+			echo "
+			<tr bgcolor='" . ac($col) . "'>
+				<th>Money</th>
+				<th>\$$money</th>
+			</tr>
+			";
+		}
+		if ( shenmuePrintSlotTime( $vms, "Slot 3", 0x7C0 ) ) {
 		$money = $vms->readInt_16(0x5018);
-		echo "
-		<tr bgcolor='" . ac($col) . "'>
-			<th>Slot 3 Game Date</th>
-			<th>19$gY-$gM-$gD $gH:$gm:$gs</th>
-		</tr>
-		<tr bgcolor='" . ac($col) . "'>
-			<th>Time Left</th>
-			<th>$diff Days</th>
-		</tr>
-		<tr bgcolor='" . ac($col) . "'>
-			<th>Money</th>
-			<th>\$$money</th>
-		</tr>
-		";
+			echo "
+			<tr bgcolor='" . ac($col) . "'>
+				<th>Money</th>
+				<th>\$$money</th>
+			</tr>
+			";
+		}
 	}
 
 }

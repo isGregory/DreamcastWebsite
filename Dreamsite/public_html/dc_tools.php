@@ -203,7 +203,6 @@ function eyecatchcreatefromvms( $vms ) {
 
 	// Grab the color palette
 	$pal = getVMSpalette( $vms, $image, $paletteOffset, $paletteSize );
-	var_dump($pal);
 
 	// Palette Size is the number of colors in the palette
 	// Each palette color is two bytes long.
@@ -523,7 +522,7 @@ class VMS {
 		// there shouldn't be any collisions
 		return hash( 'crc32',
 			$this->getVMStext()
-			. $this->getDCBootRomTest() );
+			. $this->getDCBootRomText() );
 	}
 
 	function getSize() {

@@ -36,11 +36,12 @@
 			</tr>
 			<tr bgcolor='" . ac($col) . "'>
 				<th>Download: "
-				. "<a href='" . $dirUp . "vmidl.php?id=$s&t=i'><img src='images/save_vmi.png'</a> "
+				. "<a href='" . $dirUp . "vmidl.php?id=$s&t=i'><img src='images/save_vmi.png'></a> ";
 				if ( !$dreamBrowser ) {
-					. "<a href='" . $dirUp . "vmidl.php?id=$s&t=s'>'images/save_vms.png'</a>"
+					echo "<a href='" . $dirUp . "vmidl.php?id=$s&t=s'><img src='images/save_vms.png'></a>";
 				}
-				. "</th>
+		echo "
+					</th>
 				<th>$blocks Blocks</th>
 			</tr>
 		";

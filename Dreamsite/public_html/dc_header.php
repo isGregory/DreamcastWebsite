@@ -49,7 +49,7 @@
 	                                        <td>Other</td>
 	                                    </tr>
 	                                    <tr bgcolor="#CEEBF5">
-	                                        <td><a href="#gweb">PC Site</a></td>
+	                                        <td><a href="PC/index.php">PC Site</a></td>
 	                                    </tr>
 	                                    <tr bgcolor="#FFFFFF">
 	                                        <td><a href="sonic.dricas.ne.jp">Sonic</a></td>

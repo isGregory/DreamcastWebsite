@@ -27,8 +27,8 @@
     if ( $p > $pages ) {
         $p = $pages;
     }
-    echo "<p>Click the file name for more information.</p>";
-    echo "<p>Click the icon image to download each file.</p>";
+    echo "<p>Click the file name for more information.<br>
+        Click the blocks size to download each file.</p>";
     echo "<p align='center'>";
     if ( $p > 1 ) {
         $prev = $p - 1;

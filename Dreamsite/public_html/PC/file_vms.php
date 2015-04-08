@@ -1,28 +1,13 @@
 <?php
     // file_vms.php
     include 'pc_globals.php';
+    include 'format.php';
 
     $pageTitle = "VMS File";
     $homeDir = "";
     include 'pc_header.php';
 
     $col = "$C1";
-
-    function fiveEntry( $one, $two, $three, $four, $five ) {
-        echo "
-            <tr bgcolor='" . ac($col) . "'>;
-                <td>$one</td>
-                <td><pre>$two</pre></td>
-                <td align='center'>$three</td>
-                <td>$four</td>
-                <td>$five</td>
-            </tr>
-        ";
-    }
-
-    function memoryEntry( $hex, $size, $type, $contents ) {
-        fiveEntry( hexdex( $hex ), $hex, $size, $type, $contents );
-    }
 ?>
 
           <h1 align="left">.VMS File</h1>
@@ -70,7 +55,7 @@
 
           <p>All VMS files should contain a standard header which is used by the file
 managers in the VMS and in the DC boot ROM to display information about
-the file.  (<a href="file_icondata_vms.html">ICONDATA</a> files use a somewhat
+the file.  (<a href="file_icondata_vms.php">ICONDATA</a> files use a somewhat
 simplified headers since they are not shown in the DC boot ROM file manager.)
 For data files, the header is stored at the very beginning of the file.
 For VMU game files, it begins in the <i>second</i> block of the file (offset <code>0x200</code>).
@@ -235,7 +220,7 @@ contains 1024 (32 * 32) nybbles, or 512 bytes.</p>
 eyecatch for the file in the DC boot ROM file manager. The graphic data
 for the eyecatch is stored immediately after the last icon bitmap.</p>
 
-          <p>For examples see <a href="file_vms_eyecatch.html">here</a>.</p>
+          <p>For examples see <a href="file_vms_eyecatch.php">here</a>.</p>
 
           <p>There are four possible visual modes, selected with the field at offset <code>0x44</code>:
             <table cellpadding="3" cellspacing="1" border="0" bgcolor="#6E6E6E" style="max-width:640px;">

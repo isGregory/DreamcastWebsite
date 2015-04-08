@@ -5,18 +5,6 @@
     $C1 = "#FFFFFF";
     $C2 = "#CEEBF5";
 
-    // Used to alternate colors (ac) between the
-    // two main ones for the rows of tables.
-    function ac( &$cur ) {
-
-    	if ( $cur == $C1 ) {
-    		$cur = $C2;
-    	} else {
-    		$cur = $C1;
-    	}
-    	return $cur;
-    }
-
     // Get browser information
     // Example. Planetweb 2.6 returns:
     // Mozilla/3.0 (Planetweb/2.606 JS SSL VoIP US; Dreamcast US)
@@ -30,4 +18,9 @@
     } else {
         $dreamBrowser = false;
     }
+
+    $dSA2 = "SonicAdventure2";
+    $dPSOv2 = "PhantasyStarOnline";
+    $dJGR = "JetGrindRadio";
+    $d4X4 = "4x4Evolution";
 ?>

@@ -45,4 +45,4 @@ Writable:	uploads
 Writable:	images
 Writable:	images/icons
 Writable:	images/eyecatch
-Writable:	images/PSOscreenshots
+Writable:	images/psoscreenshots
