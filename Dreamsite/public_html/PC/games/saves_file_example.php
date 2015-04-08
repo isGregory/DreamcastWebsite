@@ -1,11 +1,11 @@
 <?php
     // saves_file_example.php
     $homeDir = "../";
-    include "$homeDir"."pc_globals.php";
-    include "$homeDir"."format.php";
+    include $homeDir . "pc_globals.php";
+    include $homeDir . "format.php";
 
     $pageTitle = "Games";
-    include 'pc_header.php';
+    include $homeDir . "pc_header.php";
 
     $col = "$C1";
 

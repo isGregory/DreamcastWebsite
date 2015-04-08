@@ -19,6 +19,11 @@
         $dreamBrowser = false;
     }
 
+    $root = "../";
+	$dirImages = $root . "images/";
+	$dirIcons  = $root . "images/icons/";
+	$dirEC     = $root . "images/eyecatch/";
+	$dirPSO    = $root . "images/psoscreenshots/";
     $dSA2 = "SonicAdventure2";
     $dPSOv2 = "PhantasyStarOnline";
     $dJGR = "JetGrindRadio";
