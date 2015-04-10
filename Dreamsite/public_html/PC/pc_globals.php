@@ -20,6 +20,7 @@
     }
 
     $root = "../";
+    $dirUp     = $root . "uploads/";
 	$dirImages = $root . "images/";
 	$dirIcons  = $root . "images/icons/";
 	$dirEC     = $root . "images/eyecatch/";
