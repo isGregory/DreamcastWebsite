@@ -1,37 +1,15 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<?php
+    // index.php
+    $homeDir = "../../";
+    include $homeDir . "pc_globals.php";
+    include $homeDir . "format.php";
 
-<html>
+    $pageTitle = "Shenmue";
+    include $homeDir . "pc_header.php";
 
-  <head>
-    <title>Shenmue</title>
-  </head>
+    $col = "$C1";
 
-  <body link="#0022EE" vlink="#0022EE" alink="red" text="black" bgcolor="blue" background="../../images/tile.gif">
-
-    <font face="Helvetica">
-      <table cellpadding="2" cellspacing="0" border="1" width="640" align="center" bgcolor="#FFFFFF">
-
-        <!-- Main Title Image -->
-        <tr bgcolor="#CCCCCC">
-          <th align="center"><img src="../../images/title.png" alt="" align="center" width="640" height="160"></th>
-        </tr>
-
-        <!-- Header Links -->
-        <tr bgcolor="#CCCCCC">
-          <th align="center">
-            <table width="100%"><tr>
-              <th><a href="../../index.html" style="text-decoration:none">Home</a></th>
-              <th><a href="../index.html" style="text-decoration:none">Games</a></th>
-              <th><a href="../../vmu.html" style="text-decoration:none">VMU</a></th>
-              <th><a href="../../links.html" style="text-decoration:none">Links</a></th>
-              <th><a href="../../thanks.html" style="text-decoration:none">Thanks</a></th>
-            </tr></table>
-          </th>
-        </tr>
-
-        <!-- Body -->
-        <tr bgcolor="#FFFFFF"><td align="center" background="../../images/tile2.png">
-
+?>
           <h1 align="left">Shenmue</h1>
 
           <table cellpadding="3" cellspacing="1" border"0">
@@ -102,18 +80,8 @@
               </tr>
             </table>
           </p>
-        </tr>
-        <tr bgcolor="#CCCCCC">
-          <td align="center">
-            <font size="1">
-              <br>
-              Last modified: 2015-2-6 9:54 PM EST<br>
-              Design Copyright &copy; 2015 Gregory Hoople<br>
-              <br>
-            </font>
-          </td>
-        </tr>
-      </table>
-    </font>
-  </body>
-</html>
+
+          <?php
+              $from = getcwd() . "/index.php";
+              include $homeDir . "pc_footer.php";
+          ?>

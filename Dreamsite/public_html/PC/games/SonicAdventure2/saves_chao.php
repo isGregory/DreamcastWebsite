@@ -1,5 +1,5 @@
 <?php
-    // saves_file_example.php
+    // saves_chao.php
     $homeDir = "../../";
     include $homeDir . "pc_globals.php";
     include $homeDir . "format.php";
@@ -454,7 +454,7 @@
           </p>
 
           <?php
-              $from = "saves_chao.php";
+              $from = getcwd() . "/saves_chao.php";
               include $homeDir . "pc_footer.php";
           ?>
 <!--

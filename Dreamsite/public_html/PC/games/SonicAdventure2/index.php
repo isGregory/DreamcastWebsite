@@ -1,5 +1,5 @@
 <?php
-    // saves_file_example.php
+    // index.php
     $homeDir = "../../";
     include $homeDir . "pc_globals.php";
     include $homeDir . "format.php";
@@ -261,6 +261,6 @@
             </table>
           </p>
           <?php
-              $from = "index.php";
+              $from = getcwd() . "/index.php";
               include $homeDir . "pc_footer.php";
           ?>
