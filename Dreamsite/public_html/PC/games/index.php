@@ -25,6 +25,9 @@
       <td align='center'><a href='$dSA2/index.php' style='text-decoration:none'>Sonic Adventure 2</a></td>
     </tr>
     <tr bgcolor='" . ac( $col ) . "'>
+      <td align='center'><a href='$dShen/index.php' style='text-decoration:none'>Shenmue</a></td>
+    </tr>
+    <tr bgcolor='" . ac( $col ) . "'>
       <td align='center'><a href='$dPSOv2/index.php' style='text-decoration:none'>Phantasy Star Online</a></td>
     </tr>
     <tr bgcolor='" . ac( $col ) . "'>

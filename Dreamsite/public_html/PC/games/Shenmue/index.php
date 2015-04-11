@@ -56,7 +56,7 @@
               </tr>
 
               <tr bgcolor="#CEEBF5">
-                <td align="center"><a href="saves_file.html" style="text-decoration:none">Main Data</a></td>
+                <td align="center"><a href="saves_file.php" style="text-decoration:none">Main Data</a></td>
                 <td align="center">80</td>
                 <td>Save file for the main game data.</td>
                 <td align="center"><img src="images/saves/GAME.gif"></td>

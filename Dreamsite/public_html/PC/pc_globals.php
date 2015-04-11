@@ -26,6 +26,7 @@
 	$dirEC     = $root . "images/eyecatch/";
 	$dirPSO    = $root . "images/psoscreenshots/";
     $dSA2 = "SonicAdventure2";
+    $dShen = "Shenmue";
     $dPSOv2 = "PhantasyStarOnline";
     $dJGR = "JetGrindRadio";
     $d4X4 = "4x4Evolution";

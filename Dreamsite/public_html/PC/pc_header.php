@@ -1,5 +1,7 @@
 <?php
 //pc_header.php
+
+include "pc_globals.php";
 ?>
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 
@@ -9,14 +11,14 @@
         <title><?php echo $pageTitle; ?></title>
     </head>
 
-    <body link="#0022EE" vlink="#0022EE" alink="red" text="black" bgcolor="grey" background="<?php echo $homeDir$dirImages; ?>tile.gif">
+    <body link="#0022EE" vlink="#0022EE" alink="red" text="black" bgcolor="grey" background='<?php echo $homeDir . $dirImages; ?>tile.gif'>
 
         <font face="Helvetica">
             <table cellpadding="2" cellspacing="0" border="1" width="640" align="center" bgcolor="#FFFFFF">
 
                 <!-- Main Title Image -->
                 <tr bgcolor="#CCCCCC">
-                    <th align="center"><img src="<?php echo $homeDir$dirImages; ?>title_pc.png" alt="" align="center" width="640" height="160"></th>
+                    <th align="center"><img src='<?php echo $homeDir . $dirImages; ?>title_pc.png' alt="" align="center" width="640" height="160"></th>
                 </tr>
 
                 <!-- Header Links -->
@@ -34,4 +36,4 @@
                 </tr>
 
                 <!-- Body -->
-                <tr bgcolor="#FFFFFF"><td align="left" background="<?php echo $homeDir; ?>images/tile2.png">
+                <tr bgcolor="#FFFFFF"><td align="left" background="<?php echo $homeDir . $dirImages; ?>tile2.png">

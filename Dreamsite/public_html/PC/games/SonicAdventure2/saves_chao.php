@@ -10,7 +10,7 @@
     $col = "$C1";
 
 ?>
-          <h1 align="left"><a href="index.html" style="text-decoration:none">Sonic Adventure 2</a></h1>
+          <h1 align="left"><a href="index.php" style="text-decoration:none">Sonic Adventure 2</a></h1>
 
           <h3>Chao Save File</h3>
 
