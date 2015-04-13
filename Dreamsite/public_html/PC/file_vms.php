@@ -87,6 +87,7 @@ directory, which should contain 1 for VMU game files, and 0 for data files.</p>
             ?>
             </table>
           </p>
+
           <br>
 
           <!-- Table for Notes -->
