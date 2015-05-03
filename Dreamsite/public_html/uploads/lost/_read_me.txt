@@ -1,0 +1,1 @@
+This directory is set up to collect .VMI files that lack a paired .VMS file.

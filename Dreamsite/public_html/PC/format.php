@@ -38,6 +38,18 @@
         ";
     }
 
+	function convTable( $fC, $tC, $fH, $tH ) {
+		global $col;
+		echo "
+			<tr bgcolor='" . ac($col) . "'>
+				<td>$fC</td>
+				<td>$tC</td>
+				<td>$fH</td>
+				<td>$tH</td>
+			</tr>
+		";
+	}
+
 	function memoryTable() {
 		echo "
 			<table cellpadding='3' cellspacing='1' border='0' style='max-width:640px;' bgcolor='#6E6E6E'>
