@@ -11,7 +11,7 @@ include "pc_globals.php";
         <title><?php echo $pageTitle; ?></title>
     </head>
 
-    <body link="#0022EE" vlink="#0022EE" alink="red" text="black" bgcolor="grey" background='<?php echo $homeDir . $dirImages; ?>tile.gif'>
+    <body link="#0022EE" vlink="#0022EE" alink="red" text="black" bgcolor="grey" background='<?php echo $homeDir . $dirImages . $pcBGimg; ?>'>
 
         <font face="Helvetica">
             <table cellpadding="2" cellspacing="0" border="1" width="640" align="center" bgcolor="#FFFFFF">

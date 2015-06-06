@@ -25,6 +25,7 @@
 	$dirIcons  = $root . "images/icons/";
 	$dirEC     = $root . "images/eyecatch/";
 	$dirPSO    = $root . "images/psoscreenshots/";
+    $pcBGimg = "tile.png";
     $dSA2 = "SonicAdventure2";
     $dShen = "Shenmue";
     $dPSOv2 = "PhantasyStarOnline";

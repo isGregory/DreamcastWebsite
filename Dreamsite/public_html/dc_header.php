@@ -9,7 +9,7 @@
 	        <title><?php echo $pageTitle; ?></title>
 	    </head>
 
-	    <body link="#0022EE" vlink="#0022EE" alink="red" text="black" bgcolor="grey" background="images/tile.png">
+	    <body link="#0022EE" vlink="#0022EE" alink="red" text="black" bgcolor="grey" background='<?php echo $dcBGimg; ?>'>
 
 	        <font face="Helvetica">
 	            <table cellpadding="2" cellspacing="0" border="1" width="500" align="center" bgcolor="#FFFFFF">

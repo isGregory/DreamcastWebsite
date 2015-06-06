@@ -1,6 +1,8 @@
 <?php
 	//globals.php
 
+    $dcBGimg = "images/tile.png";
+
     // Directories
     $dirUp    = "uploads/";
 	$dirIcons = "images/icons/";
