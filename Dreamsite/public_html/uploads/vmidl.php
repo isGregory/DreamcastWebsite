@@ -17,7 +17,7 @@ if( $t == "s" ) {
 }
 
 // Check if vmi file name provided
-if ( $id === false ) {
+if ( false === $id ) {
 
 	$pageTitle = "VMU Download";
 	include 'dc_header.php';

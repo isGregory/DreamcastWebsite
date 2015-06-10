@@ -23,6 +23,9 @@ function shenmuePrintSlotTime( $vms, $name, $o ) {
 		$curDay = new DateTime("19$gY-$gM-$gD");
 		$diff = $finalDay->diff($curDay)->format("%a");
 		echo "
+		<tr bgcolor='#CCCCCC'>
+			<th colspan='2'>$name</th>
+		</tr>
 		<tr bgcolor='" . ac($col) . "'>
 			<th>$name Date</th>
 			<th>19$gY-$gM-$gD $gH:$gm:$gs</th>
@@ -87,7 +90,7 @@ function getUniqueInfo( $vms ) {
 			";
 		}
 		if ( shenmuePrintSlotTime( $vms, "Slot 3", 0x7C0 ) ) {
-		$money = $vms->readInt_16(0x5018);
+			$money = $vms->readInt_16(0x5018);
 			echo "
 			<tr bgcolor='" . ac($col) . "'>
 				<th>Money</th>

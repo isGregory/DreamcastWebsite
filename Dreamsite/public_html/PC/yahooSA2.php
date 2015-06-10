@@ -260,43 +260,45 @@ place is ignored.
 
 
 _-==============================================-_
-WRITTEN BY:
--=========-
-SONICBLUR
+                    WRITTEN BY:
+                    -=========-
+                     SONICBLUR
 
-INFO PROVIDED BY:
--===============-
+                 INFO PROVIDED BY:
+                 -===============-
 SONICBLUR (-----------) ALL OWNER INFORMATION
-sblur@... CHAO STATS
-CHAO NAME
+sblur@...               CHAO STATS
+                        CHAO NAME
 
 WARPDIGIVOLVE (-------) CHAO TYPE
-warpdigivolve@... FACE DATA
+warpdigivolve@...       FACE DATA
 
 BRANDEN PINNEY (------) CHAO COSTUME & ANIMALS
-bapinney@... CHAO HEADS
-CHAO COLORS
-CHAO JEWLRY
+bapinney@...            CHAO HEADS
+                        CHAO COLORS
+                        CHAO JEWLRY
 
 ~K'TANI (-------------) EYE VALUES
-snowfox16@... MOUTH VALUES
-ANIMAL MODS
-ANIMAL VALUES
-CHAO TYPE VALUES
+snowfox16@...           MOUTH VALUES
+                        ANIMAL MODS
+                        ANIMAL VALUES
+                        CHAO TYPE VALUES
 
 
 
 
-SPECIAL THANKS T0:
--================-
+                SPECIAL THANKS T0:
+                -================-
 YARHARHAR (-----------) FOR THE SILVER CHAO
-IN A VMS FILE
-ELLIOTRO (-----------) FOR SENDING ME HIS
-CHAO ADVENTUE FILE
+                        IN A VMS FILE
+
+ELLIOTRO (------------) FOR SENDING ME HIS
+                        CHAO ADVENTUE FILE
+
 SAYIAN SONIC (--------) FOR BEING THE FIRST
-TO GET ALL 180
-EMBLEMS AND POST A
-SAVE ON THE NET
+                        TO GET ALL 180
+                        EMBLEMS AND POST A
+                        SAVE ON THE NET
 =-____________________________________________-=
 
 

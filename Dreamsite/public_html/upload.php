@@ -177,8 +177,8 @@ if ( $dreamBrowser ) {
 		// read-in to correct values for decoding
 		$table = array(
 		    '=' => '=', // 0x3D => 0x3D
-			'+' => 'y',	// 0x2B => 0x79
-			'/' => '/',	// 0x2F => 0x2F
+			'+' => 'y', // 0x2B => 0x79
+			'/' => '/', // 0x2F => 0x2F
 			'0' => '2', // 0x30 => 0x32
 			'1' => '7', // 0x31 => 0x37
 			'2' => '0', // 0x32 => 0x30

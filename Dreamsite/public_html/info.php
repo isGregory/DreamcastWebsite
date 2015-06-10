@@ -1,10 +1,14 @@
 <?php
 	//info.php
-	include 'globals.php';
+	require_once 'globals.php';
 
     $s = isset($_GET["s"]) ? $_GET["s"] : false;
 
-	include 'dc_tools.php';
+	require_once 'dc_tools.php';
+	require_once 'savefile_lookup.php';
+	$luSaves = new saveLookup();
+	$luSaves->buildTable();
+
     $pageTitle = "File Info";
     include 'dc_header.php';
 
@@ -16,6 +20,8 @@
 		$vms = new VMS;
 		$vms->load($dirUp . $VMSname);
 		$imgName = createVMSicons( $vms );
+		$luGame = $luSaves->getGame( $vms->getTypeHash() );
+		$luType = $luSaves->getType( $vms->getTypeHash() );
 
 		$col = $C1;
 
@@ -35,6 +41,9 @@
 				<th colspan='2'><img src='$imgName'></th>
 			</tr>
 			<tr bgcolor='" . ac($col) . "'>
+				<th colspan='2'>$luGame - $luType</th>
+			</tr>
+			<tr bgcolor='" . ac($col) . "'>
 				<th>Download: "
 				. "<a href='" . $dirUp . "vmidl.php?id=$s&t=i'><img src='images/save_vmi.png'></a> ";
 				if ( !$dreamBrowser ) {
@@ -49,7 +58,7 @@
 			getUniqueInfo( $vms );
 		echo "
 			<tr bgcolor='#CCCCCC'>
-				<th colspan='2'>$VMSname - Header Info</th>
+				<th colspan='2'>Header Info</th>
 			</tr>
 			<tr bgcolor='" . ac($col) . "'>
 				<th>Menu Description</th><th>$Dmenu</th>
