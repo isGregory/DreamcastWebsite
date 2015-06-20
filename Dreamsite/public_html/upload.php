@@ -20,7 +20,7 @@
 
 // Include to check if they're using a dreamcast web-browser
 // and get the globals specified upload directory.
-include 'globals.php';
+require_once 'globals.php';
 
 
 // Check if it is a Dreamcast
@@ -176,7 +176,7 @@ if ( $dreamBrowser ) {
 		// This table will be used to translate data
 		// read-in to correct values for decoding
 		$table = array(
-		    '=' => '=', // 0x3D => 0x3D
+			'=' => '=', // 0x3D => 0x3D
 			'+' => 'y', // 0x2B => 0x79
 			'/' => '/', // 0x2F => 0x2F
 			'0' => '2', // 0x30 => 0x32
@@ -325,7 +325,7 @@ if ( $dreamBrowser ) {
 
 	// if everything is ok, try to upload file
 	} else {
-    	if (move_uploaded_file($_FILES["upfile"]["tmp_name"], $target_file)) {
+		if (move_uploaded_file($_FILES["upfile"]["tmp_name"], $target_file)) {
 
 			$pageTitle = "Upload - Success";
 			include 'dc_header.php';
@@ -334,14 +334,14 @@ if ( $dreamBrowser ) {
 			$from = "upload.php";
 			include 'dc_footer.php';
 
-    	} else {
+		} else {
 			// Error moving temporary file
 			$pageTitle = "Upload - Failed";
 			include 'dc_header.php';
 			echo "<p>Sorry, there was an error uploading your file.</p>";
 			$from = "upload.php";
 			include 'dc_footer.php';
-    	}
+		}
 	}
 }
 

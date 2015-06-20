@@ -7,7 +7,7 @@
 // $saveInfo->buildTable();
 
 class saveLookup {
-    private $savefiles = array();
+	private $savefiles = array();
 
 	function getGame( $hash ) {
 		$toReturn = $this->savefiles[ $hash ][ 'game' ];

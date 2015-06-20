@@ -6,7 +6,7 @@ include 'dc_tools.php';
 // VMI file name
 $id = isset($_GET["id"]) ? $_GET["id"] : false;
 
-// t can be either 'i' for ".vmi" or 's' for ".VMS"
+// $t can be either 'i' for ".vmi" or 's' for ".VMS"
 $t = isset($_GET["t"]) ? $_GET["t"] : false;
 
 if( $t == "s" ) {

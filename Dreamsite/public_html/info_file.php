@@ -3,11 +3,11 @@
 $col;
 
 function printFileBar() {
-	echo "
-	<tr bgcolor='#CCCCCC'>
-		<th colspan='2'>File Info</th>
-	</tr>
-	";
+	?>
+		<tr bgcolor='#CCCCCC'>
+			<th colspan='2'>File Info</th>
+		</tr>
+	<?php
 }
 
 function shenmuePrintSlotTime( $vms, $name, $o ) {
@@ -22,26 +22,26 @@ function shenmuePrintSlotTime( $vms, $name, $o ) {
 		$gs = $vms->get($o + 0xE);
 		$curDay = new DateTime("19$gY-$gM-$gD");
 		$diff = $finalDay->diff($curDay)->format("%a");
-		echo "
-		<tr bgcolor='#CCCCCC'>
-			<th colspan='2'>$name</th>
-		</tr>
-		<tr bgcolor='" . ac($col) . "'>
-			<th>$name Date</th>
-			<th>19$gY-$gM-$gD $gH:$gm:$gs</th>
-		</tr>
-		<tr bgcolor='" . ac($col) . "'>
-			<th>Time Left</th>
-			<th>$diff Days</th>
-		</tr>
-		";
+		?>
+			<tr bgcolor='#CCCCCC'>
+				<th colspan='2'><?php echo $name; ?></th>
+			</tr>
+			<tr bgcolor='<?php echo ac(); ?>'>
+				<th><?php echo "$name Date"; ?></th>
+				<th><?php echo "19$gY-$gM-$gD $gH:$gm:$gs"; ?></th>
+			</tr>
+			<tr bgcolor='<?php echo ac(); ?>'>
+				<th>Time Left</th>
+				<th><?php echo "$diff Days"; ?></th>
+			</tr>
+		<?php
 		return true;
 	} else {
-		echo "
-		<tr bgcolor='#CCCCCC'>
-			<th colspan='2'>$name not in use</th>
-		</tr>
-		";
+		?>
+			<tr bgcolor='#CCCCCC'>
+				<th colspan='2'>$name not in use</th>
+			</tr>
+		<?php
 		return false;
 	}
 }
@@ -55,50 +55,49 @@ function getUniqueInfo( $vms ) {
 	if ( strpos( $vms->getVMStext(), "PSO/SCREEN_IMAGE" ) !== false ) {
 		$imgName = createVMSpso( $vms );
 		printFileBar();
-		echo "
-		<tr bgcolor='" . ac($col) . "'>
+		?>
+		<tr bgcolor='<?php echo ac(); ?>'>
 			<th>Screenshot</th>
 			<th><img src='$imgName'></th>
 		</tr>
-		";
+		<?php
 	} else if ( strpos( $vms->getVMStext(), "SHENMUE" ) !== false ) {
 		if ( shenmuePrintSlotTime( $vms, "Resume Game", 0x700 ) ) {
 			$money = $vms->readInt_16(0x818);
-			echo "
-			<tr bgcolor='" . ac($col) . "'>
-				<th>Money</th>
-				<th>\$$money</th>
-			</tr>
-			";
+			?>
+				<tr bgcolor='<?php echo ac(); ?>'>
+					<th>Money</th>
+					<th><?php echo "\$$money" ?></th>
+				</tr>
+			<?php
 		}
 		if ( shenmuePrintSlotTime( $vms, "Slot 1", 0x740 ) ) {
 			$money = $vms->readInt_16(0x2018);
-			echo "
-			<tr bgcolor='" . ac($col) . "'>
-				<th>Money</th>
-				<th>\$$money</th>
-			</tr>
-			";
+			?>
+				<tr bgcolor='<?php echo ac(); ?>'>
+					<th>Money</th>
+					<th><?php echo "\$$money" ?></th>
+				</tr>
+			<?php
 		}
 		if ( shenmuePrintSlotTime( $vms, "Slot 2", 0x780 ) ) {
 			$money = $vms->readInt_16(0x3818);
-			echo "
-			<tr bgcolor='" . ac($col) . "'>
-				<th>Money</th>
-				<th>\$$money</th>
-			</tr>
-			";
+			?>
+				<tr bgcolor='<?php echo ac(); ?>'>
+					<th>Money</th>
+					<th><?php echo "\$$money" ?></th>
+				</tr>
+			<?php
 		}
 		if ( shenmuePrintSlotTime( $vms, "Slot 3", 0x7C0 ) ) {
 			$money = $vms->readInt_16(0x5018);
-			echo "
-			<tr bgcolor='" . ac($col) . "'>
-				<th>Money</th>
-				<th>\$$money</th>
-			</tr>
-			";
+			?>
+				<tr bgcolor='<?php echo ac(); ?>'>
+					<th>Money</th>
+					<th><?php echo "\$$money" ?></th>
+				</tr>
+			<?php
 		}
 	}
-
 }
 ?>

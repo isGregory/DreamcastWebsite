@@ -1,24 +1,30 @@
 <?php
-    // yahooSA2.php
-    include 'pc_globals.php';
+	// yahooSA2.php
+	include 'pc_globals.php';
 
-    $pageTitle = "SA2 Yahoo";
-    $homeDir = "";
-    include 'pc_header.php';
+	$pageTitle = "SA2 Yahoo";
+	$homeDir = "";
+	include 'pc_header.php';
 
 ?>
 
-      <h1>Yahoo Message on Sonic Adventure 2</h1>
+<h1>Yahoo Message on Sonic Adventure 2</h1>
 
-This message was backed up from <a href="https://groups.yahoo.com/neo/groups/vmu-dev/conversations/messages/875">this site</a>.<br>
-It talks about the Chao <a href="games/<?php echo $dSA2; ?>/saves_chao.php">save file structure</a> from Sonic Adventure 2.<br>
-Thanks to Stephanie Rogerson for asking the question, and Paul Kratt for responding with information from sonicblur.
+This message was backed up from
+<a href="https://groups.yahoo.com/neo/groups/vmu-dev/conversations/messages/875">this site</a>.
+<br>
+It talks about the Chao
+<a href="games/<?php echo $dSA2; ?>/saves_chao.php">save file structure</a>
+from Sonic Adventure 2.
+<br>
+Thanks to Stephanie Rogerson for asking the question, and Paul Kratt for
+responding with information from sonicblur.
 <br>
 <br>
 <table cellpadding="2" cellspacing="0" border="0" bgcolor="#CCCCCC" style="max-width:600px;">
-  <tr>
-    <td>
-      <pre style="white-space: pre-wrap;">
+	<tr>
+		<td>
+			<pre style="white-space: pre-wrap;">
 From: steph42@sammy.cwru.edu
 Date: 2001-9-23
 <br>
@@ -36,17 +42,17 @@ This would greatly help others who are trying to develop tools to edit Chao.
 Thank you,
 
 Stephanie Rogerson
-</pre>
-</td>
-</tr>
+			</pre>
+		</td>
+	</tr>
 </table>
 
 
 <br>
 <table cellpadding="2" cellspacing="0" border="0" bgcolor="#CCCCCC" style="max-width:600px;">
-  <tr>
-    <td>
-      <pre style="white-space: pre-wrap;">
+	<tr>
+		<td>
+			<pre style="white-space: pre-wrap;">
 From: Paul Kratt
 Date: 2001-9-25
 <br>
@@ -342,12 +348,12 @@ info used.
 I'm sure someone probably found some of this before me, but I was the
 first to put it in a guide.
 :-P
-</pre>
-</td>
-</tr>
+			</pre>
+		</td>
+	</tr>
 </table>
 
 <?php
-    $from = "yahooSA2.php";
-    include 'pc_footer.php';
+	$from = "yahooSA2.php";
+	include 'pc_footer.php';
 ?>

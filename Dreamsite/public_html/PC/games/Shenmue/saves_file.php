@@ -1,43 +1,41 @@
 <?php
-    // saves_file.php
-    $homeDir = "../../";
-    include $homeDir . "pc_globals.php";
-    include $homeDir . "format.php";
+	// saves_file.php
+	$homeDir = "../../";
+	include $homeDir . "pc_globals.php";
+	include $homeDir . "format.php";
 
-    $pageTitle = "Shenmue - Save File";
-    include $homeDir . "pc_header.php";
-
-    $col = "$C1";
+	$pageTitle = "Shenmue - Save File";
+	include $homeDir . "pc_header.php";
 
 ?>
 <h1 align="left"><a href="index.html" style="text-decoration:none">Shenmue</a></h1>
 
 <table cellpadding="3" cellspacing="1" border"0">
-    <tr>
-        <td>
-            <table cellpadding="3" cellspacing="1" border="0" width="150" bgcolor="#6E6E6E">
-                <tr align="center" bgcolor="#BBBBBB">
-                    <td>Contents</td>
-                </tr>
-                <tr bgcolor="#CCCCCC">
-                    <td><a href="../../file_vms.html">VMS Header</a></td>
-                </tr>
-                <tr bgcolor="#EEEEEE">
-                    <td><a href="#body">Body</a></td>
-                </tr>
-            </table>
-        </td>
-        <td>
-            <label>
-                <br>
-                Very little save information has been mapped for this file so
-                far. This is something you can help with! If you're interested
-                check out this guide <a href="../../vmu_mapping.html">HERE</a>
-                to get started.
-                <br><br>
-            </label>
-        </td>
-    </tr>
+	<tr>
+		<td>
+			<table cellpadding="3" cellspacing="1" border="0" width="150" bgcolor="#6E6E6E">
+				<tr align="center" bgcolor="#BBBBBB">
+					<td>Contents</td>
+				</tr>
+				<tr bgcolor="#CCCCCC">
+					<td><a href="../../file_vms.html">VMS Header</a></td>
+				</tr>
+				<tr bgcolor="#EEEEEE">
+					<td><a href="#body">Body</a></td>
+				</tr>
+			</table>
+		</td>
+		<td>
+			<label>
+				<br>
+				Very little save information has been mapped for this file so
+				far. This is something you can help with! If you're interested
+				check out this guide <a href="../../vmu_mapping.html">HERE</a>
+				to get started.
+				<br><br>
+			</label>
+		</td>
+	</tr>
 </table>
 
 <hr>
@@ -45,153 +43,153 @@
 <h3 align="left">VMS File <a id="body">Body</a> Contents</h3>
 
 <p>
-    <?php
-        memoryTable();
-            memoryEntry( '0x00', 1664, 'Bytes', '<a href="../../file_vms.html">Header</a> with 3-frame animated icon.' );
-            memoryEntry( '0x680', 32, 'Bytes', 'Unknown' );
+	<?php
+		memoryTable();
+			memoryEntry( '0x00', 1664, 'Bytes', '<a href="../../file_vms.html">Header</a> with 3-frame animated icon.' );
+			memoryEntry( '0x680', 32, 'Bytes', 'Unknown' );
 
-            echo "
-                <tr bgcolor='#E0E0E0'>
-                <td colspan='5' align='center'>Start \"Resume\" - Save File Times</td>
-                </tr>
-            ";
+			?>
+				<tr bgcolor='#E0E0E0'>
+					<td colspan='5' align='center'>Start "Resume" - Save File Times</td>
+				</tr>
+			<?php
 
-            memoryEntry( '0x700', 2, 'Integer', 'SaveTime - Year <span style=\"float:right;\">( 4 Digit Year - ie 1998 )</span>' );
-            memoryEntry( '0x702', 1, 'Integer', 'SaveTime - Month <span style=\"float:right;\">( 1 - 12 )</span>' );
-            memoryEntry( '0x703', 1, 'Integer', 'SaveTime - Day of Month <span style=\"float:right;\">( 1 - 31 )</span>' );
-            memoryEntry( '0x704', 1, 'Integer', 'SaveTime - Hours <span style=\"float:right;\">( 0 - 23 )</span>' );
-            memoryEntry( '0x705', 1, 'Integer', 'SaveTime - Minutes <span style=\"float:right;\">( 0 - 59 )</span>' );
-            memoryEntry( '0x706', 1, 'Integer', 'SaveTime - Seconds <span style=\"float:right;\">( 0 - 59 )</span>' );
-            memoryEntry( '0x707', 1, 'Integer', 'SaveTime - Day of Week <span style=\"float:right;\">( 0 = sunday - 6 = saturday )</span>' );
+			memoryEntry( '0x700', 2, 'Integer', 'SaveTime - Year <span style=\"float:right;\">( 4 Digit Year - ie 1998 )</span>' );
+			memoryEntry( '0x702', 1, 'Integer', 'SaveTime - Month <span style=\"float:right;\">( 1 - 12 )</span>' );
+			memoryEntry( '0x703', 1, 'Integer', 'SaveTime - Day of Month <span style=\"float:right;\">( 1 - 31 )</span>' );
+			memoryEntry( '0x704', 1, 'Integer', 'SaveTime - Hours <span style=\"float:right;\">( 0 - 23 )</span>' );
+			memoryEntry( '0x705', 1, 'Integer', 'SaveTime - Minutes <span style=\"float:right;\">( 0 - 59 )</span>' );
+			memoryEntry( '0x706', 1, 'Integer', 'SaveTime - Seconds <span style=\"float:right;\">( 0 - 59 )</span>' );
+			memoryEntry( '0x707', 1, 'Integer', 'SaveTime - Day of Week <span style=\"float:right;\">( 0 = sunday - 6 = saturday )</span>' );
 
-            memoryEntry( '0x708', '1-2?', 'Integer', 'GameTime - Year <span style=\"float:right;\">( Starting with 86 )</span>' );
-            memoryEntry( '0x70A', 1, 'Integer', 'GameTime - Month <span style=\"float:right;\">( 1 - 12 )</span>' );
-            memoryEntry( '0x70B', 1, 'Integer', 'GameTime - Day of Month <span style=\"float:right;\">( 1 - 31 )</span>' );
-            memoryEntry( '0x70C', 1, 'Integer', 'GameTime - Hours <span style=\"float:right;\">( 0 - 23 )</span>' );
-            memoryEntry( '0x70D', 1, 'Integer', 'GameTime - Minutes <span style=\"float:right;\">( 0 - 59 )</span>' );
-            memoryEntry( '0x70E', 1, 'Integer', 'GameTime - Seconds <span style=\"float:right;\">( 0 - 59 )</span>' );
-            memoryEntry( '0x70F', 1, 'Integer', 'GameTime - Day of Week <span style=\"float:right;\">( 0 = sunday - 6 = saturday )</span>' );
-            memoryEntry( '0x710', 8, 'Bytes', 'Unknown' );
-            memoryEntry( '0x718', 4, 'Text', 'Entry Point?' );
+			memoryEntry( '0x708', '1-2?', 'Integer', 'GameTime - Year <span style=\"float:right;\">( Starting with 86 )</span>' );
+			memoryEntry( '0x70A', 1, 'Integer', 'GameTime - Month <span style=\"float:right;\">( 1 - 12 )</span>' );
+			memoryEntry( '0x70B', 1, 'Integer', 'GameTime - Day of Month <span style=\"float:right;\">( 1 - 31 )</span>' );
+			memoryEntry( '0x70C', 1, 'Integer', 'GameTime - Hours <span style=\"float:right;\">( 0 - 23 )</span>' );
+			memoryEntry( '0x70D', 1, 'Integer', 'GameTime - Minutes <span style=\"float:right;\">( 0 - 59 )</span>' );
+			memoryEntry( '0x70E', 1, 'Integer', 'GameTime - Seconds <span style=\"float:right;\">( 0 - 59 )</span>' );
+			memoryEntry( '0x70F', 1, 'Integer', 'GameTime - Day of Week <span style=\"float:right;\">( 0 = sunday - 6 = saturday )</span>' );
+			memoryEntry( '0x710', 8, 'Bytes', 'Unknown' );
+			memoryEntry( '0x718', 4, 'Text', 'Entry Point?' );
 
-            echo "
-                <tr bgcolor='#E0E0E0'>
-                <td colspan='5' align='center'>End \"Resume\" - Save File Times</td>
-                </tr>
-            ";
+			?>
+				<tr bgcolor='#E0E0E0'>
+					<td colspan='5' align='center'>End "Resume" - Save File Times</td>
+				</tr>
+			<?php
 
-            memoryEntry( '0x71C', 36, 'Bytes', 'Unknown' );
+			memoryEntry( '0x71C', 36, 'Bytes', 'Unknown' );
 
-            echo "
-                <tr bgcolor='#E0E0E0'>
-                <td colspan='5' align='center'>Start Slot 1 - Save File Times</td>
-                </tr>
-            ";
+			?>
+				<tr bgcolor='#E0E0E0'>
+					<td colspan='5' align='center'>Start Slot 1 - Save File Times</td>
+				</tr>
+			<?php
 
-            memoryEntry( '0x740', 2, 'Integer', 'SaveTime - Year <span style=\"float:right;\">( 4 Digit Year - ie 1998 )</span>' );
-            memoryEntry( '0x742', 1, 'Integer', 'SaveTime - Month <span style=\"float:right;\">( 1 - 12 )</span>' );
-            memoryEntry( '0x743', 1, 'Integer', 'SaveTime - Day of Month <span style=\"float:right;\">( 1 - 31 )</span>' );
-            memoryEntry( '0x744', 1, 'Integer', 'SaveTime - Hours <span style=\"float:right;\">( 0 - 23 )</span>' );
-            memoryEntry( '0x745', 1, 'Integer', 'SaveTime - Minutes <span style=\"float:right;\">( 0 - 59 )</span>' );
-            memoryEntry( '0x746', 1, 'Integer', 'SaveTime - Seconds <span style=\"float:right;\">( 0 - 59 )</span>' );
-            memoryEntry( '0x747', 1, 'Integer', 'SaveTime - Day of Week <span style=\"float:right;\">( 0 = sunday - 6 = saturday )</span>' );
+			memoryEntry( '0x740', 2, 'Integer', 'SaveTime - Year <span style=\"float:right;\">( 4 Digit Year - ie 1998 )</span>' );
+			memoryEntry( '0x742', 1, 'Integer', 'SaveTime - Month <span style=\"float:right;\">( 1 - 12 )</span>' );
+			memoryEntry( '0x743', 1, 'Integer', 'SaveTime - Day of Month <span style=\"float:right;\">( 1 - 31 )</span>' );
+			memoryEntry( '0x744', 1, 'Integer', 'SaveTime - Hours <span style=\"float:right;\">( 0 - 23 )</span>' );
+			memoryEntry( '0x745', 1, 'Integer', 'SaveTime - Minutes <span style=\"float:right;\">( 0 - 59 )</span>' );
+			memoryEntry( '0x746', 1, 'Integer', 'SaveTime - Seconds <span style=\"float:right;\">( 0 - 59 )</span>' );
+			memoryEntry( '0x747', 1, 'Integer', 'SaveTime - Day of Week <span style=\"float:right;\">( 0 = sunday - 6 = saturday )</span>' );
 
-            memoryEntry( '0x748', '1-2?', 'Integer', 'GameTime - Year <span style=\"float:right;\">( Starting with 86 )</span>' );
-            memoryEntry( '0x74A', 1, 'Integer', 'GameTime - Month <span style=\"float:right;\">( 1 - 12 )</span>' );
-            memoryEntry( '0x74B', 1, 'Integer', 'GameTime - Day of Month <span style=\"float:right;\">( 1 - 31 )</span>' );
-            memoryEntry( '0x74C', 1, 'Integer', 'GameTime - Hours <span style=\"float:right;\">( 0 - 23 )</span>' );
-            memoryEntry( '0x74D', 1, 'Integer', 'GameTime - Minutes <span style=\"float:right;\">( 0 - 59 )</span>' );
-            memoryEntry( '0x74E', 1, 'Integer', 'GameTime - Seconds <span style=\"float:right;\">( 0 - 59 )</span>' );
-            memoryEntry( '0x74F', 1, 'Integer', 'GameTime - Day of Week <span style=\"float:right;\">( 0 = sunday - 6 = saturday )</span>' );
-            memoryEntry( '0x750', 8, 'Bytes', 'Unknown' );
-            memoryEntry( '0x758', 4, 'Text', 'Entry Point?' );
+			memoryEntry( '0x748', '1-2?', 'Integer', 'GameTime - Year <span style=\"float:right;\">( Starting with 86 )</span>' );
+			memoryEntry( '0x74A', 1, 'Integer', 'GameTime - Month <span style=\"float:right;\">( 1 - 12 )</span>' );
+			memoryEntry( '0x74B', 1, 'Integer', 'GameTime - Day of Month <span style=\"float:right;\">( 1 - 31 )</span>' );
+			memoryEntry( '0x74C', 1, 'Integer', 'GameTime - Hours <span style=\"float:right;\">( 0 - 23 )</span>' );
+			memoryEntry( '0x74D', 1, 'Integer', 'GameTime - Minutes <span style=\"float:right;\">( 0 - 59 )</span>' );
+			memoryEntry( '0x74E', 1, 'Integer', 'GameTime - Seconds <span style=\"float:right;\">( 0 - 59 )</span>' );
+			memoryEntry( '0x74F', 1, 'Integer', 'GameTime - Day of Week <span style=\"float:right;\">( 0 = sunday - 6 = saturday )</span>' );
+			memoryEntry( '0x750', 8, 'Bytes', 'Unknown' );
+			memoryEntry( '0x758', 4, 'Text', 'Entry Point?' );
 
-            echo "
-                <tr bgcolor='#E0E0E0'>
-                <td colspan='5' align='center'>End Slot 1 - Save File Times</td>
-                </tr>
-            ";
+			?>
+				<tr bgcolor='#E0E0E0'>
+					<td colspan='5' align='center'>End Slot 1 - Save File Times</td>
+				</tr>
+			<?php
 
-            memoryEntry( '0x75C', 36, 'Bytes', 'Unknown' );
+			memoryEntry( '0x75C', 36, 'Bytes', 'Unknown' );
 
-            echo "
-                <tr bgcolor='#E0E0E0'>
-                <td colspan='5' align='center'>Start Slot 2 - Save File Times</td>
-                </tr>
-            ";
+			?>
+				<tr bgcolor='#E0E0E0'>
+					<td colspan='5' align='center'>Start Slot 2 - Save File Times</td>
+				</tr>
+			<?php
 
-            memoryEntry( '0x780', 2, 'Integer', 'SaveTime - Year <span style=\"float:right;\">( 4 Digit Year - ie 1998 )</span>' );
-            memoryEntry( '0x782', 1, 'Integer', 'SaveTime - Month <span style=\"float:right;\">( 1 - 12 )</span>' );
-            memoryEntry( '0x783', 1, 'Integer', 'SaveTime - Day of Month <span style=\"float:right;\">( 1 - 31 )</span>' );
-            memoryEntry( '0x784', 1, 'Integer', 'SaveTime - Hours <span style=\"float:right;\">( 0 - 23 )</span>' );
-            memoryEntry( '0x785', 1, 'Integer', 'SaveTime - Minutes <span style=\"float:right;\">( 0 - 59 )</span>' );
-            memoryEntry( '0x786', 1, 'Integer', 'SaveTime - Seconds <span style=\"float:right;\">( 0 - 59 )</span>' );
-            memoryEntry( '0x787', 1, 'Integer', 'SaveTime - Day of Week <span style=\"float:right;\">( 0 = sunday - 6 = saturday )</span>' );
+			memoryEntry( '0x780', 2, 'Integer', 'SaveTime - Year <span style=\"float:right;\">( 4 Digit Year - ie 1998 )</span>' );
+			memoryEntry( '0x782', 1, 'Integer', 'SaveTime - Month <span style=\"float:right;\">( 1 - 12 )</span>' );
+			memoryEntry( '0x783', 1, 'Integer', 'SaveTime - Day of Month <span style=\"float:right;\">( 1 - 31 )</span>' );
+			memoryEntry( '0x784', 1, 'Integer', 'SaveTime - Hours <span style=\"float:right;\">( 0 - 23 )</span>' );
+			memoryEntry( '0x785', 1, 'Integer', 'SaveTime - Minutes <span style=\"float:right;\">( 0 - 59 )</span>' );
+			memoryEntry( '0x786', 1, 'Integer', 'SaveTime - Seconds <span style=\"float:right;\">( 0 - 59 )</span>' );
+			memoryEntry( '0x787', 1, 'Integer', 'SaveTime - Day of Week <span style=\"float:right;\">( 0 = sunday - 6 = saturday )</span>' );
 
-            memoryEntry( '0x788', '1-2?', 'Integer', 'GameTime - Year <span style=\"float:right;\">( Starting with 86 )</span>' );
-            memoryEntry( '0x78A', 1, 'Integer', 'GameTime - Month <span style=\"float:right;\">( 1 - 12 )</span>' );
-            memoryEntry( '0x78B', 1, 'Integer', 'GameTime - Day of Month <span style=\"float:right;\">( 1 - 31 )</span>' );
-            memoryEntry( '0x78C', 1, 'Integer', 'GameTime - Hours <span style=\"float:right;\">( 0 - 23 )</span>' );
-            memoryEntry( '0x78D', 1, 'Integer', 'GameTime - Minutes <span style=\"float:right;\">( 0 - 59 )</span>' );
-            memoryEntry( '0x78E', 1, 'Integer', 'GameTime - Seconds <span style=\"float:right;\">( 0 - 59 )</span>' );
-            memoryEntry( '0x78F', 1, 'Integer', 'GameTime - Day of Week <span style=\"float:right;\">( 0 = sunday - 6 = saturday )</span>' );
-            memoryEntry( '0x790', 8, 'Bytes', 'Unknown' );
-            memoryEntry( '0x798', 4, 'Text', 'Entry Point?' );
+			memoryEntry( '0x788', '1-2?', 'Integer', 'GameTime - Year <span style=\"float:right;\">( Starting with 86 )</span>' );
+			memoryEntry( '0x78A', 1, 'Integer', 'GameTime - Month <span style=\"float:right;\">( 1 - 12 )</span>' );
+			memoryEntry( '0x78B', 1, 'Integer', 'GameTime - Day of Month <span style=\"float:right;\">( 1 - 31 )</span>' );
+			memoryEntry( '0x78C', 1, 'Integer', 'GameTime - Hours <span style=\"float:right;\">( 0 - 23 )</span>' );
+			memoryEntry( '0x78D', 1, 'Integer', 'GameTime - Minutes <span style=\"float:right;\">( 0 - 59 )</span>' );
+			memoryEntry( '0x78E', 1, 'Integer', 'GameTime - Seconds <span style=\"float:right;\">( 0 - 59 )</span>' );
+			memoryEntry( '0x78F', 1, 'Integer', 'GameTime - Day of Week <span style=\"float:right;\">( 0 = sunday - 6 = saturday )</span>' );
+			memoryEntry( '0x790', 8, 'Bytes', 'Unknown' );
+			memoryEntry( '0x798', 4, 'Text', 'Entry Point?' );
 
-            echo "
-                <tr bgcolor='#E0E0E0'>
-                <td colspan='5' align='center'>End Slot 2 - Save File Times</td>
-                </tr>
-            ";
+			?>
+				<tr bgcolor='#E0E0E0'>
+					<td colspan='5' align='center'>End Slot 2 - Save File Times</td>
+				</tr>
+			<?php
 
-            memoryEntry( '0x79C', 36, 'Bytes', 'Unknown' );
+			memoryEntry( '0x79C', 36, 'Bytes', 'Unknown' );
 
-            echo "
-                <tr bgcolor='#E0E0E0'>
-                <td colspan='5' align='center'>Start Slot 3 - Save File Times</td>
-                </tr>
-            ";
+			?>
+				<tr bgcolor='#E0E0E0'>
+					<td colspan='5' align='center'>Start Slot 3 - Save File Times</td>
+				</tr>
+			<?php
 
-            memoryEntry( '0x7C0', 2, 'Integer', 'SaveTime - Year <span style=\"float:right;\">( 4 Digit Year - ie 1998 )</span>' );
-            memoryEntry( '0x7C2', 1, 'Integer', 'SaveTime - Month <span style=\"float:right;\">( 1 - 12 )</span>' );
-            memoryEntry( '0x7C3', 1, 'Integer', 'SaveTime - Day of Month <span style=\"float:right;\">( 1 - 31 )</span>' );
-            memoryEntry( '0x7C4', 1, 'Integer', 'SaveTime - Hours <span style=\"float:right;\">( 0 - 23 )</span>' );
-            memoryEntry( '0x7C5', 1, 'Integer', 'SaveTime - Minutes <span style=\"float:right;\">( 0 - 59 )</span>' );
-            memoryEntry( '0x7C6', 1, 'Integer', 'SaveTime - Seconds <span style=\"float:right;\">( 0 - 59 )</span>' );
-            memoryEntry( '0x7C7', 1, 'Integer', 'SaveTime - Day of Week <span style=\"float:right;\">( 0 = sunday - 6 = saturday )</span>' );
+			memoryEntry( '0x7C0', 2, 'Integer', 'SaveTime - Year <span style=\"float:right;\">( 4 Digit Year - ie 1998 )</span>' );
+			memoryEntry( '0x7C2', 1, 'Integer', 'SaveTime - Month <span style=\"float:right;\">( 1 - 12 )</span>' );
+			memoryEntry( '0x7C3', 1, 'Integer', 'SaveTime - Day of Month <span style=\"float:right;\">( 1 - 31 )</span>' );
+			memoryEntry( '0x7C4', 1, 'Integer', 'SaveTime - Hours <span style=\"float:right;\">( 0 - 23 )</span>' );
+			memoryEntry( '0x7C5', 1, 'Integer', 'SaveTime - Minutes <span style=\"float:right;\">( 0 - 59 )</span>' );
+			memoryEntry( '0x7C6', 1, 'Integer', 'SaveTime - Seconds <span style=\"float:right;\">( 0 - 59 )</span>' );
+			memoryEntry( '0x7C7', 1, 'Integer', 'SaveTime - Day of Week <span style=\"float:right;\">( 0 = sunday - 6 = saturday )</span>' );
 
-            memoryEntry( '0x7C8', '1-2?', 'Integer', 'GameTime - Year <span style=\"float:right;\">( Starting with 86 )</span>' );
-            memoryEntry( '0x7CA', 1, 'Integer', 'GameTime - Month <span style=\"float:right;\">( 1 - 12 )</span>' );
-            memoryEntry( '0x7CB', 1, 'Integer', 'GameTime - Day of Month <span style=\"float:right;\">( 1 - 31 )</span>' );
-            memoryEntry( '0x7CC', 1, 'Integer', 'GameTime - Hours <span style=\"float:right;\">( 0 - 23 )</span>' );
-            memoryEntry( '0x7CD', 1, 'Integer', 'GameTime - Minutes <span style=\"float:right;\">( 0 - 59 )</span>' );
-            memoryEntry( '0x7CE', 1, 'Integer', 'GameTime - Seconds <span style=\"float:right;\">( 0 - 59 )</span>' );
-            memoryEntry( '0x7CF', 1, 'Integer', 'GameTime - Day of Week <span style=\"float:right;\">( 0 = sunday - 6 = saturday )</span>' );
-            memoryEntry( '0x7D0', 8, 'Bytes', 'Unknown' );
-            memoryEntry( '0x7D8', 4, 'Text', 'Entry Point?' );
+			memoryEntry( '0x7C8', '1-2?', 'Integer', 'GameTime - Year <span style=\"float:right;\">( Starting with 86 )</span>' );
+			memoryEntry( '0x7CA', 1, 'Integer', 'GameTime - Month <span style=\"float:right;\">( 1 - 12 )</span>' );
+			memoryEntry( '0x7CB', 1, 'Integer', 'GameTime - Day of Month <span style=\"float:right;\">( 1 - 31 )</span>' );
+			memoryEntry( '0x7CC', 1, 'Integer', 'GameTime - Hours <span style=\"float:right;\">( 0 - 23 )</span>' );
+			memoryEntry( '0x7CD', 1, 'Integer', 'GameTime - Minutes <span style=\"float:right;\">( 0 - 59 )</span>' );
+			memoryEntry( '0x7CE', 1, 'Integer', 'GameTime - Seconds <span style=\"float:right;\">( 0 - 59 )</span>' );
+			memoryEntry( '0x7CF', 1, 'Integer', 'GameTime - Day of Week <span style=\"float:right;\">( 0 = sunday - 6 = saturday )</span>' );
+			memoryEntry( '0x7D0', 8, 'Bytes', 'Unknown' );
+			memoryEntry( '0x7D8', 4, 'Text', 'Entry Point?' );
 
-            echo "
-                <tr bgcolor='#E0E0E0'>
-                <td colspan='5' align='center'>End Slot 3 - Save File Times</td>
-                </tr>
-            ";
+			?>
+				<tr bgcolor='#E0E0E0'>
+					<td colspan='5' align='center'>End Slot 3 - Save File Times</td>
+				</tr>
+			<?php
 
-            memoryEntry( '0x818', '2-4?', 'Integer', 'Resume - Money' );
-            memoryEntry( '0x1000', '2?', 'Integer', 'Resume - Number of Times Saved' );
-            memoryEntry( '0x19FF', '2?', 'Integer', 'Resume - Saves not in slot 2? (Starting at 0)' );
-            memoryEntry( '0x1B8C', '2?', 'Integer', 'Resume - Number of Collectables (Sonic the Hedgehog?)' );
-            memoryEntry( '0x2018', '2-4?', 'Integer', 'Slot 1 - Money' );
-            memoryEntry( '0x3818', '2-4?', 'Integer', 'Slot 2 - Money' );
-            memoryEntry( '0x5018', '2-4?', 'Integer', 'Slot 3 - Money' );
-            memoryEntry( '0x6800', '2?', 'Integer', 'Total - Number of Times Saved' );
-            memoryEntry( '0x71FF', '2?', 'Integer', 'Total - Number of Saves Not in Slot 2? (Starting at 0)' );
-            memoryEntry( '0x738C', '2?', 'Integer', 'Total - Number of Collectables (Sonic the Hedgehog?)' );
-        echo "</table>";
-    ?>
+			memoryEntry( '0x818', '2-4?', 'Integer', 'Resume - Money' );
+			memoryEntry( '0x1000', '2?', 'Integer', 'Resume - Number of Times Saved' );
+			memoryEntry( '0x19FF', '2?', 'Integer', 'Resume - Saves not in slot 2? (Starting at 0)' );
+			memoryEntry( '0x1B8C', '2?', 'Integer', 'Resume - Number of Collectables (Sonic the Hedgehog?)' );
+			memoryEntry( '0x2018', '2-4?', 'Integer', 'Slot 1 - Money' );
+			memoryEntry( '0x3818', '2-4?', 'Integer', 'Slot 2 - Money' );
+			memoryEntry( '0x5018', '2-4?', 'Integer', 'Slot 3 - Money' );
+			memoryEntry( '0x6800', '2?', 'Integer', 'Total - Number of Times Saved' );
+			memoryEntry( '0x71FF', '2?', 'Integer', 'Total - Number of Saves Not in Slot 2? (Starting at 0)' );
+			memoryEntry( '0x738C', '2?', 'Integer', 'Total - Number of Collectables (Sonic the Hedgehog?)' );
+		memoryCloseTable();
+	?>
 </p>
 
 <p>
-    <pre>
+	<pre>
 Thanks to: <br>http://www.shenmuedojo.net/forum/viewtopic.php?f=3&t=43133<br>
 Disc 1 Scenes
 
@@ -267,10 +265,10 @@ Disc 3
 All scene 03
 
 NBIK - Motorcycle (0 - Saved Nozo
-    </pre>
+	</pre>
 </p>
 
 <?php
-    $from = getcwd() . "/saves_file.php";
-    include $homeDir . "pc_footer.php";
+	$from = getcwd() . "/saves_file.php";
+	include $homeDir . "pc_footer.php";
 ?>

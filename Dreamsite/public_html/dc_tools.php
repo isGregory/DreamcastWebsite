@@ -5,8 +5,9 @@ include 'GIFEncoder.class.php'; // For creating animated GIFs
 
 // Used to alternate colors (ac) between the
 // two main ones for the rows of tables.
-function ac( &$cur ) {
-	include 'globals.php';
+function ac() {
+	require_once 'globals.php';
+	global $cur, $C1, $C2;
 
 	if ( $cur == $C1 ) {
 		$cur = $C2;
@@ -94,7 +95,7 @@ function iconcreatefromvms( $vms, $frameNum ) {
 function getvmsframe( $vms, $frameNum ) {
 	include 'globals.php';
 	$imgName = $dirIcons . $vms->getTypeHash();
- 	if ( $frameNum != 0 ) {
+	if ( $frameNum != 0 ) {
 		$imgName .= "-" . $frameNum;
 	}
 
@@ -109,7 +110,7 @@ function getvmsframe( $vms, $frameNum ) {
 
 // $vms = VMS object
 function createVMSicons( $vms ) {
-	include 'globals.php';
+	require_once 'globals.php';
 	$fc = $vms->getNumFrames();
 	$imgName = $dirIcons . $vms->getTypeHash();
 
@@ -153,7 +154,7 @@ function createVMSicons( $vms ) {
 }
 
 function eyecatchcreatefromvms( $vms ) {
-	include 'globals.php';
+	require_once 'globals.php';
 
 	// Look up the graphic eyecatch mode
 	$ecMode = $vms->getEyecatchMode();
@@ -280,7 +281,7 @@ function eyecatchcreatefromvms( $vms ) {
 
 // $vms = VMS object
 function createVMSeyecatch( $vms ) {
-	include 'globals.php';
+	require_once 'globals.php';
 	$imgName = $dirEC . $vms->getTypeHash() . "-EC";
 
 	if ( !file_exists( $imgName . ".gif" ) ) {
@@ -353,7 +354,7 @@ function psocreatefromvms( $vms ) {
 // PSO images are defined by
 // "PSO/SCREEN_IMAGE" at 0x00
 function createVMSpso( $vms ) {
-	include 'globals.php';
+	require_once 'globals.php';
 	$imgName = $dirPSO . $vms->getName();
 
 	if ( !file_exists( $imgName . ".gif" ) ) {
@@ -383,7 +384,7 @@ function getVMSnamefromVMI( $vmiFile ) {
 // corresponding VMI files and then create them.
 // $vmsFile = location of VMS file
 function generateVMI( $vmsFile ) {
-	include 'globals.php';
+	require_once 'globals.php';
 
 	// Remove ".VMS"
 	$resource_name = end( explode( "/", $vmsFile ) );
@@ -453,7 +454,8 @@ function generateVMI( $vmsFile ) {
 // the VMS files they link to exist or not
 // If not it will rename them.
 function validateVMIs() {
-	include 'globals.php';
+	require_once 'globals.php';
+	global $dirUp;
 	$Ikey = "*.[vV][mM][iI]";
 	$Skey = "*.[vV][mM][sS]";
 
@@ -475,10 +477,10 @@ function validateVMIs() {
 			foreach($Sfiles as $key => $address) {
 
 				// Check if the address contains the filename
-    			if(strpos($address, $VMSname) !== false) {
+				if(strpos($address, $VMSname) !== false) {
 					// Remove Element
 
-        			unset($Sfiles[$key]);
+					unset($Sfiles[$key]);
 					// Reset indexes
 					$Sfiles = array_values($Sfiles);
 				}
