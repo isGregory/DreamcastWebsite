@@ -1,12 +1,12 @@
 <?php
 //dc_tools.php
 
-include 'GIFEncoder.class.php'; // For creating animated GIFs
+require_once 'GIFEncoder.class.php'; // For creating animated GIFs
+require_once 'globals.php';
 
 // Used to alternate colors (ac) between the
 // two main ones for the rows of tables.
 function ac() {
-	require_once 'globals.php';
 	global $cur, $C1, $C2;
 
 	if ( $cur == $C1 ) {
@@ -93,7 +93,7 @@ function iconcreatefromvms( $vms, $frameNum ) {
 
 // $vms = VMS object
 function getvmsframe( $vms, $frameNum ) {
-	include 'globals.php';
+	global $dirIcons;
 	$imgName = $dirIcons . $vms->getTypeHash();
 	if ( $frameNum != 0 ) {
 		$imgName .= "-" . $frameNum;
@@ -110,7 +110,7 @@ function getvmsframe( $vms, $frameNum ) {
 
 // $vms = VMS object
 function createVMSicons( $vms ) {
-	require_once 'globals.php';
+	global $dirIcons, $dreamBrowser;
 	$fc = $vms->getNumFrames();
 	$imgName = $dirIcons . $vms->getTypeHash();
 
@@ -154,7 +154,6 @@ function createVMSicons( $vms ) {
 }
 
 function eyecatchcreatefromvms( $vms ) {
-	require_once 'globals.php';
 
 	// Look up the graphic eyecatch mode
 	$ecMode = $vms->getEyecatchMode();
@@ -281,7 +280,7 @@ function eyecatchcreatefromvms( $vms ) {
 
 // $vms = VMS object
 function createVMSeyecatch( $vms ) {
-	require_once 'globals.php';
+	global $dirEC;
 	$imgName = $dirEC . $vms->getTypeHash() . "-EC";
 
 	if ( !file_exists( $imgName . ".gif" ) ) {
@@ -354,7 +353,7 @@ function psocreatefromvms( $vms ) {
 // PSO images are defined by
 // "PSO/SCREEN_IMAGE" at 0x00
 function createVMSpso( $vms ) {
-	require_once 'globals.php';
+	global $dirPSO;
 	$imgName = $dirPSO . $vms->getName();
 
 	if ( !file_exists( $imgName . ".gif" ) ) {
@@ -384,7 +383,7 @@ function getVMSnamefromVMI( $vmiFile ) {
 // corresponding VMI files and then create them.
 // $vmsFile = location of VMS file
 function generateVMI( $vmsFile ) {
-	require_once 'globals.php';
+	global $dirUp;
 
 	// Remove ".VMS"
 	$resource_name = end( explode( "/", $vmsFile ) );
@@ -454,7 +453,6 @@ function generateVMI( $vmsFile ) {
 // the VMS files they link to exist or not
 // If not it will rename them.
 function validateVMIs() {
-	require_once 'globals.php';
 	global $dirUp;
 	$Ikey = "*.[vV][mM][iI]";
 	$Skey = "*.[vV][mM][sS]";

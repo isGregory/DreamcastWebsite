@@ -1,57 +1,57 @@
 <?php
 
-include 'globals.php';
-include 'dc_tools.php';
+$homeDir = "../";
+require_once $homeDir . 'globals.php';
+require_once $homeDir . 'dc_tools.php';
+global $dirUp;
 
 // VMI file name
-$id = isset($_GET["id"]) ? $_GET["id"] : false;
+$target_vmi = isset($_GET["id"]) ? $_GET["id"] : false;
 
-// $t can be either 'i' for ".vmi" or 's' for ".VMS"
-$t = isset($_GET["t"]) ? $_GET["t"] : false;
+// $type can be either 'i' for ".vmi" or 's' for ".VMS"
+$type = isset($_GET["t"]) ? $_GET["t"] : false;
 
-if( $t == "s" ) {
+if( "s" == $type ) {
 	// 's' exists and is VMS
 } else {
 	// Otherwise 'i' is set
-	$t = "i";
+	$type = "i";
 }
 
-// Check if vmi file name provided
-if ( false === $id ) {
+// Check if save file name provided
+if ( false === $target_vmi ) {
 
 	$pageTitle = "VMU Download";
-	include 'dc_header.php';
+	include $homeDir . 'dc_header.php';
 	echo "<p>No File Specified</p>";
-	$from = "vmidl.php";
-	include 'dc_footer.php';
+	$from = $dirUp . "vmidl.php";
+	include $homeDir . 'dc_footer.php';
 
 } else {
 
-	// Check that vmi file exists
-	if ( !file_exists( $dirUp . $id ) ) {
+	// Check that save file exists
+	if ( !file_exists( $target_vmi ) ) {
 
 		$pageTitle = "VMU Download";
-		include 'dc_header.php';
-		echo "<p>File $id Not Found</p>";
-		$from = "vmidl.php";
-		include 'dc_footer.php';
+		include $homeDir . 'dc_header.php';
+		echo "<p>File $target_vmi Not Found</p>";
+		$from = $dirUp . "vmidl.php";
+		include $homeDir . 'dc_footer.php';
 
 	} else {
 
-		$target_file = $id . ".vmi";
-
 		// Check if user wants vmi file
-		if ( $t == "i" ) {
+		if ( "i" == $type ) {
 			// MIME Types for Dreamcast
 			// VMI: application/x-dreamcast-vms-info
 			// VMS: application/x-dreamcast-vms
-			header("Content-disposition: attachment; filename=$target_file");
+			header("Content-disposition: attachment; filename=$target_vmi");
 			header("Content-type: application/x-dreamcast-vms-info");
-			readfile("$target_file");
+			readfile("$target_vmi");
 
 		// User wants VMS file
 		} else {
-			$VMSname = getVMSnamefromVMI( $target_file );
+			$VMSname = getVMSnamefromVMI( $target_vmi );
 			header("Content-disposition: attachment; filename=$VMSname");
 			header("Content-type: application/x-dreamcast-vms");
 			readfile("$VMSname");

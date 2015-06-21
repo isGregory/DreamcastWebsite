@@ -42,9 +42,9 @@
 				<th colspan='2'><?php echo "$luGame - $luType"; ?></th>
 			</tr>
 			<tr bgcolor='<?php echo ac(); ?>'>
-				<th>Download: ";
+				<th>Download:
 					<?php
-						echo "<a href='" . $dirUp . "vmidl.php?id=$s&t=i'><img src='images/save_vmi.png'></a> ";
+						echo " <a href='" . $dirUp . "vmidl.php?id=$s&t=i'><img src='images/save_vmi.png'></a> ";
 						if ( !$dreamBrowser ) {
 							echo "<a href='" . $dirUp . "vmidl.php?id=$s&t=s'><img src='images/save_vms.png'></a>";
 						}
