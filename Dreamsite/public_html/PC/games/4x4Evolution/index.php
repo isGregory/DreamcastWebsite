@@ -34,9 +34,11 @@
 		<td>
 			<label>
 				<br>
-				Here is some quick information about this game. Be sure to
-				push the content of this paragraph over the limit of a single
-				line or it will look funny.
+				4x4 Evolution allowed for intense multiplayer racing locally
+				and online. The game also allows for play between PC and
+				Dreamcast players. Players could download custom maps as
+				well and play those online. This game will always be Online
+				as it supports direct IP play.
 				<br><br>
 			</label>
 		</td>
@@ -72,8 +74,8 @@
 
 <p><h3 align="left"><u><a id="serv">Server Websites</a></u></h3>
 	<p align="left">
-	Here is the list of servers 4x4 Evolution connect to.</p>
-	<table cellpadding="3" cellspacing="1" border="0" style="min-width:450px;max-width:640px;" bgcolor="#6E6E6E">
+	Here is the list of servers 4x4 Evolution connects to:</p>
+	<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:450px;max-width:640px;" bgcolor="#6E6E6E">
 		<tr>
 			<th align="center" bgcolor="#CCCCCC">Game Servers</th>
 		</tr>

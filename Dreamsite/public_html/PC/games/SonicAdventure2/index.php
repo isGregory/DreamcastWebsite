@@ -40,9 +40,17 @@
 		<td>
 			<label>
 				<br>
-				Here is some quick information about this game. Be sure to
-				push the content of this paragraph over the limit of a single
-				line or it will look funny.
+				Sonic Adventure 2 was a flagship title for Sega. It
+				continued Sonic's adventure into 3D fast paced environments
+				and pioneered quite a few interesting features, such as
+				downloadable content, and continued to build off the Chao
+				Garden introduced in the first game. The Chao Garden was
+				deeply engrained into the main game as a sort of minigame
+				which contained minigames. It provided the ability to bring
+				Chaos in a tomogatchi like way to the VMU and play there.
+				In addition the game provided a way for players to connect
+				online and unlock items in the Black Market, as well as put
+				Chaos into a daycare system where they could strengthen up.
 				<br><br>
 			</label>
 		</td>
@@ -221,7 +229,7 @@
 		These are websites that are accessable through
 		in-game menus.
 	</p>
-	<table cellpadding="3" cellspacing="1" border="0" width="90%" bgcolor="#6E6E6E">
+	<table align="center" cellpadding="3" cellspacing="1" border="0" width="90%" bgcolor="#6E6E6E">
 		<tr bgcolor="#CCCCCC">
 			<th width="140px" align="center">Site</th><th align="center">URL</th><th width="35px" align="center">Link</th>
 		</tr>
@@ -245,7 +253,7 @@
 		These are links to official websites that hosted
 		supplemental information about the game.
 	</p>
-	<table cellpadding="3" cellspacing="1" border="0" width="90%" bgcolor="#6E6E6E">
+	<table align="center" cellpadding="3" cellspacing="1" border="0" width="90%" bgcolor="#6E6E6E">
 		<tr bgcolor="#CCCCCC">
 			<th width="140px" align="center">Site</th><th align="center">URL</th><th width="35px" align="center">Link</th>
 		</tr>

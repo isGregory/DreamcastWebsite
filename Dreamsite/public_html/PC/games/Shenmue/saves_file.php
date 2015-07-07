@@ -30,7 +30,7 @@
 				<br>
 				Very little save information has been mapped for this file so
 				far. This is something you can help with! If you're interested
-				check out this guide <a href="../../vmu_mapping.html">HERE</a>
+				check out this guide <a href='<?php echo $homeDir; ?>vmu_mapping.php'>HERE</a>
 				to get started.
 				<br><br>
 			</label>

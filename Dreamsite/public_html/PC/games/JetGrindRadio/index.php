@@ -37,9 +37,7 @@
 		<td>
 			<label>
 				<br>
-				Here is some quick information about this game. Be sure to
-				push the content of this paragraph over the limit of a single
-				line or it will look funny.
+				Jet Grind Radio (or Jet Set Radio) 
 				<br><br>
 			</label>
 		</td>
@@ -108,7 +106,7 @@
 		in-game menus. Only the Japanese site is known to have been
 		backed up.
 	</p>
-	<table cellpadding="3" cellspacing="1" border="0" style="min-width:600px;max-width:640px;" bgcolor="#6E6E6E">
+	<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:600px;max-width:640px;" bgcolor="#6E6E6E">
 		<tr>
 			<th align="center" bgcolor="#CCCCCC">Site</th><th align="center" bgcolor="#CCCCCC">URL</th><th align="center" bgcolor="#CCCCCC">Link</th>
 		</tr>

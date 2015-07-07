@@ -32,9 +32,6 @@
 	<tr bgcolor="<?php echo ac(); ?>">
 	  <td align='center'><a href='<?php echo $d4X4; ?>/index.php' style='text-decoration:none'>4x4 Evolution</a></td>
 	</tr>
-	<tr bgcolor="<?php echo ac(); ?>">
-	  <td align='center'><a href='Default/index.php' style='text-decoration:none'>Default</a></td>
-	</tr>
   </table>
 </p>
 

@@ -14,7 +14,7 @@
 		<a href="file_vmi.php">VMI Format</a><br>
 		<a href="file_vms.php">VMS Format</a><br>
 		<a href="file_lcd.php">LCD Format</a><br>
-		<a href="file_upload.php">VMU Saves Uploading</a><br>
+		<a href="file_upload.php">Web Browser</a><br>
 	</p>
 <?php
 	$from = "vmu.php";

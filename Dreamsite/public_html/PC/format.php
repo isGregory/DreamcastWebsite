@@ -51,8 +51,8 @@
 			<tr align='center' bgcolor="<?php echo ac(); ?>">
 				<td><?php echo $fC; ?></td>
 				<td><?php echo $tC; ?></td>
-				<td><?php echo $fH; ?></td>
-				<td><?php echo $tH; ?></td>
+				<td><pre><?php echo $fH; ?></pre></td>
+				<td><pre><?php echo $tH; ?></pre></td>
 			</tr>
 		<?php
 	}

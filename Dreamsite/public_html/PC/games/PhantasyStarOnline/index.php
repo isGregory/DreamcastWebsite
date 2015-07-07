@@ -27,7 +27,7 @@
 					<td><a href="#dlc">DLC</a></td>
 				</tr>
 				<tr bgcolor="#CEEBF5">
-					<td><a href="#shot">Screen Shots</a></td>
+					<td><a href="#shot">Screenshots</a></td>
 				</tr>
 				<tr align="center" bgcolor="#DDDDDD">
 					<td>Websites</td>
@@ -46,9 +46,10 @@
 		<td>
 			<label>
 				<br>
-				Here is some quick information about this game. Be sure to
-				push the content of this paragraph over the limit of a single
-				line or it will look funny.
+				Phantasy Star Online allows players to meet up in lobbies
+				with players from all around the world. It was one of the
+				early pioneers with videogame staples such as new game plus,
+				world wide multiplayer match making, and downloadable content.
 				<br><br>
 			</label>
 		</td>
@@ -213,7 +214,7 @@
 	</p>
 	<table align="center" cellpadding="3" cellspacing="1" border="0" width="90%" bgcolor="#6E6E6E">
 		<tr bgcolor="#CCCCCC">
-			<th colspan="6">PSO Version 2</th>
+			<th colspan="5">PSO Version 2</th>
 		</tr>
 		<tr bgcolor="#CCCCCC">
 			<th width="65px">Size<br>(Blocks)</th><th width="100px">File Name</th><th>Description</th><th width="34px">Icon</th>
@@ -267,7 +268,7 @@
 		<br><br>
 		<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:400px;max-width:640px;" bgcolor="#6E6E6E">
 			<tr>
-				<th align="center" bgcolor="#CCCCCC">Shot</th><th align="center" bgcolor="#CCCCCC">Instructions</th>
+				<th align="center" bgcolor="#CCCCCC">Shot Type</th><th align="center" bgcolor="#CCCCCC">Instructions</th>
 			</tr>
 			<tr bgcolor="#CEEBF5">
 				<td>Closeup of Screen</td>
@@ -294,7 +295,7 @@
 	<p align="left">
 		These are websites that are accessable through in-game menus.
 	</p>
-	<table cellpadding="3" cellspacing="1" border="0" style="min-width:600px;max-width:640px;" bgcolor="#6E6E6E">
+	<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:600px;max-width:640px;" bgcolor="#6E6E6E">
 		<tr>
 			<th align="center" bgcolor="#CCCCCC">Site</th><th align="center" bgcolor="#CCCCCC">URL</th><th align="center" bgcolor="#CCCCCC">Link</th>
 		</tr>
@@ -318,7 +319,7 @@
 		These are links to official websites that hosted
 		supplemental information about the game.
 	</p>
-	<table cellpadding="3" cellspacing="1" border="0" style="min-width:600px;max-width:640px;" bgcolor="#6E6E6E">
+	<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:600px;max-width:640px;" bgcolor="#6E6E6E">
 		<tr>
 			<th align="center" bgcolor="#CCCCCC">Site</th><th align="center" bgcolor="#CCCCCC">URL</th><th align="center" bgcolor="#CCCCCC">Link</th>
 		</tr>
@@ -344,7 +345,7 @@
 		game first attempts to connect to Hunter License servers to check
 		that there is an active subscription.
 	</p>
-	<table cellpadding="3" cellspacing="1" border="0" style="min-width:450px;max-width:640px;" bgcolor="#6E6E6E">
+	<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:450px;max-width:640px;" bgcolor="#6E6E6E">
 		<tr>
 			<th align="center" colspan="2" bgcolor="#CCCCCC">USA (NTSC-U)</th>
 		</tr>

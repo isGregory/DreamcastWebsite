@@ -20,19 +20,16 @@
 					<td>Contents</td>
 				</tr>
 				<tr bgcolor="#CCCCCC">
-					<td><a href="#head">VMS Header</a></td>
+					<td><a href='<?php echo $homeDir; ?>file_vms.php#head'>VMS Header</a></td>
 				</tr>
 				<tr bgcolor="#EEEEEE">
-					<td><a href="#calc">CRC Calculation</a></td>
+					<td><a href="#body">Body Format</a></td>
 				</tr>
 				<tr bgcolor="#CCCCCC">
+					<td><a href="#ibit">Image Properties</a></td>
+				</tr>
+				<tr bgcolor="#EEEEEE">
 					<td><a href="#ipal">Icon Palette</a></td>
-				</tr>
-				<tr bgcolor="#EEEEEE">
-					<td><a href="#ibit">Icon Bitmaps</a></td>
-				</tr>
-				<tr bgcolor="#CCCCCC">
-					<td><a href="#eyecatch">Graphic Eyecatch</a></td>
 				</tr>
 			</table>
 		</td>
@@ -41,7 +38,12 @@
 				<h2 align="center">Screenshot File</h2>
 				Here is the format of the Phantasy Star Online Screenshot file.
 				<br><br>
-				VMS files are the dreamcast save files for games. They set out a standard header which specifies how the rest of the file will go. Following the header is the actual game data, which is saved in a format specified by the developer.
+				Phantasy Star Online allows for players to take a screenshot
+				using an extra controller and empty memory card as explained
+				<a href="index.php#shot" style="text-decoration:none">here</a>.
+				This page specifies how the save file is laid out. In addition
+				to recording pixel information the save file also documents
+				players in the game when the picture was taken.
 				<br><br>
 			</label>
 		</td>
@@ -54,15 +56,6 @@
 <h3>VMS File <a id="body">Body</a> Format</h3>
 
 <p>
-	All VMS files should contain a standard header which is used by the file
-	managers in the VMS and in the DC boot ROM to display information about
-	the file.(<a href='<?php echo $homeDir; ?>file_icondata_vms.php'>ICONDATA</a> files use a somewhat
-	simplified headers since they are not shown in the DC boot ROM file manager.)
-	For data files, the header is stored at the very beginning of the file.
-	For game files, it begins in the <i>second</i> block of the file (offset <code>0x200</code>).
-	This fact should be reflected by the header offset field in the VMS
-	directory, which should contain 1 for game files, and 0 for data files.
-	<br><br>
 	The body contents directly follow the
 	<a href='<?php echo $homeDir; ?>file_vms.php#head'>VMS header</a>
 	information. Where there is only one icon and no eyecatch.
@@ -90,14 +83,14 @@
 			<td><pre>0x280</pre></td>
 			<td align="center">1</td>
 			<td>Unknown</td>
-			<td>Unknown - Image Width?</td>
+			<td>Unknown - Image Width? (256)</td>
 		</tr>
 		<tr bgcolor="#CEEBF5">
 			<td>641</td>
 			<td><pre>0x281</pre></td>
 			<td align="center">1</td>
 			<td>Unknown</td>
-			<td>Unknown - Pixel Count + 1?</td>
+			<td>Unknown - Pixel Count + 1? (49,153)</td>
 		</tr>
 		<tr bgcolor="#FFFFFF">
 			<td>642</td>
@@ -169,12 +162,12 @@
 <hr>
 <h3><a id="ibit">Image Properties</a></h3>
 <p>
-	The Image is 256x192. Pixels are stored as 16-bit colors
+	The Image is 256 x 192. Pixels are stored as 16-bit colors
 	following a 565-RGB format. Where Red is 5 bits, Green is 6 bits,
 	and Blue is 5 bits. There are then 49,152 pixels and each pixel
 	is 2 bytes. Data is stored in little endian and thus the bytes
 	need to be switched around for extracting component colors.
-	Pixels are stored end to end and thus there is no other
+	Pixels are stored end to end, meaning there is no other
 	information in the Pixel Data section beyond all of
 	the 49,152 pixels.
 </p>

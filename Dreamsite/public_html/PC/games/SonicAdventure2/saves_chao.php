@@ -13,6 +13,8 @@
 <h1 align="left"><a href="index.php" style="text-decoration:none">Sonic Adventure 2</a></h1>
 
 <h3>Chao Save File</h3>
+See <a href="<?php echo $homeDir; ?>yahooSA2.php">this page</a> for more info about this information.
+As of [2015-7-6] I have not been able to confirm this information.
 
 <br>
 <h4>File Overview</h4>
