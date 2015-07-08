@@ -383,7 +383,7 @@ function getVMSnamefromVMI( $vmiFile ) {
 // corresponding VMI files and then create them.
 // $vmsFile = location of VMS file
 function generateVMI( $vmsFile ) {
-	global $dirUp;
+	global $dirSave;
 
 	// Remove ".VMS"
 	$resource_name = end( explode( "/", $vmsFile ) );
@@ -441,7 +441,7 @@ function generateVMI( $vmsFile ) {
 
 	$output = unpack("C*", $headPack );
 
-	$vmiFile = fopen( $dirUp . $resource_name . ".vmi", 'wb' ) or die("Can't create $resource_name.vmi");
+	$vmiFile = fopen( $dirSave . $resource_name . ".vmi", 'wb' ) or die("Can't create $resource_name.vmi");
 
 	for ( $c = 1; $c <= count( $output ); $c++ ) {
 		fwrite( $vmiFile, chr( $output[$c] ) );
@@ -453,15 +453,15 @@ function generateVMI( $vmsFile ) {
 // the VMS files they link to exist or not
 // If not it will rename them.
 function validateVMIs() {
-	global $dirUp;
+	global $dirSave;
 	$Ikey = "*.[vV][mM][iI]";
 	$Skey = "*.[vV][mM][sS]";
 
 	// Get list of all VMI files
-	$Ifiles = glob( $dirUp . $Ikey );
+	$Ifiles = glob( $dirSave . $Ikey );
 
 	// Get list of all VMS files
-	$Sfiles = glob( $dirUp . $Skey );
+	$Sfiles = glob( $dirSave . $Skey );
 
 	// Go through all VMI files
 	foreach ( $Ifiles as $filefound ) {
@@ -470,7 +470,7 @@ function validateVMIs() {
 		$VMSname = getVMSnamefromVMI( $filefound );
 
 		// Check if VMS file exists
-		if ( file_exists( $dirUp . $VMSname ) ) {
+		if ( file_exists( $dirSave . $VMSname ) ) {
 			// Remove from list of VMS files.
 			foreach($Sfiles as $key => $address) {
 
@@ -487,7 +487,7 @@ function validateVMIs() {
 			// VMI doesn't point to a real file.
 			// Move it to notify user.
 			$VMIfile = end( explode( "/", $filefound ) );
-			rename( $filefound, $dirUp . "lost/" . $VMIfile );
+			rename( $filefound, $dirSave . "lost/" . $VMIfile );
 		}
 	}
 

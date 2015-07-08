@@ -23,7 +23,7 @@
 	}
 
 	$root      = "../";
-	$dirUp     = $root . "uploads/";
+	$dirSave   = $root . "savefiles/";
 	$dirImages = $root . "images/";
 	$dirIcons  = $root . "images/icons/";
 	$dirEC     = $root . "images/eyecatch/";

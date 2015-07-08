@@ -73,13 +73,13 @@
 			<td align="center"><a href="saves_main.php" style="text-decoration:none"><font color="#FF0000">Main Game</font></a></td>
 			<td align="center">18</td>
 			<td>Save file for the main game story.</td>
-			<td align="center"><img src="images/saves/GAME.bmp"></td>
+			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "7aadd2f3.gif"?>"></td>
 		</tr>
 		<tr bgcolor="#FFFFFF">
 			<td align="center"><a href="saves_chao.php" style="text-decoration:none">Chao Save</a></td>
 			<td align="center">52</td>
 			<td>Save file for Chao world.</td>
-			<td align="center"><img src="images/saves/CHAO.gif"></td>
+			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "86df7f16-a.gif"?>"></td>
 		</tr>
 	</table>
 </p>

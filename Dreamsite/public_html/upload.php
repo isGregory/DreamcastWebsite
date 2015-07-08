@@ -29,7 +29,7 @@ if ( $dreamBrowser ) {
 
 	// Setup target file information
 	$resource_name = $_POST["name"];
-	$target_file = $dirUp . $resource_name;
+	$target_file = $dirSave . $resource_name;
 
 	// Get Size for later if-statement check
 	$size = (int) $_SERVER['CONTENT_LENGTH'];
@@ -288,7 +288,7 @@ if ( $dreamBrowser ) {
 
 	// Setup target file information
 	$resource_name = basename($_FILES["upfile"]["name"]);
-	$target_file = $dirUp . $resource_name;
+	$target_file = $dirSave . $resource_name;
 
 	$fileType = pathinfo($target_file,PATHINFO_EXTENSION);
 

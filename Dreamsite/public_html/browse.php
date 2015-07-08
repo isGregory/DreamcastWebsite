@@ -17,7 +17,7 @@
 	validateVMIs();
 
 	$filename = "*.[vV][mM][iI]";
-	$files = glob( $dirUp . $filename );
+	$files = glob( $dirSave . $filename );
 	usort( $files, function($a, $b) {
 		return filemtime($a) < filemtime($b);
 	});
@@ -71,16 +71,16 @@
 				$VMIfile = end( explode( "/", $filefound ) );
 
 				$vms = new VMS;
-				$vms->load( $dirUp . $VMSname );
+				$vms->load( $dirSave . $VMSname );
 				$imgName = createVMSicons( $vms );
 				$fileDate = date( "g:i:s A<\b\\r>Y-M-d",
-					filemtime( $dirUp . $VMSname ) );
+					filemtime( $dirSave . $VMSname ) );
 				$blocks = $vms->getBlocks();
 				?>
 					<tr bgcolor="<?php echo ac($col); ?>">
 						<td><a href='<?php echo "info.php?s=" . $VMIfile; ?>'><?php echo $VMIfile; ?></a></td>
 						<td align='center'>
-							<a href='<?php echo $dirUp . "vmidl.php?id=" . $VMIfile . "&t=i"; ?>'><?php echo $blocks; ?></a>
+							<a href='<?php echo $dirSave . "vmidl.php?id=" . $VMIfile . "&t=i"; ?>'><?php echo $blocks; ?></a>
 						</td>
 						<td align='right'><?php echo $fileDate; ?></td>
 						<td align='center'><img src='<?php echo $imgName; ?>'></td>

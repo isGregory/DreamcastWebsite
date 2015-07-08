@@ -12,13 +12,13 @@
 	$pageTitle = "File Info";
 	include 'dc_header.php';
 
-	if ( $s === false || !file_exists( $dirUp . $s ) ) {
+	if ( $s === false || !file_exists( $dirSave . $s ) ) {
 		echo "<p>File Not Found.</p>";
 	} else {
 
-		$VMSname = getVMSnamefromVMI( $dirUp . $s );
+		$VMSname = getVMSnamefromVMI( $dirSave . $s );
 		$vms = new VMS;
-		$vms->load($dirUp . $VMSname);
+		$vms->load($dirSave . $VMSname);
 		$imgName = createVMSicons( $vms );
 		$luGame = $luSaves->getGame( $vms->getTypeHash() );
 		$luType = $luSaves->getType( $vms->getTypeHash() );
@@ -44,9 +44,9 @@
 			<tr bgcolor='<?php echo ac(); ?>'>
 				<th>Download:
 					<?php
-						echo " <a href='" . $dirUp . "vmidl.php?id=$s&t=i'><img src='images/save_vmi.png'></a> ";
+						echo " <a href='" . $dirSave . "vmidl.php?id=$s&t=i'><img src='images/save_vmi.png'></a> ";
 						if ( !$dreamBrowser ) {
-							echo "<a href='" . $dirUp . "vmidl.php?id=$s&t=s'><img src='images/save_vms.png'></a>";
+							echo "<a href='" . $dirSave . "vmidl.php?id=$s&t=s'><img src='images/save_vms.png'></a>";
 						}
 					?>
 				</th>

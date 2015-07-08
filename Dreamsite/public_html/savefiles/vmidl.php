@@ -3,7 +3,7 @@
 $homeDir = "../";
 require_once $homeDir . 'globals.php';
 require_once $homeDir . 'dc_tools.php';
-global $dirUp;
+global $dirSave;
 
 // VMI file name
 $target_vmi = isset($_GET["id"]) ? $_GET["id"] : false;
@@ -24,7 +24,7 @@ if ( false === $target_vmi ) {
 	$pageTitle = "VMU Download";
 	include $homeDir . 'dc_header.php';
 	echo "<p>No File Specified</p>";
-	$from = $dirUp . "vmidl.php";
+	$from = $dirSave . "vmidl.php";
 	include $homeDir . 'dc_footer.php';
 
 } else {
@@ -35,7 +35,7 @@ if ( false === $target_vmi ) {
 		$pageTitle = "VMU Download";
 		include $homeDir . 'dc_header.php';
 		echo "<p>File $target_vmi Not Found</p>";
-		$from = $dirUp . "vmidl.php";
+		$from = $dirSave . "vmidl.php";
 		include $homeDir . 'dc_footer.php';
 
 	} else {

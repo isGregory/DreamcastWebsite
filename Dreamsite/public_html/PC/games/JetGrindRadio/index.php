@@ -37,7 +37,24 @@
 		<td>
 			<label>
 				<br>
-				Jet Grind Radio (or Jet Set Radio) 
+				Released in 2000, Jet Grind Radio redefined what style meant
+				with gorgeous cel shading and an unforgettable soundtrack by
+				Hideki Naganuma. DJ Professor K narrates as players assume the
+				role of the graffiti-spraying GG’s gang, skating through the
+				open streets of Tokyo-to in an attempt to cover the art of
+				rival gangs and convince other skaters to join them. Within
+				each level the checklist of spots that need to be tagged can
+				be completed in any order; rewarding faster completion with a
+				higher end score. Not only do players battle rival gangs like
+				the Noise Tanks and Poison jam, they must also deal with the
+				short-tempered Captain Onishima of the Tokyo-to police and
+				eventually the mysterious assassins of the Rokkaku
+				corporation. Titled Jet Set Radio in Japan, Jet Grind Radio
+				lives on as a pioneer for cartoon-like graphics in video
+				games, and as one of the most creative and original Dreamcast
+				titles. And remember kids: Graffiti is an art. However,
+				graffiti as an act of vandalism is a crime. Sega does not
+				condone the real life act of vandalism in any form.
 				<br><br>
 			</label>
 		</td>

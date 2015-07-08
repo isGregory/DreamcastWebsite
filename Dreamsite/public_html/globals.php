@@ -4,7 +4,7 @@
 	$dcBGimg = "images/tile.png";
 
 	// Directories
-	$dirUp    = "uploads/";
+	$dirSave  = "savefiles/";
 	$dirIcons = "images/icons/";
 	$dirEC    = "images/eyecatch/";
 	$dirPSO   = "images/psoscreenshots/";

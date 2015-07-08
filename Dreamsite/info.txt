@@ -7,7 +7,7 @@
 # Author: Gregory Hoople
 #
 # Date Created: 2015-3-28
-# Date Modified: 2015-4-4
+# Date Modified: 2015-7-7
 
 # Specifying the target website
 # The "Site" setting allows users to set which URL domain they
@@ -41,7 +41,7 @@ Site:	sega.com
 #
 # Usage:
 # Writable:	folder_name
-Writable:	uploads
+Writable:	savefiles
 Writable:	images
 Writable:	images/icons
 Writable:	images/eyecatch
