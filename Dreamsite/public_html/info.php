@@ -24,11 +24,11 @@
 		$luType = $luSaves->getType( $vms->getTypeHash() );
 
 		$blocks = $vms->getBlocks();
-		$Dmenu = $vms->readString(0x00, 16);
-		$Dfile = $vms->readString(0x10, 32);
-		$Dapp = $vms->readString(0x30, 16);
-		$nI = $vms->readInt_16(0x40);
-		$aS = $vms->readInt_16(0x42);
+		$Dmenu = $vms->getVMStext();
+		$Dfile = $vms->getDCBootRomText();
+		$Dapp = $vms->getAppID();
+		$nI = $vms->getNumFrames();
+		$aS = $vms->getAniSpeed();
 
 		?>
 		<table cellpadding='3' cellspacing='1' border='0' width='100%' bgcolor='#6E6E6E'>

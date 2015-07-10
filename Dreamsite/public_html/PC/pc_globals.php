@@ -4,9 +4,24 @@
 	// Two colors for doing rows in tables
 	$C1 = "#FFFFFF";
 	$C2 = "#CEEBF5";
+	$altC1 = "#FFFFFF";
+	$altC2 = "#A6FFB2";
 
 	// Currently used row color.
 	$cur = $C1;
+	$altCur = $altC1;
+
+	// Table header color
+	$tHead = "#CCCCCC";
+
+	// Table background color
+	$tBG = "#6E6E6E";
+
+	// Index header color
+	$indexHead = "#BBBBBB";
+
+	// Index sub header color
+	$indexSub = "#DDDDDD";
 
 	// Get browser information
 	// Example. Planetweb 2.6 returns:

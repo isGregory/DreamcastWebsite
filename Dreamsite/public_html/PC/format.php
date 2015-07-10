@@ -15,6 +15,20 @@
 		return $cur;
 	}
 
+	// Used to alternate alternative colors (altc)
+	// between alternative colors for rows of a table.
+	function altc() {
+		require_once 'pc_globals.php';
+		global $altCur, $altC1, $altC2;
+
+		if ( $altCur == $altC1 ) {
+			$altCur = $altC2;
+		} else {
+			$altCur = $altC1;
+		}
+		return $altCur;
+	}
+
 	function twoEntry( $one, $two ) {
 		?>
 			<tr bgcolor="<?php echo ac(); ?>">
@@ -95,6 +109,42 @@
 					<td align='center' colspan='4' bgcolor='#CEEBF5'>Blue</td>
 				</tr>
 			</table>
+		<?php
+	}
+
+	function dlcEntry( $file, $color ) {
+		require_once dirname(__FILE__) . '/../dc_tools.php';
+		global $homeDir, $dirSave;
+
+		$VMSname = getVMSnamefromVMI( $file );
+		$VMIfile = end( explode( "/", $file ) );
+
+		$vms = new VMS;
+		$vms->load( $dirSave . $VMSname );
+		$imgName = createVMSicons( $vms );
+		$blocks = $vms->getBlocks();
+
+		require_once dirname(__FILE__) . '/../savefile_lookup.php';
+		$luSaves = new saveLookup();
+		$luSaves->buildTable();
+		$luType = $luSaves->getType( $vms->getTypeHash() );
+		?>
+			<tr bgcolor="<?php echo $color; ?>">
+				<td align="center">
+					<a href="<?php echo $homeDir . $dirSave . "vmidl.php?id=dlc/$file.vmi&t=i" ?>">
+						<img src="<?php echo $homeDir . $dirIcons . "save_vmi.png"?>">
+					</a>
+				</td>
+				<td align="center">
+					<a href="<?php echo $homeDir . $dirSave . "vmidl.php?id=dlc/$file.vmi&t=s" ?>">
+						<img src="<?php echo $homeDir . $dirIcons . "save_vms.png"?>">
+					</a>
+				</td>
+				<td align="center"><?php echo $blocks; ?></td>
+				<td align="center"><?php echo $file; ?></td>
+				<td><?php echo $luType; ?></td>
+				<td align="center"><img src='<?php echo $homeDir . $root . $imgName; ?>'></td>
+			</tr>
 		<?php
 	}
 ?>

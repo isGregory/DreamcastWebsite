@@ -5,7 +5,7 @@
 	include $homeDir . "format.php";
 	global $tHead, $tBG, $indexHead, $indexSub;
 
-	$pageTitle = "4x4 Evolution";
+	$pageTitle = "Game Name";
 	include $homeDir . "pc_header.php";
 
 ?>
@@ -35,11 +35,8 @@
 		<td>
 			<label>
 				<br>
-				4x4 Evolution allowed for intense multiplayer racing locally
-				and online. The game also allows for play between PC and
-				Dreamcast players. Players could download custom maps as
-				well and play those online. This game will always be Online
-				as it supports direct IP play.
+				Game description goes here, preferably extending past a single
+				line so the page doesn't have goofy formatting.
 				<br><br>
 			</label>
 		</td>
@@ -75,10 +72,10 @@
 
 <p><h3 align="left"><u><a id="serv">Server Websites</a></u></h3>
 	<p align="left">
-	Here is the list of servers 4x4 Evolution connects to:</p>
+	Here is the list of servers THE GAME connects to:</p>
 	<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:450px;max-width:640px;" bgcolor="<?php echo $tBG; ?>">
-		<tr bgcolor="<?php echo $tHead; ?>">
-			<th align="center">Game Servers</th>
+		<tr>
+			<th align="center" bgcolor="<?php echo $tHead; ?>">Game Servers</th>
 		</tr>
 		<tr bgcolor="<?php echo altc(); ?>">
 			<td align="center" ><code>master.4x4evolution.com</code></td>
@@ -88,15 +85,6 @@
 		</tr>
 		<tr bgcolor="<?php echo altc(); ?>">
 			<td align="center" ><code>master2.4x4evolution.com</code></td>
-		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td align="center" ><code>master3.4x4evolution.com</code></td>
-		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td align="center" ><code>master4.4x4evolution.com</code></td>
-		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td align="center" ><code>master5.4x4evolution.com</code></td>
 		</tr>
 	</table>
 </p>

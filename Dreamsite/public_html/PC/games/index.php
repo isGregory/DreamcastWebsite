@@ -3,6 +3,7 @@
 	$homeDir = "../";
 	include $homeDir . "pc_globals.php";
 	include $homeDir . "format.php";
+	global $tHead, $tBG;
 
 	$pageTitle = "Games";
 	include $homeDir . "pc_header.php";
@@ -12,9 +13,9 @@
 <p>Here are a list of games with information currently.</p>
 
 <p><br>
-  <table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:400px;max-width:640px;" bgcolor="#6E6E6E">
+  <table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:400px;max-width:640px;" bgcolor="<?php echo $tBG; ?>">
 	<tr>
-	  <th bgcolor="#CCCCCC">Game</th>
+	  <th bgcolor="<?php echo $tHead; ?>">Game</th>
 	</tr>
 
 	<tr bgcolor="<?php echo ac(); ?>">

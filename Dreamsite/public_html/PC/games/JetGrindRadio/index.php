@@ -3,33 +3,34 @@
 	$homeDir = "../../";
 	include $homeDir . "pc_globals.php";
 	include $homeDir . "format.php";
+	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Jet Grind Radio";
 	include $homeDir . "pc_header.php";
 
 ?>
-<h1 align="left">Jet Grind Radio</h1>
+<h1 align="left"><?php echo $pageTitle; ?></h1>
 
 <table cellpadding="3" cellspacing="1" border"0">
 	<tr>
 		<td>
-			<table cellpadding="3" cellspacing="1" border="0" width="150" bgcolor="#6E6E6E">
-				<tr align="center" bgcolor="#BBBBBB">
+			<table cellpadding="3" cellspacing="1" border="0" width="150" bgcolor="<?php echo $tBG; ?>">
+				<tr align="center" bgcolor="<?php echo $indexHead; ?>">
 					<td><b>Contents</b></td>
 				</tr>
-				<tr align="center" bgcolor="#DDDDDD">
+				<tr align="center" bgcolor="<?php echo $indexSub; ?>">
 					<td>Files</td>
 				</tr>
-				<tr bgcolor="#CEEBF5">
+				<tr bgcolor="<?php echo ac(); ?>">
 					<td><a href="#save">Game Saves</a></td>
 				</tr>
-				<tr bgcolor="#FFFFFF">
+				<tr bgcolor="<?php echo ac(); ?>">
 					<td><a href="#dlc">DLC</a></td>
 				</tr>
-				<tr align="center" bgcolor="#DDDDDD">
+				<tr align="center" bgcolor="<?php echo $indexSub; ?>">
 					<td>Websites</td>
 				</tr>
-				<tr bgcolor="#CEEBF5">
+				<tr bgcolor="<?php echo ac(); ?>">
 					<td><a href="#gweb">In-Game</a></td>
 				</tr>
 			</table>
@@ -74,34 +75,34 @@
 		originally intended to look, and not how they are seen in the
 		Dreamcast file browser.
 	</p>
-	<table align="center" cellpadding="3" cellspacing="1" border="0" width="90%" bgcolor="#6E6E6E">
-		<tr bgcolor="#CCCCCC">
+	<table align="center" cellpadding="3" cellspacing="1" border="0" width="90%" bgcolor="<?php echo $tBG; ?>">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th width="100px">Name</th><th width="65px">Size<br>(Blocks)</th><th>Description</th><th width="34px">Icon</th>
 		</tr>
 
-		<tr bgcolor="#CEEBF5">
+		<tr bgcolor="<?php echo ac(); ?>">
 			<td align="center"><a href="saves_file.php" style="text-decoration:none"><font color="#FF0000">Main Data</font></a></td>
 			<td align="center">4</td>
 			<td>Save file for the main game data.</td>
-			<td align="center"><img src="images/saves/GAME.bmp"></td>
+			<td align="center"><img src="GAME.gif"></td>
 		</tr>
-		<tr bgcolor="#FFFFFF">
+		<tr bgcolor="<?php echo ac(); ?>">
 			<td align="center"><a href="saves_file.php" style="text-decoration:none"><font color="#FF0000">Small</font></a></td>
 			<td align="center">~10</td>
 			<td>Save file for Small Custom Graffiti.</td>
-			<td align="center"><img src="images/saves/SMALL.bmp"></td>
+			<td align="center"><img src="SMALL.gif"></td>
 		</tr>
-		<tr bgcolor="#CEEBF5">
+		<tr bgcolor="<?php echo ac(); ?>">
 			<td align="center"><a href="saves_file.php" style="text-decoration:none"><font color="#FF0000">Large</font></a></td>
 			<td align="center">~20</td>
 			<td>Save file for Large Custom Graffiti.</td>
-			<td align="center"><img src="images/saves/LARGE.bmp"></td>
+			<td align="center"><img src="LARGE.gif"></td>
 		</tr>
-		<tr bgcolor="#FFFFFF">
+		<tr bgcolor="<?php echo ac(); ?>">
 			<td align="center"><a href="saves_file.php" style="text-decoration:none"><font color="#FF0000">X-Large</font></a></td>
 			<td align="center">~40</td>
 			<td>Save file for X-Large Custom Graffiti.</td>
-			<td align="center"><img src="images/saves/XLARGE.bmp"></td>
+			<td align="center"><img src="XLARGE.gif"></td>
 		</tr>
 	</table>
 </p>
@@ -123,21 +124,21 @@
 		in-game menus. Only the Japanese site is known to have been
 		backed up.
 	</p>
-	<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:600px;max-width:640px;" bgcolor="#6E6E6E">
-		<tr>
-			<th align="center" bgcolor="#CCCCCC">Site</th><th align="center" bgcolor="#CCCCCC">URL</th><th align="center" bgcolor="#CCCCCC">Link</th>
+	<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:600px;max-width:640px;" bgcolor="<?php echo $tBG; ?>">
+		<tr bgcolor="<?php echo $tHead; ?>">
+			<th align="center">Site</th><th align="center">URL</th><th align="center">Link</th>
 		</tr>
-		<tr bgcolor="#A6FFB2">
+		<tr bgcolor="<?php echo altc(); ?>">
 			<td>USA Site</td>
 			<td align="right"><code>jetgrindradio.web.dreamcast.com</code></td>
 			<td align="center"><code><a href="http://jetgrindradio.web.dreamcast.com">Link</a></code></td>
 		</tr>
-		<tr bgcolor="#FFFFFF">
+		<tr bgcolor="<?php echo altc(); ?>">
 			<td>Europe Site</td>
 			<td align="right"><code>jetsetradio.dream-key.com</code></td>
 			<td align="center"><code><a href="http://jetsetradio.dream-key.com">Link</a></code></td>
 		</tr>
-		<tr bgcolor="#A6FFB2">
+		<tr bgcolor="<?php echo altc(); ?>">
 			<td>Japanese Site</td>
 			<td align="right"><code>jet.dricas.ne.jp</code></td>
 			<td align="center"><code><a href="http://jet.dricas.ne.jp">Link</a></code></td>
