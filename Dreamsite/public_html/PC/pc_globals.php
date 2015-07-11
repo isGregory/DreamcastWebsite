@@ -39,6 +39,7 @@
 
 	$root      = "../";
 	$dirSave   = $root . "savefiles/";
+	$dirDLC    = $dirSave . "dlc/";
 	$dirImages = $root . "images/";
 	$dirIcons  = $root . "images/icons/";
 	$dirEC     = $root . "images/eyecatch/";

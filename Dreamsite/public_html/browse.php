@@ -80,7 +80,7 @@
 					<tr bgcolor="<?php echo ac($col); ?>">
 						<td><a href='<?php echo "info.php?s=" . $VMIfile; ?>'><?php echo $VMIfile; ?></a></td>
 						<td align='center'>
-							<a href='<?php echo $dirSave . "vmidl.php?id=" . $VMIfile . "&t=i"; ?>'><?php echo $blocks; ?></a>
+							<a href='<?php echo "vmidl.php?id=" . $VMIfile . "&t=i"; ?>'><?php echo $blocks; ?></a>
 						</td>
 						<td align='right'><?php echo $fileDate; ?></td>
 						<td align='center'><img src='<?php echo $imgName; ?>'></td>

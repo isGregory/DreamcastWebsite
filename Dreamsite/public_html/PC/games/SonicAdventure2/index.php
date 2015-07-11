@@ -1,8 +1,8 @@
 <?php
 	// index.php
 	$homeDir = "../../";
-	include $homeDir . "pc_globals.php";
-	include $homeDir . "format.php";
+	require_once $homeDir . "pc_globals.php";
+	require_once $homeDir . "format.php";
 	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Sonic Adventure 2";
@@ -108,12 +108,12 @@
 		<?php dlcEntry('DOWN001'); ?>
 		<tr bgcolor="<?php echo ac(); ?>">
 			<td align="center">
-				<a href="<?php echo $homeDir . $dirSave . "vmidl.php?id=dlc/DOWN001.vmi&t=i" ?>">
+				<a href="<?php echo $homeDir . $root . "vmidl.php?id=dlc/DOWN001.vmi&t=i" ?>">
 					<img src="<?php echo $homeDir . $dirIcons . "save_vmi.png"?>">
 				</a>
 			</td>
 			<td align="center">
-				<a href="<?php echo $homeDir . $dirSave . "vmidl.php?id=dlc/DOWN001.vmi&t=s" ?>">
+				<a href="<?php echo $homeDir . $root . "vmidl.php?id=dlc/DOWN001.vmi&t=s" ?>">
 					<img src="<?php echo $homeDir . $dirIcons . "save_vms.png"?>">
 				</a>
 			</td>

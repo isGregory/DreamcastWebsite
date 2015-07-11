@@ -1,12 +1,13 @@
 <?php
 
-$homeDir = "../";
-require_once $homeDir . 'globals.php';
-require_once $homeDir . 'dc_tools.php';
+require_once 'globals.php';
+require_once 'dc_tools.php';
 global $dirSave;
 
 // VMI file name
 $target_vmi = isset($_GET["id"]) ? $_GET["id"] : false;
+$directory = $dirSave . current( explode( "/", $target_vmi ) );
+$file = end( explode( "/", $target_vmi ) );
 
 // $type can be either 'i' for ".vmi" or 's' for ".VMS"
 $type = isset($_GET["t"]) ? $_GET["t"] : false;
@@ -24,18 +25,18 @@ if ( false === $target_vmi ) {
 	$pageTitle = "VMU Download";
 	include $homeDir . 'dc_header.php';
 	echo "<p>No File Specified</p>";
-	$from = $dirSave . "vmidl.php";
+	$from = "vmidl.php";
 	include $homeDir . 'dc_footer.php';
 
 } else {
 
 	// Check that save file exists
-	if ( !file_exists( $target_vmi ) ) {
+	if ( !file_exists( $dirSave . $directory . $file ) ) {
 
 		$pageTitle = "VMU Download";
 		include $homeDir . 'dc_header.php';
-		echo "<p>File $target_vmi Not Found</p>";
-		$from = $dirSave . "vmidl.php";
+		echo "<p>File $dirSave$directory$file Not Found</p>";
+		$from = "vmidl.php";
 		include $homeDir . 'dc_footer.php';
 
 	} else {
@@ -45,16 +46,16 @@ if ( false === $target_vmi ) {
 			// MIME Types for Dreamcast
 			// VMI: application/x-dreamcast-vms-info
 			// VMS: application/x-dreamcast-vms
-			header("Content-disposition: attachment; filename=$target_vmi");
+			header("Content-disposition: attachment; filename=$file");
 			header("Content-type: application/x-dreamcast-vms-info");
-			readfile("$target_vmi");
+			readfile("$dirSave$directory$file");
 
 		// User wants VMS file
 		} else {
 			$VMSname = getVMSnamefromVMI( $target_vmi );
 			header("Content-disposition: attachment; filename=$VMSname");
 			header("Content-type: application/x-dreamcast-vms");
-			readfile("$VMSname");
+			readfile("$dirSave$directory$VMSname");
 		}
 	}
 }

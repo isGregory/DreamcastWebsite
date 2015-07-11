@@ -112,15 +112,16 @@
 		<?php
 	}
 
-	function dlcEntry( $file, $color ) {
+	function dlcEntry( $file ) {
 		require_once dirname(__FILE__) . '/../dc_tools.php';
-		global $homeDir, $dirSave;
+		global $homeDir, $root, $dirDLC, $dirImages;
 
-		$VMSname = getVMSnamefromVMI( $file );
-		$VMIfile = end( explode( "/", $file ) );
+		$filename = $homeDir . $dirDLC . $file . ".vmi";
+		$VMSname = getVMSnamefromVMI( $filename );
+		$VMIfile = end( explode( "/", $filename ) );
 
 		$vms = new VMS;
-		$vms->load( $dirSave . $VMSname );
+		$vms->load( $homeDir . $dirDLC . $VMSname );
 		$imgName = createVMSicons( $vms );
 		$blocks = $vms->getBlocks();
 
@@ -129,15 +130,15 @@
 		$luSaves->buildTable();
 		$luType = $luSaves->getType( $vms->getTypeHash() );
 		?>
-			<tr bgcolor="<?php echo $color; ?>">
+			<tr bgcolor="<?php echo ac(); ?>">
 				<td align="center">
-					<a href="<?php echo $homeDir . $dirSave . "vmidl.php?id=dlc/$file.vmi&t=i" ?>">
-						<img src="<?php echo $homeDir . $dirIcons . "save_vmi.png"?>">
+					<a href="<?php echo $homeDir . $root . "vmidl.php?id=dlc/$VMIfile&t=i" ?>">
+						<img src="<?php echo $homeDir . $dirImages . "save_vmi.png"?>">
 					</a>
 				</td>
 				<td align="center">
-					<a href="<?php echo $homeDir . $dirSave . "vmidl.php?id=dlc/$file.vmi&t=s" ?>">
-						<img src="<?php echo $homeDir . $dirIcons . "save_vms.png"?>">
+					<a href="<?php echo $homeDir . $root . "vmidl.php?id=dlc/$VMIfile&t=s" ?>">
+						<img src="<?php echo $homeDir . $dirImages . "save_vms.png"?>">
 					</a>
 				</td>
 				<td align="center"><?php echo $blocks; ?></td>

@@ -44,9 +44,9 @@
 			<tr bgcolor='<?php echo ac(); ?>'>
 				<th>Download:
 					<?php
-						echo " <a href='" . $dirSave . "vmidl.php?id=$s&t=i'><img src='images/save_vmi.png'></a> ";
+						echo " <a href='vmidl.php?id=$s&t=i'><img src='images/save_vmi.png'></a> ";
 						if ( !$dreamBrowser ) {
-							echo "<a href='" . $dirSave . "vmidl.php?id=$s&t=s'><img src='images/save_vms.png'></a>";
+							echo "<a href='vmidl.php?id=$s&t=s'><img src='images/save_vms.png'></a>";
 						}
 					?>
 				</th>

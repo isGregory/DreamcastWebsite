@@ -4,19 +4,6 @@
 require_once 'GIFEncoder.class.php'; // For creating animated GIFs
 require_once 'globals.php';
 
-// Used to alternate colors (ac) between the
-// two main ones for the rows of tables.
-function ac() {
-	global $cur, $C1, $C2;
-
-	if ( $cur == $C1 ) {
-		$cur = $C2;
-	} else {
-		$cur = $C1;
-	}
-	return $cur;
-}
-
 // $vms = VMS object
 // Returns array of colors
 function getVMSpalette( $vms, $image, $offset, $size ) {
@@ -465,6 +452,11 @@ function validateVMIs() {
 
 	// Go through all VMI files
 	foreach ( $Ifiles as $filefound ) {
+
+		// Make sure all VMI files are ".vmi"
+		$filefix = current( explode( ".", $filefound ) ) . ".vmi";
+		rename( $filefound, $filefix );
+		$filefound = $filefix;
 
 		// Extract the VMS file name from the VMI
 		$VMSname = getVMSnamefromVMI( $filefound );
