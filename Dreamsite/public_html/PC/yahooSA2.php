@@ -1,6 +1,6 @@
 <?php
 	// yahooSA2.php
-	include 'pc_globals.php';
+	require_once 'pc_directories.php';
 
 	$pageTitle = "SA2 Yahoo";
 	$homeDir = "";

@@ -19,8 +19,9 @@
 		# VMU Uploading is now set free!
 
 // Include to check if they're using a dreamcast web-browser
-// and get the globals specified upload directory.
-require_once 'globals.php';
+// and get the specified upload directory.
+require_once 'directories.php';
+require_once 'format.php';
 
 
 // Check if it is a Dreamcast

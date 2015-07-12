@@ -1,8 +1,8 @@
 <?php
 	// index.php
 	$homeDir = "../../";
-	include $homeDir . "pc_globals.php";
-	include $homeDir . "format.php";
+	require_once $homeDir . 'pc_directories.php';
+	require_once $homeDir . $root . 'format.php';
 	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Jet Grind Radio";
@@ -41,7 +41,7 @@
 				Released in 2000, Jet Grind Radio redefined what style meant
 				with gorgeous cel shading and an unforgettable soundtrack by
 				Hideki Naganuma. DJ Professor K narrates as players assume the
-				role of the graffiti-spraying GG’s gang, skating through the
+				role of the graffiti-spraying GG&#8217;s gang, skating through the
 				open streets of Tokyo-to in an attempt to cover the art of
 				rival gangs and convince other skaters to join them. Within
 				each level the checklist of spots that need to be tagged can

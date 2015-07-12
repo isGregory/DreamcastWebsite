@@ -1,7 +1,5 @@
 <?php
 //pc_header.php
-
-include "pc_globals.php";
 ?>
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 
@@ -17,12 +15,12 @@ include "pc_globals.php";
 			<table cellpadding="2" cellspacing="0" border="1" width="640" align="center" bgcolor="#FFFFFF">
 
 				<!-- Main Title Image -->
-				<tr bgcolor="#CCCCCC">
+				<tr bgcolor="<?php echo $tHead; ?>">
 					<th align="center"><img src='<?php echo $homeDir . $dirImages; ?>title_pc.png' alt="" align="center" width="640" height="160"></th>
 				</tr>
 
 				<!-- Header Links -->
-				<tr bgcolor="#CCCCCC">
+				<tr bgcolor="<?php echo $tHead; ?>">
 					<th align="center">
 						<table width="100%"><tr>
 							<th><a href="<?php echo $homeDir; ?>index.php" style="text-decoration:none">Home</a></th>

@@ -1,7 +1,7 @@
 <?php
 	// file_vms.php
-	include 'pc_globals.php';
-	include 'format.php';
+	require_once 'pc_directories.php';
+	require_once $root . 'format.php';
 
 	$pageTitle = "VMS File";
 	$homeDir = "";
@@ -13,23 +13,23 @@
 <table cellpadding="3" cellspacing="1" border"0">
 	<tr>
 		<td>
-			<table cellpadding="3" cellspacing="1" border="0" width="150" bgcolor="#6E6E6E">
-				<tr align="center" bgcolor="#BBBBBB">
+			<table cellpadding="3" cellspacing="1" border="0" width="150" bgcolor="<?php echo $tBG; ?>">
+				<tr align="center" bgcolor="<?php echo $indexHead; ?>">
 					<td>Contents</td>
 				</tr>
-				<tr bgcolor="#CCCCCC">
+				<tr bgcolor="<?php echo ac(); ?>">
 					<td><a href="#head">VMS Header</a></td>
 				</tr>
-				<tr bgcolor="#EEEEEE">
+				<tr bgcolor="<?php echo ac(); ?>">
 					<td><a href="#calc">CRC Calculation</a></td>
 				</tr>
-				<tr bgcolor="#CCCCCC">
+				<tr bgcolor="<?php echo ac(); ?>">
 					<td><a href="#ipal">Icon Palette</a></td>
 				</tr>
-				<tr bgcolor="#EEEEEE">
+				<tr bgcolor="<?php echo ac(); ?>">
 					<td><a href="#ibit">Icon Bitmaps</a></td>
 				</tr>
-				<tr bgcolor="#CCCCCC">
+				<tr bgcolor="<?php echo ac(); ?>">
 					<td><a href="#eyecatch">Graphic Eyecatch</a></td>
 				</tr>
 			</table>
@@ -64,11 +64,11 @@
 
 <p>
 	The following is the contents of the header:
-	<table cellpadding="3" cellspacing="1" border="0" style="max-width:640px;" bgcolor="#6E6E6E">
-		<tr bgcolor="#CCCCCC">
+	<table cellpadding="3" cellspacing="1" border="0" style="max-width:640px;" bgcolor="<?php echo $tBG; ?>">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th colspan="2">Offset</th><th rowspan="2">Size (bytes)</th><th rowspan="2">Datatype</th><th rowspan="2">Contents</th>
 		</tr>
-		<tr bgcolor="#CCCCCC">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th>Byte</th><th>Hex</th>
 		</tr>
 		<?php
@@ -92,20 +92,20 @@
 <br>
 
 <!-- Table for Notes -->
-<table cellpadding="3" cellspacing="1" border="0" bgcolor="#6E6E6E">
-	<tr bgcolor="#CCCCCC">
+<table cellpadding="3" cellspacing="1" border="0" bgcolor="<?php echo $tBG; ?>">
+	<tr bgcolor="<?php echo $tHead; ?>">
 		<th colspan="2">Notes</th>
 	</tr>
 
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>Text fields</td>
 		<td>are padded with space (<code>0x20</code>).</td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
-		<td bgcolor="#FFFFFF">String fields</td>
-		<td bgcolor="#FFFFFF">are padded with NUL (<code>0x00</code>).</td>
+	<tr bgcolor="<?php $tempCol = ac(); echo $tempCol; ?>">
+		<td bgcolor="<?php echo $tempCol; ?>">String fields</td>
+		<td bgcolor="<?php echo $tempCol; ?>">are padded with NUL (<code>0x00</code>).</td>
 	</tr>
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>Integer fields</td>
 		<td>are little endian.</td>
 	</tr>
@@ -122,7 +122,7 @@
 
 <p>
 	The CRC calculation algorithm is as follows (C code):
-	<table bgcolor="#CCCCCC" border="0">
+	<table bgcolor="<?php echo $tHead; ?>" border="0">
 		<tr>
 			<td>
 				<pre>
@@ -169,7 +169,7 @@ int calcCRC(const unsigned char *buf, int size)
 	Function to pull out individual color elements of
 	<br>
 	the first color entry in the color palette:
-	<table bgcolor="#CCCCCC" border="0">
+	<table bgcolor="<?php echo $tHead; ?>" border="0">
 		<tr>
 			<td>
 				<pre>
@@ -233,11 +233,11 @@ void separateColors( ifstream &file )
 
 <p>
 	There are four possible visual modes, selected with the field at offset <code>0x44</code>:
-	<table cellpadding="3" cellspacing="1" border="0" bgcolor="#6E6E6E" style="max-width:640px;">
-		<tr bgcolor="#CCCCCC">
+	<table cellpadding="3" cellspacing="1" border="0" bgcolor="<?php echo $tBG; ?>" style="max-width:640px;">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th rowspan="2">Mode</th><th colspan="3">Size (bytes)</th><th rowspan="2">Data format</th>
 		</tr>
-		<tr bgcolor="#CCCCCC">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th>Total</th><th>Palette</th><th>Bitmap</th>
 		</tr>
 			<?php

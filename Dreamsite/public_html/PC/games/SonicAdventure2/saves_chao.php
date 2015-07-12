@@ -1,8 +1,9 @@
 <?php
 	// saves_chao.php
 	$homeDir = "../../";
-	include $homeDir . "pc_globals.php";
-	include $homeDir . "format.php";
+	require_once $homeDir . 'pc_directories.php';
+	require_once $homeDir . $root . 'format.php';
+	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Sonic Adventure 2 Chao Save";
 	include $homeDir . "pc_header.php";
@@ -18,51 +19,51 @@ As of [2015-7-6] I have not been able to confirm this information.
 
 <br>
 <h4>File Overview</h4>
-<table cellpadding="3" cellspacing="1" border="0" bgcolor="#6E6E6E" style="max-width:640px;">
-	<tr bgcolor="#CCCCCC">
+<table cellpadding="3" cellspacing="1" border="0" bgcolor="<?php echo $tBG; ?>" style="max-width:640px;">
+	<tr bgcolor="<?php echo $tHead; ?>">
 		<th colspan="2">Offset</th><th rowspan="2">Size (bytes)</th><th rowspan="2">Contents</th>
 	</tr>
-	<tr bgcolor="#CCCCCC">
+	<tr bgcolor="<?php echo $tHead; ?>">
 		<th>Byte</th><th>Hex</th>
 	</tr>
 
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>0</td>
 		<td><pre>0x00</pre></td>
 		<td align="center">2179?</td>
 		<td>File Header Information</td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>2179</td>
 		<td><pre>0x883</pre></td>
 		<td align="center">43</td>
 		<td>The Owner</td>
 	</tr>
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>2222</td>
 		<td><pre>0xA08</pre></td>
 		<td align="center">8</td>
 		<td>Chao Name</td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>?</td>
 		<td>?</td>
 		<td align="center">?</td>
 		<td>Chao Type</td>
 	</tr>
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>?</td>
 		<td>?</td>
 		<td align="center">?</td>
 		<td>Chao Appearence</td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>?</td>
 		<td>?</td>
 		<td align="center">?</td>
 		<td>Animal MODs</td>
 	</tr>
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>?</td>
 		<td>?</td>
 		<td align="center">?</td>
@@ -72,57 +73,57 @@ As of [2015-7-6] I have not been able to confirm this information.
 
 <br>
 <h4>The Owner</h4>
-<table cellpadding="3" cellspacing="1" border="0" bgcolor="#6E6E6E" style="max-width:640px;">
-	<tr bgcolor="#CCCCCC">
+<table cellpadding="3" cellspacing="1" border="0" bgcolor="<?php echo $tBG; ?>" style="max-width:640px;">
+	<tr bgcolor="<?php echo $tHead; ?>">
 		<th colspan="2">Offset</th><th rowspan="2">Size (bytes)</th><th rowspan="2">Datatype</th><th rowspan="2">Contents</th>
 	</tr>
-	<tr bgcolor="#CCCCCC">
+	<tr bgcolor="<?php echo $tHead; ?>">
 		<th>Byte</th><th>Hex</th>
 	</tr>
 
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>2179</td>
 		<td><pre>0x883</pre></td>
 		<td align="center">1</td>
 		<td>Integer</td>
 		<td>The owner's age.</td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>2180</td>
 		<td><pre>0x884</pre></td>
 		<td align="center">1</td>
 		<td>Values</td>
 		<td>The owner's gender.<br> <code>0x81 = Male,<br> 0x82 = Female,<br></code> any other value is listed as <code>"?"</code></td>
 	</tr>
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>2181</td>
 		<td><pre>0x885</pre></td>
 		<td align="center">1</td>
 		<td>Values</td>
 		<td>The owner's blood type. <br><code>0x80=A,<br> 0x81=B,<br> 0x82=AB,<br> 0x83=O,<br></code> any other value is listed as <code>"A"</code></td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>2182</td>
 		<td><pre>0x886</pre></td>
 		<td align="center">2</td>
 		<td>Integer</td>
 		<td>The owner's birthday. Stored as normal hex. First byte is month, second is day. NOTE: If this is two separate things, make two entries.</td>
 	</tr>
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>2184</td>
 		<td><pre>0x888</pre></td>
 		<td align="center">8</td>
 		<td>String</td>
 		<td>The owner's name. The first letter of the name has <code>0x20</code> subtracted from it.</td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>2192</td>
 		<td><pre>0x8A0</pre></td>
 		<td align="center">15</td>
 		<td>String</td>
 		<td>The owner's favorite person, place, or thing. Every character is stored with <code>0x20</code> subtracted from it.</td>
 	</tr>
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>2207</td>
 		<td><pre>0x8B0</pre></td>
 		<td align="center">15</td>
@@ -133,15 +134,15 @@ As of [2015-7-6] I have not been able to confirm this information.
 
 <br>
 <h4>Chao Name</h4>
-<table cellpadding="3" cellspacing="1" border="0" bgcolor="#6E6E6E" style="max-width:640px;">
-	<tr bgcolor="#CCCCCC">
+<table cellpadding="3" cellspacing="1" border="0" bgcolor="<?php echo $tBG; ?>" style="max-width:640px;">
+	<tr bgcolor="<?php echo $tHead; ?>">
 		<th colspan="2">Offset</th><th rowspan="2">Size (bytes)</th><th rowspan="2">Datatype</th><th rowspan="2">Contents</th>
 	</tr>
-	<tr bgcolor="#CCCCCC">
+	<tr bgcolor="<?php echo $tHead; ?>">
 		<th>Byte</th><th>Hex</th>
 	</tr>
 
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>2568</td>
 		<td><pre>0xA08</pre></td>
 		<td align="center">8</td>
@@ -156,15 +157,15 @@ As of [2015-7-6] I have not been able to confirm this information.
 	Below is the Chao Type data. This allows you to change the type
 	of chao you have to any other type of Chao. The chao type is one
 	byte long.
-	<table cellpadding="3" cellspacing="1" border="0" bgcolor="#6E6E6E" style="max-width:640px;">
-		<tr bgcolor="#CCCCCC">
+	<table cellpadding="3" cellspacing="1" border="0" bgcolor="<?php echo $tBG; ?>" style="max-width:640px;">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th colspan="2">Offset</th><th rowspan="2">Size (bytes)</th><th rowspan="2">Datatype</th><th rowspan="2">Contents</th>
 		</tr>
-		<tr bgcolor="#CCCCCC">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th>Byte</th><th>Hex</th>
 		</tr>
 
-		<tr bgcolor="#CEEBF5">
+		<tr bgcolor="<?php echo ac(); ?>">
 			<td>2560</td>
 			<td><pre>0xA00</pre></td>
 			<td align="center">1</td>
@@ -179,64 +180,64 @@ As of [2015-7-6] I have not been able to confirm this information.
 <p>
 	The Chao Appearence Information is next. You can change a bunch
 	of things in order to alter the look of your chao.
-	<table cellpadding="3" cellspacing="1" border="0" bgcolor="#6E6E6E" style="max-width:640px;">
-		<tr bgcolor="#CCCCCC">
+	<table cellpadding="3" cellspacing="1" border="0" bgcolor="<?php echo $tBG; ?>" style="max-width:640px;">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th colspan="2">Offset</th><th rowspan="2">Size (bytes)</th><th rowspan="2">Datatype</th><th rowspan="2">Contents</th>
 		</tr>
-		<tr bgcolor="#CCCCCC">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th>Byte</th><th>Hex</th>
 		</tr>
 
-		<tr bgcolor="#CEEBF5">
+		<tr bgcolor="<?php echo ac(); ?>">
 			<td>2717</td>
 			<td><pre>0xA9D</pre></td>
 			<td align="center">1</td>
 			<td>unsigned Char</td>
 			<td>Chao Eyes<br><code>0x00 = Plain Eyes<br>0x04 = Happy Anime Eyes<br>0x09 = Tired Eyes<br>0x0A = Angry Eyes</code></td>
 		</tr>
-		<tr bgcolor="#FFFFFF">
+		<tr bgcolor="<?php echo ac(); ?>">
 			<td>2718</td>
 			<td><pre>0xA9E</pre></td>
 			<td align="center">1</td>
 			<td>unsigned Char</td>
 			<td>Chao Mouth<br><code>0x00 = No Mouth<br>0x01 = Toothy Grin<br>0x02 = Open Mouth<br>0x03 = Smiling Mouth<br>0x04 = Little Frown</code></td>
 		</tr>
-		<tr bgcolor="#CEEBF5">
+		<tr bgcolor="<?php echo ac(); ?>">
 			<td>2212</td>
 			<td><pre>0x8A4</pre></td>
 			<td align="center">1</td>
 			<td>unsigned Char</td>
 			<td>Chao Head<br><code>0x00 = Nothing<br>0x01 = Pumpkin<br>0x02 = Skull<br>0x03 = Egg Shell</code></td>
 		</tr>
-		<tr bgcolor="#FFFFFF">
+		<tr bgcolor="<?php echo ac(); ?>">
 			<td>2730</td>
 			<td><pre>0xAAA</pre></td>
 			<td align="center">1</td>
 			<td>unsigned Char</td>
 			<td>Costume<br><code>0x00 = Normal Chao<br>0x01 = Egg<br>0x02 = Omochao<br>0x03 = Animal (See Chart)</code></td>
 		</tr>
-		<tr bgcolor="#CEEBF5">
+		<tr bgcolor="<?php echo ac(); ?>">
 			<td>2731</td>
 			<td><pre>0xAAB</pre></td>
 			<td align="center">1</td>
 			<td>unsigned Char</td>
 			<td>Kind of Animal<br>If costume is <code>0x03</code>, use the chart below for Animals</td>
 		</tr>
-		<tr bgcolor="#FFFFFF">
+		<tr bgcolor="<?php echo ac(); ?>">
 			<td>2726</td>
 			<td><pre>0xAA6</pre></td>
 			<td align="center">1</td>
 			<td>unsigned Char</td>
 			<td>Chao Jewelry<br><code>Values Unknown<br></code></td>
 		</tr>
-		<tr bgcolor="#CEEBF5">
+		<tr bgcolor="<?php echo ac(); ?>">
 			<td>2727</td>
 			<td><pre>0xAA7</pre></td>
 			<td align="center">1</td>
 			<td>unsigned Char</td>
 			<td>Normal Color Mod<br><code>Values Unknown<br></code></td>
 		</tr>
-		<tr bgcolor="#FFFFFF">
+		<tr bgcolor="<?php echo ac(); ?>">
 			<td>2728</td>
 			<td><pre>0xAA8</pre></td>
 			<td align="center">1</td>
@@ -248,57 +249,57 @@ As of [2015-7-6] I have not been able to confirm this information.
 
 <br>
 <h4>Animal MODs</h4>
-<table cellpadding="3" cellspacing="1" border="0" bgcolor="#6E6E6E" style="max-width:640px;">
-	<tr bgcolor="#CCCCCC">
+<table cellpadding="3" cellspacing="1" border="0" bgcolor="<?php echo $tBG; ?>" style="max-width:640px;">
+	<tr bgcolor="<?php echo $tHead; ?>">
 		<th colspan="2">Offset</th><th rowspan="2">Size (bytes)</th><th rowspan="2">Chao Part Modified</th>
 	</tr>
-	<tr bgcolor="#CCCCCC">
+	<tr bgcolor="<?php echo $tHead; ?>">
 		<th>Byte</th><th>Hex</th>
 	</tr>
 
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>2740</td>
 		<td><pre>0xAB4</pre></td>
 		<td align="center">1</td>
 		<td>Arms</td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>2741</td>
 		<td><pre>0xAB5</pre></td>
 		<td align="center">1</td>
 		<td>Ears</td>
 	</tr>
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>2742</td>
 		<td><pre>0xAB6</pre></td>
 		<td align="center">1</td>
 		<td>Front of Head</td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>2743</td>
 		<td><pre>0xAB7</pre></td>
 		<td align="center">1</td>
 		<td>Back of Head</td>
 	</tr>
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>2744</td>
 		<td><pre>0xAB8</pre></td>
 		<td align="center">1</td>
 		<td>Feet</td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>2745</td>
 		<td><pre>0xAB9</pre></td>
 		<td align="center">1</td>
 		<td>Tail</td>
 	</tr>
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>2746</td>
 		<td><pre>0xABA</pre></td>
 		<td align="center">1</td>
 		<td>Wings</td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>2747</td>
 		<td><pre>0xABB</pre></td>
 		<td align="center">1</td>
@@ -312,88 +313,88 @@ As of [2015-7-6] I have not been able to confirm this information.
 </p>
 <br>
 <h4>Animal Types</h4>
-<table cellpadding="3" cellspacing="1" border="0" bgcolor="#6E6E6E" style="max-width:640px;">
-	<tr bgcolor="#CCCCCC">
+<table cellpadding="3" cellspacing="1" border="0" bgcolor="<?php echo $tBG; ?>" style="max-width:640px;">
+	<tr bgcolor="<?php echo $tHead; ?>">
 		<th>Value</th><th>Animal Value</th>
 	</tr>
 
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td><pre>0x00</pre></td>
 		<td>Penguin</td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td><pre>0x01</pre></td>
 		<td>Fish</td>
 	</tr>
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td><pre>0x02</pre></td>
 		<td>Otter</td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td><pre>0x03</pre></td>
 		<td>Rabbit</td>
 	</tr>
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td><pre>0x04</pre></td>
 		<td>Cheetah</td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td><pre>0x05</pre></td>
 		<td>Boar</td>
 	</tr>
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td><pre>0x06</pre></td>
 		<td>Bear</td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td><pre>0x07</pre></td>
 		<td>Tiger</td>
 	</tr>
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td><pre>0x08</pre></td>
 		<td>Gorrilla</td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td><pre>0x09</pre></td>
 		<td>Peacock</td>
 	</tr>
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td><pre>0x0A</pre></td>
 		<td>Parrot</td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td><pre>0x0B</pre></td>
 		<td>Vulture</td>
 	</tr>
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td><pre>0x0C</pre></td>
 		<td>Skunk</td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td><pre>0x0D</pre></td>
 		<td>Sheep</td>
 	</tr>
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td><pre>0x0E</pre></td>
 		<td>Racoon</td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td><pre>0x10</pre></td>
 		<td>Ghost</td>
 	</tr>
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td><pre>0x11</pre></td>
 		<td>Bone Dog</td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td><pre>0x12</pre></td>
 		<td>Dragon</td>
 	</tr>
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td><pre>0x13</pre></td>
 		<td>Unicorn</td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td><pre>0x14</pre></td>
 		<td>Phoenix</td>
 	</tr>
@@ -407,51 +408,51 @@ As of [2015-7-6] I have not been able to confirm this information.
 	a stat which has a value of <code>0x1E23</code>, is actually <code>0x231E</code>, and has
 	a value of 8990. However, it's real value is 899, as the last
 	place is ignored.
-	<table cellpadding="3" cellspacing="1" border="0" bgcolor="#6E6E6E" style="max-width:640px;">
-		<tr bgcolor="#CCCCCC">
+	<table cellpadding="3" cellspacing="1" border="0" bgcolor="<?php echo $tBG; ?>" style="max-width:640px;">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th colspan="2">Offset</th><th rowspan="2">Size (bytes)</th><th rowspan="2">Contents</th>
 		</tr>
-		<tr bgcolor="#CCCCCC">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th>Byte</th><th>Hex</th>
 		</tr>
 
-		<tr bgcolor="#CEEBF5">
+		<tr bgcolor="<?php echo ac(); ?>">
 			<td>2584</td>
 			<td><pre>0xA18</pre></td>
 			<td align="center">2</td>
 			<td>Swim: SWM</td>
 		</tr>
-		<tr bgcolor="#FFFFFF">
+		<tr bgcolor="<?php echo ac(); ?>">
 			<td>2586</td>
 			<td><pre>0xA1A</pre></td>
 			<td align="center">2</td>
 			<td>Fly: FLY</td>
 		</tr>
-		<tr bgcolor="#CEEBF5">
+		<tr bgcolor="<?php echo ac(); ?>">
 			<td>2588</td>
 			<td><pre>0xA1C</pre></td>
 			<td align="center">2</td>
 			<td>Run: RUN</td>
 		</tr>
-		<tr bgcolor="#FFFFFF">
+		<tr bgcolor="<?php echo ac(); ?>">
 			<td>2590</td>
 			<td><pre>0xA1E</pre></td>
 			<td align="center">2</td>
 			<td>Power: PWR</td>
 		</tr>
-		<tr bgcolor="#CEEBF5">
+		<tr bgcolor="<?php echo ac(); ?>">
 			<td>2592</td>
 			<td><pre>0xA20</pre></td>
 			<td align="center">2</td>
 			<td>Luck: LCK</td>
 		</tr>
-		<tr bgcolor="#FFFFFF">
+		<tr bgcolor="<?php echo ac(); ?>">
 			<td>2594</td>
 			<td><pre>0xA22</pre></td>
 			<td align="center">2</td>
 			<td>Intellegence: INT</td>
 		</tr>
-		<tr bgcolor="#CEEBF5">
+		<tr bgcolor="<?php echo ac(); ?>">
 			<td>2596</td>
 			<td><pre>0xA24</pre></td>
 			<td align="center">2</td>

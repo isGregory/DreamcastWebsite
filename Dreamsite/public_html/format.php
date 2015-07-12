@@ -1,10 +1,47 @@
 <?php
 	//format.php
 
+	// Two colors for doing rows in tables
+	$C1 = "#FFFFFF";
+	$C2 = "#CEEBF5";
+	$altC1 = "#FFFFFF";
+	$altC2 = "#A6FFB2";
+
+	// Currently used row color.
+	$cur = $C1;
+	$altCur = $altC1;
+
+	// Table header color
+	$tHead = "#CCCCCC";
+
+	// Table background color
+	$tBG = "#6E6E6E";
+
+	// Index header color
+	$indexHead = "#BBBBBB";
+
+	// Index sub header color
+	$indexSub = "#E0E0E0";
+
+	$dcBGimg = "images/tile.png";
+
+	// Get browser information
+	// Example. Planetweb 2.6 returns:
+	// Mozilla/3.0 (Planetweb/2.606 JS SSL VoIP US; Dreamcast US)
+	$browser = $_SERVER['HTTP_USER_AGENT'];
+
+	// Check if their browser is dreamcast.
+	// This allows us the option to serve pages
+	// differently to dreamcast than we would to a PC
+	if ( false !== strpos( strtolower( $browser ), 'dreamcast' ) ) {
+		$dreamBrowser = true;
+	} else {
+		$dreamBrowser = false;
+	}
+
 	// Used to alternate colors (ac) between the
 	// two main ones for the rows of tables.
 	function ac() {
-		require_once 'pc_globals.php';
 		global $cur, $C1, $C2;
 
 		if ( $cur == $C1 ) {
@@ -18,7 +55,6 @@
 	// Used to alternate alternative colors (altc)
 	// between alternative colors for rows of a table.
 	function altc() {
-		require_once 'pc_globals.php';
 		global $altCur, $altC1, $altC2;
 
 		if ( $altCur == $altC1 ) {
@@ -73,11 +109,11 @@
 
 	function memoryTable() {
 		?>
-			<table cellpadding='3' cellspacing='1' border='0' style='max-width:640px;' bgcolor='#6E6E6E'>
-				<tr bgcolor='#CCCCCC'>
+			<table cellpadding='3' cellspacing='1' border='0' style='max-width:640px;' bgcolor='<?php echo $tBG; ?>'>
+				<tr bgcolor='<?php echo $tHead; ?>'>
 					<th colspan='2'>Offset</th><th rowspan='2'>Size (bytes)</th><th rowspan='2'>Datatype</th><th rowspan='2' width='400px'>Contents</th>
 				</tr>
-				<tr bgcolor='#CCCCCC'>
+				<tr bgcolor='<?php echo $tHead; ?>'>
 					<th>Byte</th><th>Hex</th>
 				</tr>
 		<?php
@@ -94,8 +130,9 @@
 	}
 
 	function fourColorPalette() {
+		global $tBG;
 		?>
-			<table cellpadding='3' cellspacing='1' border='0' bgcolor='#6E6E6E'>
+			<table cellpadding='3' cellspacing='1' border='0' bgcolor='<?php echo $tBG; ?>'>
 				<tr>
 					<td bgcolor='#CCCCCC'>15</td><td bgcolor='#CCCCCC'>14</td><td bgcolor='#CCCCCC'>13</td><td bgcolor='#CCCCCC'>12</td>
 					<td bgcolor='#CC9595'>11</td><td bgcolor='#CC9595'>10</td><td bgcolor='#CC9595'>9</td><td bgcolor='#CC9595'>8</td>
@@ -113,7 +150,7 @@
 	}
 
 	function dlcEntry( $file ) {
-		require_once dirname(__FILE__) . '/../dc_tools.php';
+		require_once dirname(__FILE__) . '/dc_tools.php';
 		global $homeDir, $root, $dirDLC, $dirImages;
 
 		$filename = $homeDir . $dirDLC . $file . ".vmi";
@@ -125,10 +162,9 @@
 		$imgName = createVMSicons( $vms );
 		$blocks = $vms->getBlocks();
 
-		require_once dirname(__FILE__) . '/../savefile_lookup.php';
+		require_once dirname(__FILE__) . '/savefile_lookup.php';
 		$luSaves = new saveLookup();
-		$luSaves->buildTable();
-		$luType = $luSaves->getType( $vms->getTypeHash() );
+		$luType = $luSaves->getType( $vms );
 		?>
 			<tr bgcolor="<?php echo ac(); ?>">
 				<td align="center">
@@ -144,7 +180,7 @@
 				<td align="center"><?php echo $blocks; ?></td>
 				<td align="center"><?php echo $file; ?></td>
 				<td><?php echo $luType; ?></td>
-				<td align="center"><img src='<?php echo $homeDir . $root . $imgName; ?>'></td>
+				<td align="center"><img src='<?php echo $imgName; ?>'></td>
 			</tr>
 		<?php
 	}

@@ -1,13 +1,13 @@
 <?php
 	//info.php
-	require_once 'globals.php';
+	require_once 'directories.php';
+	require_once 'format.php';
 
 	$s = isset($_GET["s"]) ? $_GET["s"] : false;
 
 	require_once 'dc_tools.php';
 	require_once 'savefile_lookup.php';
 	$luSaves = new saveLookup();
-	$luSaves->buildTable();
 
 	$pageTitle = "File Info";
 	include 'dc_header.php';
@@ -20,8 +20,8 @@
 		$vms = new VMS;
 		$vms->load($dirSave . $VMSname);
 		$imgName = createVMSicons( $vms );
-		$luGame = $luSaves->getGame( $vms->getTypeHash() );
-		$luType = $luSaves->getType( $vms->getTypeHash() );
+		$luGame = $luSaves->getGame( $vms );
+		$luType = $luSaves->getType( $vms );
 
 		$blocks = $vms->getBlocks();
 		$Dmenu = $vms->getVMStext();
@@ -31,15 +31,15 @@
 		$aS = $vms->getAniSpeed();
 
 		?>
-		<table cellpadding='3' cellspacing='1' border='0' width='100%' bgcolor='#6E6E6E'>
-			<tr bgcolor='#CCCCCC'>
+		<table cellpadding='3' cellspacing='1' border='0' width='100%' bgcolor='<?php echo $tBG; ?>'>
+			<tr bgcolor='<?php echo $tHead; ?>'>
 				<th colspan='2'><?php echo $VMSname; ?></th>
 			</tr>
 			<tr bgcolor='<?php echo ac(); ?>'>
 				<th colspan='2'><img src='<?php echo $imgName; ?>'></th>
 			</tr>
 			<tr bgcolor='<?php echo ac(); ?>'>
-				<th colspan='2'><?php echo "$luGame - $luType"; ?></th>
+				<th colspan='2'><?php echo "$luGame<br>$luType"; ?></th>
 			</tr>
 			<tr bgcolor='<?php echo ac(); ?>'>
 				<th>Download:
@@ -56,7 +56,7 @@
 				require_once 'info_file.php';
 				getUniqueInfo( $vms );
 			?>
-			<tr bgcolor='#CCCCCC'>
+			<tr bgcolor='<?php echo $tHead; ?>'>
 				<th colspan='2'>Header Info</th>
 			</tr>
 			<tr bgcolor='<?php echo ac(); ?>'>

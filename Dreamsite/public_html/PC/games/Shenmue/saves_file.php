@@ -1,8 +1,9 @@
 <?php
 	// saves_file.php
 	$homeDir = "../../";
-	include $homeDir . "pc_globals.php";
-	include $homeDir . "format.php";
+	require_once $homeDir . 'pc_directories.php';
+	require_once $homeDir . $root . 'format.php';
+	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Shenmue - Save File";
 	include $homeDir . "pc_header.php";
@@ -13,14 +14,14 @@
 <table cellpadding="3" cellspacing="1" border"0">
 	<tr>
 		<td>
-			<table cellpadding="3" cellspacing="1" border="0" width="150" bgcolor="#6E6E6E">
-				<tr align="center" bgcolor="#BBBBBB">
+			<table cellpadding="3" cellspacing="1" border="0" width="150" bgcolor="<?php echo $tBG; ?>">
+				<tr align="center" bgcolor="<?php echo $indexHead; ?>">
 					<td>Contents</td>
 				</tr>
-				<tr bgcolor="#CCCCCC">
+				<tr bgcolor="<?php echo ac(); ?>">
 					<td><a href="../../file_vms.html">VMS Header</a></td>
 				</tr>
-				<tr bgcolor="#EEEEEE">
+				<tr bgcolor="<?php echo ac(); ?>">
 					<td><a href="#body">Body</a></td>
 				</tr>
 			</table>
@@ -49,7 +50,7 @@
 			memoryEntry( '0x680', 32, 'Bytes', 'Unknown' );
 
 			?>
-				<tr bgcolor='#E0E0E0'>
+				<tr bgcolor='<?php $indexSub; ?>'>
 					<td colspan='5' align='center'>Start "Resume" - Save File Times</td>
 				</tr>
 			<?php
@@ -73,7 +74,7 @@
 			memoryEntry( '0x718', 4, 'Text', 'Entry Point?' );
 
 			?>
-				<tr bgcolor='#E0E0E0'>
+				<tr bgcolor='<?php $indexSub; ?>'>
 					<td colspan='5' align='center'>End "Resume" - Save File Times</td>
 				</tr>
 			<?php
@@ -81,7 +82,7 @@
 			memoryEntry( '0x71C', 36, 'Bytes', 'Unknown' );
 
 			?>
-				<tr bgcolor='#E0E0E0'>
+				<tr bgcolor='<?php $indexSub; ?>'>
 					<td colspan='5' align='center'>Start Slot 1 - Save File Times</td>
 				</tr>
 			<?php
@@ -105,7 +106,7 @@
 			memoryEntry( '0x758', 4, 'Text', 'Entry Point?' );
 
 			?>
-				<tr bgcolor='#E0E0E0'>
+				<tr bgcolor='<?php $indexSub; ?>'>
 					<td colspan='5' align='center'>End Slot 1 - Save File Times</td>
 				</tr>
 			<?php
@@ -113,7 +114,7 @@
 			memoryEntry( '0x75C', 36, 'Bytes', 'Unknown' );
 
 			?>
-				<tr bgcolor='#E0E0E0'>
+				<tr bgcolor='<?php $indexSub; ?>'>
 					<td colspan='5' align='center'>Start Slot 2 - Save File Times</td>
 				</tr>
 			<?php
@@ -137,7 +138,7 @@
 			memoryEntry( '0x798', 4, 'Text', 'Entry Point?' );
 
 			?>
-				<tr bgcolor='#E0E0E0'>
+				<tr bgcolor='<?php $indexSub; ?>'>
 					<td colspan='5' align='center'>End Slot 2 - Save File Times</td>
 				</tr>
 			<?php
@@ -145,7 +146,7 @@
 			memoryEntry( '0x79C', 36, 'Bytes', 'Unknown' );
 
 			?>
-				<tr bgcolor='#E0E0E0'>
+				<tr bgcolor='<?php $indexSub; ?>'>
 					<td colspan='5' align='center'>Start Slot 3 - Save File Times</td>
 				</tr>
 			<?php
@@ -169,7 +170,7 @@
 			memoryEntry( '0x7D8', 4, 'Text', 'Entry Point?' );
 
 			?>
-				<tr bgcolor='#E0E0E0'>
+				<tr bgcolor='<?php $indexSub; ?>'>
 					<td colspan='5' align='center'>End Slot 3 - Save File Times</td>
 				</tr>
 			<?php

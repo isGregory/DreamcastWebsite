@@ -1,6 +1,7 @@
 <?php
 	//browse.php
-	include 'globals.php';
+	require_once 'directories.php';
+	require_once 'format.php';
 
 	$p = isset($_GET["p"]) ? $_GET["p"] : false;
 	if ($p === false) {
@@ -60,7 +61,6 @@
 		<th>File</th><th>Blocks</th><th>Date Added</th><th>Icon</th>
 	</tr>
 	<?php
-		$col = $C2;
 
 		$c = 1;
 		foreach ( $files as $filefound ) {
@@ -77,7 +77,7 @@
 					filemtime( $dirSave . $VMSname ) );
 				$blocks = $vms->getBlocks();
 				?>
-					<tr bgcolor="<?php echo ac($col); ?>">
+					<tr bgcolor="<?php echo ac(); ?>">
 						<td><a href='<?php echo "info.php?s=" . $VMIfile; ?>'><?php echo $VMIfile; ?></a></td>
 						<td align='center'>
 							<a href='<?php echo "vmidl.php?id=" . $VMIfile . "&t=i"; ?>'><?php echo $blocks; ?></a>

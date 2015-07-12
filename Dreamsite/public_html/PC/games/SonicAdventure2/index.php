@@ -1,8 +1,8 @@
 <?php
 	// index.php
 	$homeDir = "../../";
-	require_once $homeDir . "pc_globals.php";
-	require_once $homeDir . "format.php";
+	require_once $homeDir . 'pc_directories.php';
+	require_once $homeDir . $root . 'format.php';
 	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Sonic Adventure 2";
@@ -100,140 +100,23 @@
 			<th width="34px">VMI</th><th width="34px">VMS</th>
 		</tr>
 
-		<!--
-			I want to be able to just specify the filename.
-			Blocksize, description, icon, all of these should
-			be looked up from the file name
-		-->
-		<?php dlcEntry('DOWN001'); ?>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center">
-				<a href="<?php echo $homeDir . $root . "vmidl.php?id=dlc/DOWN001.vmi&t=i" ?>">
-					<img src="<?php echo $homeDir . $dirIcons . "save_vmi.png"?>">
-				</a>
-			</td>
-			<td align="center">
-				<a href="<?php echo $homeDir . $root . "vmidl.php?id=dlc/DOWN001.vmi&t=s" ?>">
-					<img src="<?php echo $homeDir . $dirIcons . "save_vms.png"?>">
-				</a>
-			</td>
-			<td align="center">81</td>
-			<td align="center">DOWN001</td>
-			<td>High-Speed Trial Kart Map</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "3a7d695f.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/SA2/DOWN002.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">61</td>
-			<td align="center">DOWN002</td>
-			<td>Opa Opa Kart Map</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "945bca5b.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/SA2/DOWN003.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">55</td>
-			<td align="center">DOWN003</td>
-			<td>Eggrobo Kart Map</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "6ae0a7e2.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/SA2/THEME001.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">2</td>
-			<td align="center">THEME001</td>
-			<td>Sonic Theme</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "44a59e3b.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/SA2/THEME002.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">2</td>
-			<td align="center">THEME002</td>
-			<td>Tails Theme</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "f92754c1.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/SA2/THEME003.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">2</td>
-			<td align="center">THEME003</td>
-			<td>Knuckles Theme</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "a695ba79.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/SA2/THEME004.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">2</td>
-			<td align="center">THEME004</td>
-			<td>Shadow Theme</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4295e2c7.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/SA2/THEME005.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">2</td>
-			<td align="center">THEME005</td>
-			<td>Eggman Theme</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "633ad529.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/SA2/THEME006.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">2</td>
-			<td align="center">THEME006</td>
-			<td>Rouge Theme</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "2bf7beac.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/SA2/THEME007.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">2</td>
-			<td align="center">THEME007</td>
-			<td>Amy Theme</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "a647f369.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/SA2/THEME008.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">2</td>
-			<td align="center">THEME008</td>
-			<td>Omochao Theme</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "cacf34bf.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/SA2/THEME009.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">2</td>
-			<td align="center">THEME009</td>
-			<td>Maria Theme</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "8d178fc7.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/SA2/THEME010.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">2</td>
-			<td align="center">THEME010</td>
-			<td>President's Secretary Theme</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "03ff64e8.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/SA2/THEME011.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">2</td>
-			<td align="center">THEME011</td>
-			<td>Halloween Theme</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "79faff25.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/SA2/THEME012.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">2</td>
-			<td align="center">THEME012</td>
-			<td>Christmas Theme</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "966b8a74.gif"?>"></td>
-		</tr>
+		<?php
+			dlcEntry('DOWN001');
+			dlcEntry('DOWN002');
+			dlcEntry('DOWN003');
+			dlcEntry('THEME001');
+			dlcEntry('THEME002');
+			dlcEntry('THEME003');
+			dlcEntry('THEME004');
+			dlcEntry('THEME005');
+			dlcEntry('THEME006');
+			dlcEntry('THEME007');
+			dlcEntry('THEME008');
+			dlcEntry('THEME009');
+			dlcEntry('THEME010');
+			dlcEntry('THEME011');
+			dlcEntry('THEME012');
+		?>
 	</table>
 </p>
 

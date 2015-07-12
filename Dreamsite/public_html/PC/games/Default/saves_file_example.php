@@ -1,8 +1,9 @@
 <?php
 	// saves_file_example.php
 	$homeDir = "../../";
-	include $homeDir . "pc_globals.php";
-	include $homeDir . "format.php";
+	require_once $homeDir . 'pc_directories.php';
+	require_once $homeDir . $root . 'format.php';
+	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Games";
 	include $homeDir . "pc_header.php";
@@ -14,14 +15,14 @@
 <table cellpadding="3" cellspacing="1" border"0">
 	<tr>
 		<td>
-			<table cellpadding="3" cellspacing="1" border="0" width="150" bgcolor="#6E6E6E">
-				<tr align="center" bgcolor="#BBBBBB">
+			<table cellpadding="3" cellspacing="1" border="0" width="150" bgcolor="<?php echo $tBG; ?>">
+				<tr align="center" bgcolor="<?php echo $indexHead; ?>">
 					<td>Contents</td>
 				</tr>
-				<tr bgcolor="#CCCCCC">
+				<tr bgcolor="<?php echo ac(); ?>">
 					<td><a href="<?php echo $homeDir . $root; ?>file_vms.php">VMS Header</a></td>
 				</tr>
-				<tr bgcolor="#EEEEEE">
+				<tr bgcolor="<?php echo ac(); ?>">
 					<td><a href="#body">Body</a></td>
 				</tr>
 			</table>
@@ -45,11 +46,11 @@
 
 <p>
 	The following is EXAMPLE contents of the body:
-	<table cellpadding="3" cellspacing="1" border="0" width="636px" bgcolor="#6E6E6E">
-		<tr bgcolor="#CCCCCC">
+	<table cellpadding="3" cellspacing="1" border="0" width="636px" bgcolor="<?php echo $tBG; ?>">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th colspan="2">Offset</th><th rowspan="2">Size (bytes)</th><th rowspan="2">Datatype</th><th rowspan="2" width="400px">Contents</th>
 		</tr>
-		<tr bgcolor="#CCCCCC">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th>Byte</th><th>Hex</th>
 		</tr>
 		<?php

@@ -1,8 +1,9 @@
 <?php
 	// index.php
 	$homeDir = "../../";
-	include $homeDir . "pc_globals.php";
-	include $homeDir . "format.php";
+	require_once $homeDir . 'pc_directories.php';
+	require_once $homeDir . $root . 'format.php';
+	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "PSO - Screenshot";
 	include $homeDir . "pc_header.php";
@@ -15,20 +16,20 @@
 <table cellpadding="3" cellspacing="1" border"0">
 	<tr>
 		<td>
-			<table cellpadding="3" cellspacing="1" border="0" width="150" bgcolor="#6E6E6E">
-				<tr align="center" bgcolor="#BBBBBB">
+			<table cellpadding="3" cellspacing="1" border="0" width="150" bgcolor="<?php echo $tBG; ?>">
+				<tr align="center" bgcolor="<?php echo $indexHead; ?>">
 					<td>Contents</td>
 				</tr>
-				<tr bgcolor="#CCCCCC">
+				<tr bgcolor="<?php echo ac(); ?>">
 					<td><a href='<?php echo $homeDir; ?>file_vms.php#head'>VMS Header</a></td>
 				</tr>
-				<tr bgcolor="#EEEEEE">
+				<tr bgcolor="<?php echo ac(); ?>">
 					<td><a href="#body">Body Format</a></td>
 				</tr>
-				<tr bgcolor="#CCCCCC">
+				<tr bgcolor="<?php echo ac(); ?>">
 					<td><a href="#ibit">Image Properties</a></td>
 				</tr>
-				<tr bgcolor="#EEEEEE">
+				<tr bgcolor="<?php echo ac(); ?>">
 					<td><a href="#ipal">Icon Palette</a></td>
 				</tr>
 			</table>
@@ -63,97 +64,49 @@
 
 <p>
 	The following is the contents of the body:
-	<table cellpadding="3" cellspacing="1" border="0" style="max-width:640px;" bgcolor="#6E6E6E">
-		<tr bgcolor="#CCCCCC">
+	<table cellpadding="3" cellspacing="1" border="0" style="max-width:640px;" bgcolor="<?php echo $tBG; ?>">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th colspan="2">Offset</th><th rowspan="2">Size (bytes)</th><th rowspan="2">Datatype</th><th rowspan="2">Contents<img align="right" src="images/saves/SHOT.bmp"></th>
 		</tr>
-		<tr bgcolor="#CCCCCC">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th>Byte</th><th>Hex</th>
 		</tr>
-
-		<tr bgcolor="#CEEBF5">
-			<td>0</td>
-			<td><pre>0x00</pre></td>
-			<td align="center">640</td>
-			<td>Header</td>
-			<td><a href='<?php echo $homeDir; ?>file_vms.php#head'>VMS header</a> Information.</td>
-		</tr>
-		<tr bgcolor="#FFFFFF">
-			<td>640</td>
-			<td><pre>0x280</pre></td>
-			<td align="center">1</td>
-			<td>Unknown</td>
-			<td>Unknown - Image Width? (256)</td>
-		</tr>
-		<tr bgcolor="#CEEBF5">
-			<td>641</td>
-			<td><pre>0x281</pre></td>
-			<td align="center">1</td>
-			<td>Unknown</td>
-			<td>Unknown - Pixel Count + 1? (49,153)</td>
-		</tr>
-		<tr bgcolor="#FFFFFF">
-			<td>642</td>
-			<td><pre>0x282</pre></td>
-			<td align="center">2</td>
-			<td>Unknown</td>
-			<td>Unknown</td>
-		</tr>
-		<tr bgcolor="#CEEBF5">
-			<td>644</td>
-			<td><pre>0x284</pre></td>
-			<td align="center">98,304</td>
-			<td>Pixel Data</td>
-			<td>Pixel Data for the screenshot. Pixels are 16-bits
-			and thus every two bytes.</td>
-		</tr>
-		<tr bgcolor="#FFFFFF">
-			<td>98948</td>
-			<td><pre>0x18284</pre></td>
-			<td align="center">2</td>
-			<td>Unknown</td>
-			<td>Unknown</td>
-		</tr>
-		<tr bgcolor="#CEEBF5">
-			<td>98950</td>
-			<td><pre>0x18286</pre></td>
-			<td align="center">2</td>
-			<td>Integer</td>
-			<td>The number of players around when the
-			screenshot was taken. (1-15?)</td>
-		</tr>
-		<tr bgcolor="#FFFFFF">
-			<td>98952</td>
-			<td><pre>0x18288</pre></td>
-			<td align="center">96</td>
-			<td>Unknown</td>
-			<td>Unknown - Map / Location Info?</td>
-		</tr>
-		<tr bgcolor="#CEEBF5">
-			<td>99048</td>
-			<td><pre>0x182E8</pre></td>
-			<td align="center">24*n</td>
-			<td>String</td>
-			<td>Names of players around when the screenshot was taken
-			start here. Names are every 24 bytes after this point till
-			all of the number of players around have been listed.
-			n = Number of Players (<code>0x18286</code>)</td>
-		</tr>
+		<?php
+			memoryEntry( '0x00', 640, 'Header', "Test" );
+			memoryEntry( '0x00', 640, 'Header', "Test" );
+			memoryEntry( '0x00', 640, 'Header', "<a href='" . $homeDir
+					. "file_vms.php#head'>VMS header</a> Information." );
+			memoryEntry( '0x280', 1, 'Unknown', "Unknown - Image Width? (256)" );
+			memoryEntry( '0x281', 1, 'Unknown', "Unknown - Pixel Count + 1? (49,153)" );
+			memoryEntry( '0x282', 2, 'Unknown', "Unknown" );
+			memoryEntry( '0x284', 98,304, 'Pixel Data', "Pixel Data for "
+					. "the screenshot. Pixels are 16-bits "
+					. "and thus every two bytes." );
+			memoryEntry( '0x18284', 2, 'Unknown', "Unknown" );
+			memoryEntry( '0x18286', 2, 'Integer', "The number of players "
+					. "around when the screenshot was taken. (1-15?)" );
+			memoryEntry( '0x18288', 96, 'Unkown', "Map / Location Info?" );
+			memoryEntry( '0x182E8', '24*n', 'String', "Names of players "
+					. "around when the screenshot was taken start here. "
+					. "Names are every 24 bytes after this point till "
+					. "all of the number of players around have been listed. "
+					. "n = Number of Players (<code>0x18286</code>)" );
+		?>
 	</table>
 </p>
 <br>
 
 <!-- Table for Notes -->
-<table cellpadding="3" cellspacing="1" border="0" bgcolor="#6E6E6E">
-	<tr bgcolor="#CCCCCC">
+<table cellpadding="3" cellspacing="1" border="0" bgcolor="<?php echo $tBG; ?>">
+	<tr bgcolor="<?php echo $tHead; ?>">
 		<th colspan="2">Notes</th>
 	</tr>
 
-	<tr bgcolor="#CEEBF5">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>String fields</td>
 		<td>are padded with NUL (<code>0x00</code>).</td>
 	</tr>
-	<tr bgcolor="#FFFFFF">
+	<tr bgcolor="<?php echo ac(); ?>">
 		<td>Integer fields</td>
 		<td>are little endian.</td>
 	</tr>
@@ -182,7 +135,7 @@
 </p>
 <p>
 	The three fields for each 16-bit integer are set up as such:
-	<table cellpadding="3" cellspacing="1" border="0" bgcolor="#6E6E6E">
+	<table cellpadding="3" cellspacing="1" border="0" bgcolor="<?php echo $tBG; ?>">
 		<tr align="center">
 			<td bgcolor="#CC9595">15</td><td bgcolor="#CC9595">14</td><td bgcolor="#CC9595">13</td><td bgcolor="#CC9595">12</td><td bgcolor="#CC9595">11</td>
 			<td bgcolor="#95CCAA">10</td><td bgcolor="#95CCAA">9</td><td bgcolor="#95CCAA">8</td><td bgcolor="#95CCAA">7</td><td bgcolor="#95CCAA">6</td><td bgcolor="#95CCAA">5</td>
@@ -199,7 +152,7 @@
 <p>
 	Function to pull out individual color elements of
 	<br>the first color entry in the color palette:
-	<table bgcolor="#CCCCCC" border="0">
+	<table bgcolor="<?php echo $tHead; ?>" border="0">
 		<tr>
 			<td>
 				<pre>

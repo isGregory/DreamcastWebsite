@@ -1,7 +1,7 @@
 <?php
 	// file_vms.php
-	require_once 'pc_globals.php';
-	require_once 'format.php';
+	require_once 'pc_directories.php';
+	require_once $root . 'format.php';
 
 	$pageTitle = "VMS Eyecatch";
 	$homeDir = "";
@@ -37,9 +37,9 @@
 </p>
 
 <p align="center">The following games use the Graphic Eyecatch:<br>
-	<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:400px;max-width:640px;" bgcolor="#6E6E6E">
-		<tr>
-			<th bgcolor="#CCCCCC">Mode</th><th bgcolor="#CCCCCC">Game</th><th bgcolor="#CCCCCC">Eyecatch</th>
+	<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:400px;max-width:640px;" bgcolor="<?php echo $tBG; ?>">
+		<tr bgcolor="<?php echo $tHead; ?>">
+			<th>Mode</th><th>Game</th><th>Eyecatch</th>
 		</tr>
 		<?php
 			rowEC( 3, "4 Wheel Thunder", "03faaf1d-EC.bmp" );

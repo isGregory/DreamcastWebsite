@@ -4,33 +4,65 @@
 // Usage:
 // require_once 'savefile_lookup.php';
 // $saveInfo = new saveLookup();
-// $saveInfo->buildTable();
 
 class saveLookup {
 	private $savefiles = array();
+	private $isBuilt = false;
 
-	function getGame( $hash ) {
+	function getGame( $vms ) {
+		if ( !$this->isBuilt ) {
+			$this->buildTable();
+		}
+
+		$hash = $vms->getTypeHash();
 		$toReturn = $this->savefiles[ $hash ][ 'game' ];
 		if ( NULL === $toReturn ) {
-			return "Game/Save";
+
+			$hash = $vms->getIconHash();
+			$toReturn = $this->savefiles[ $hash ][ 'game' ];
+			if ( NULL === $toReturn ) {
+				return "Game/Save";
+			}
 		}
 		return $toReturn;
 	}
 
-	function getType( $hash ) {
+	function getType( $vms ) {
+		if ( !$this->isBuilt ) {
+			$this->buildTable();
+		}
+
+		$hash = $vms->getTypeHash();
 		$toReturn = $this->savefiles[ $hash ][ 'type' ];
 		if ( NULL === $toReturn ) {
-			return "Not Documented";
+
+			$firstHash = $hash;
+			$hash = $vms->getIconHash();
+			$toReturn = $this->savefiles[ $hash ][ 'type' ];
+			if ( NULL === $toReturn ) {
+				return "Info: $firstHash"
+					. "<br>Icon: $hash"
+					. "<br>Not Documented";
+			}
 		}
 		return $toReturn;
 	}
 
-	function buildTable() {
+	private function buildTable() {
+
+		$this->isBuilt = true;
+
 		// Table is sorted alphebetically by 'game' name.
 		$this->savefiles = array(
 			"03faaf1d" => array(
 				'game'=>"4 Wheel Thunder",
 				'type'=>"Main Save"),
+			"e1c65aeb" => array(
+				'game'=>"4x4 Evolution",
+				'type'=>"Main Save"),
+			"f98203e9" => array(
+				'game'=>"4x4 Evolution",
+				'type'=>"Custom Track"),
 			"17f3394c" => array(
 				'game'=>"AeroWings",
 				'type'=>"Main Save"),

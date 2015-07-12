@@ -1,7 +1,7 @@
 <?php
 	// file_vmi.php
-	include 'pc_globals.php';
-	include 'format.php';
+	require_once 'pc_directories.php';
+	require_once $root . 'format.php';
 
 	$pageTitle = "LCD File";
 	$homeDir = "";
@@ -14,20 +14,20 @@
 <table cellpadding="3" cellspacing="1" border"0">
 	<tr>
 		<td>
-			<table cellpadding="3" cellspacing="1" border="0" style="max-width:640px;" bgcolor="#6E6E6E">
-				<tr align="center" bgcolor="#BBBBBB">
+			<table cellpadding="3" cellspacing="1" border="0" style="max-width:640px;" bgcolor="<?php echo $tBG; ?>">
+				<tr align="center" bgcolor="<?php echo $indexHead; ?>">
 					<td>LCD File Overview</td>
 				</tr>
-				<tr bgcolor="#CCCCCC">
+				<tr bgcolor="<?php echo $tHead; ?>">
 					<td><a href="#head">LCD Header</a><br><pre>16 Bytes</pre></td>
 				</tr>
-				<tr bgcolor="#EEEEEE">
+				<tr bgcolor="<?php echo $indexSub; ?>">
 					<td><a href="#info">Frame Info</a><br><pre>4 Bytes x Frame Count</pre></td>
 				</tr>
-				<tr bgcolor="#CCCCCC">
+				<tr bgcolor="<?php echo $tHead; ?>">
 					<td><a href="#data">Frame Data</a><br><pre>1536 Bytes x Frame Count</pre></td>
 				</tr>
-				<tr bgcolor="#EEEEEE">
+				<tr bgcolor="<?php echo $indexSub; ?>">
 					<td><a href="#copyright">Copyright</a><br><pre>40 Bytes</pre></td>
 				</tr>
 			</table>
@@ -50,11 +50,11 @@
 
 <p>
 	<a id="head"><b>LCD file header</b></a> (16 Bytes)
-	<table cellpadding="3" cellspacing="1" border="0" style="max-width:640px;" bgcolor="#6E6E6E">
-		<tr bgcolor="#CCCCCC">
+	<table cellpadding="3" cellspacing="1" border="0" style="max-width:640px;" bgcolor="<?php echo $tBG; ?>">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th colspan="2">Offset</th><th rowspan="2">Size (bytes)</th><th rowspan="2">Description</th><th rowspan="2">Value</th>
 		</tr>
-		<tr bgcolor="#CCCCCC">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th>Byte</th><th>Hex</th>
 		</tr>
 		<?php
@@ -80,8 +80,8 @@
 </p>
 <p>
 	<a id="info"><b>Frame Info</b></a> (4 Bytes x Frame Count)
-	<table cellpadding="3" cellspacing="1" border="0" style="max-width:640px;" bgcolor="#6E6E6E">
-		<tr bgcolor="#CCCCCC">
+	<table cellpadding="3" cellspacing="1" border="0" style="max-width:640px;" bgcolor="<?php echo $tBG; ?>">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th>Size (bytes)</th><th>Description</th><th>Value</th>
 		</tr>
 		<?php
@@ -102,8 +102,8 @@
 </p>
 <p>
 	<a id="data"><b>Frame Data</b></a> (1536[48x32] Bytes x Frame Count bytes)
-	<table cellpadding="3" cellspacing="1" border="0" style="max-width:640px;" bgcolor="#6E6E6E">
-		<tr bgcolor="#CCCCCC">
+	<table cellpadding="3" cellspacing="1" border="0" style="max-width:640px;" bgcolor="<?php echo $tBG; ?>">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th>Size (bytes)</th><th>Description</th><th>Value</th>
 		</tr>
 	<?php
@@ -116,8 +116,8 @@
 
 <p>
 	<a id="copyright"><b>Copyright</b></a> (40 bytes)
-	<table cellpadding="3" cellspacing="1" border="0" style="max-width:640px;" bgcolor="#6E6E6E">
-		<tr bgcolor="#CCCCCC">
+	<table cellpadding="3" cellspacing="1" border="0" style="max-width:640px;" bgcolor="<?php echo $tBG; ?>">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th>Size (bytes)</th><th>Description</th><th>Value</th>
 		</tr>
 		<?php

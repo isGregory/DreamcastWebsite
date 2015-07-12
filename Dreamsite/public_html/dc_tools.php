@@ -2,7 +2,7 @@
 //dc_tools.php
 
 require_once 'GIFEncoder.class.php'; // For creating animated GIFs
-require_once 'globals.php';
+require_once 'directories.php';
 
 // $vms = VMS object
 // Returns array of colors
@@ -41,6 +41,7 @@ function iconcreatefromvms( $vms, $frameNum ) {
 	// Define image parameters
 	$width = 32;
 	$height = 32;
+
 
 	// Set up blank image
 	$image = imagecreatetruecolor($width,$height);
@@ -81,7 +82,7 @@ function iconcreatefromvms( $vms, $frameNum ) {
 // $vms = VMS object
 function getvmsframe( $vms, $frameNum ) {
 	global $dirIcons;
-	$imgName = $dirIcons . $vms->getTypeHash();
+	$imgName = $dirIcons . $vms->getIconHash();
 	if ( $frameNum != 0 ) {
 		$imgName .= "-" . $frameNum;
 	}
@@ -97,9 +98,11 @@ function getvmsframe( $vms, $frameNum ) {
 
 // $vms = VMS object
 function createVMSicons( $vms ) {
-	global $dirIcons, $dreamBrowser;
+	require_once 'format.php'; // For $dreamBrowser
+	global $homeDir, $dirIcons, $dreamBrowser;
+
 	$fc = $vms->getNumFrames();
-	$imgName = $dirIcons . $vms->getTypeHash();
+	$imgName = $homeDir . $dirIcons . $vms->getIconHash();
 
 	if ( !file_exists( $imgName . ".gif" ) ) {
 
@@ -268,7 +271,7 @@ function eyecatchcreatefromvms( $vms ) {
 // $vms = VMS object
 function createVMSeyecatch( $vms ) {
 	global $dirEC;
-	$imgName = $dirEC . $vms->getTypeHash() . "-EC";
+	$imgName = $dirEC . $vms->getIconHash() . "-EC";
 
 	if ( !file_exists( $imgName . ".gif" ) ) {
 
@@ -390,7 +393,7 @@ function generateVMI( $vmsFile ) {
 	$fileSize = $vms->getSize();
 
 	// Generate a time field.
-	$time = date( "YmdHisw", filectime( $vms ) );
+	$time = date( "YmdHisw", filectime( $vmsFile ) );
 
 	// Reusing code from "upload.php"
 	// Not the most efficient way to process this.
@@ -506,7 +509,7 @@ class VMS {
 
 	// Return a hashcode that should match with all saves
 	// of the same type from the same game based on the
-	// VMS text and DC Boot Rom Test.
+	// VMS text and DC Boot Rom text.
 	function getTypeHash() {
 
 		// 'crc32' is a short hash that returns 8 bytes
@@ -515,6 +518,23 @@ class VMS {
 		return hash( 'crc32',
 			$this->getVMStext()
 			. $this->getDCBootRomText() );
+	}
+
+	// Certain saves have the exact same VMS text and
+	// DC Boot Rom text, but different images. This program
+ 	// saves all icons under a hash of their values
+	// to save space. But this is also used to differentiate
+	// certain saves when looking up game information on them
+	// and when used to uniquely identify their type.
+	function getIconHash() {
+
+		$toGet = "";
+		// Put the first icon's data into a string.
+		for( $i = 0x80; $i < 512; $i++ ) {
+			$toGet .= $this->get( $i );
+		}
+		// Encode the string and get a hash from it.
+		return hash( 'crc32', base64_encode( $toGet ) );
 	}
 
 	function getSize() {

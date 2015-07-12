@@ -1,7 +1,7 @@
 <?php
 	// file_icondata_vms.php
-	include "pc_globals.php";
-	include "format.php";
+	require_once 'pc_directories.php';
+	require_once $root . 'format.php';
 
 	$pageTitle = "ICONDATA_VMS File";
 	$homeDir = "";

@@ -1,8 +1,8 @@
 <?php
 	// index.php
 	$homeDir = "../../";
-	include $homeDir . "pc_globals.php";
-	include $homeDir . "format.php";
+	require_once $homeDir . 'pc_directories.php';
+	require_once $homeDir . $root . 'format.php';
 	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Phantasy Star Online";
@@ -114,7 +114,7 @@
 			<td align="center"><img src="../../images/save_vmi.png"></td>
 			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
 			<td align="center">??</td>
-			<td align="center">DOWN001</td>
+			<td align="center">Filename</td>
 			<td>Easter Quest - 1 of 3</td>
 			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
 		</tr>
@@ -122,7 +122,7 @@
 			<td align="center"><img src="../../images/save_vmi.png"></td>
 			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
 			<td align="center">??</td>
-			<td align="center">THEME001</td>
+			<td align="center">Filename</td>
 			<td>Easter Quest - 2 of 3</td>
 			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
 		</tr>
@@ -130,7 +130,7 @@
 			<td align="center"><img src="../../images/save_vmi.png"></td>
 			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
 			<td align="center">??</td>
-			<td align="center">DOWN001</td>
+			<td align="center">Filename</td>
 			<td>Easter Quest - 3 of 3</td>
 			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
 		</tr>
@@ -138,7 +138,7 @@
 			<td align="center"><img src="../../images/save_vmi.png"></td>
 			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
 			<td align="center">??</td>
-			<td align="center">THEME001</td>
+			<td align="center">Filename</td>
 			<td>Famitsu Quest - 1 of 3</td>
 			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
 		</tr>
@@ -146,7 +146,7 @@
 			<td align="center"><img src="../../images/save_vmi.png"></td>
 			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
 			<td align="center">??</td>
-			<td align="center">DOWN001</td>
+			<td align="center">Filename</td>
 			<td>Famitsu Quest - 2 of 3</td>
 			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
 		</tr>
@@ -154,7 +154,7 @@
 			<td align="center"><img src="../../images/save_vmi.png"></td>
 			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
 			<td align="center">??</td>
-			<td align="center">THEME001</td>
+			<td align="center">Filename</td>
 			<td>Famitsu Quest - 3 of 3</td>
 			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
 		</tr>
@@ -162,7 +162,7 @@
 			<td align="center"><img src="../../images/save_vmi.png"></td>
 			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
 			<td align="center">??</td>
-			<td align="center">DOWN001</td>
+			<td align="center">Filename</td>
 			<td>Retired Hunter Quest - 1 of 2</td>
 			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
 		</tr>
@@ -170,7 +170,7 @@
 			<td align="center"><img src="../../images/save_vmi.png"></td>
 			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
 			<td align="center">??</td>
-			<td align="center">THEME001</td>
+			<td align="center">Filename</td>
 			<td>Retired Hunter Quest - 2 of 2</td>
 			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
 		</tr>
@@ -178,7 +178,7 @@
 			<td align="center"><img src="../../images/save_vmi.png"></td>
 			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
 			<td align="center">??</td>
-			<td align="center">DOWN001</td>
+			<td align="center">Filename</td>
 			<td>Raw Material Quest - 1 of 2</td>
 			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
 		</tr>
@@ -186,7 +186,7 @@
 			<td align="center"><img src="../../images/save_vmi.png"></td>
 			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
 			<td align="center">??</td>
-			<td align="center">THEME001</td>
+			<td align="center">Filename</td>
 			<td>Raw Material Quest - 2 of 2</td>
 			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
 		</tr>
@@ -194,7 +194,7 @@
 			<td align="center"><img src="../../images/save_vmi.png"></td>
 			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
 			<td align="center">??</td>
-			<td align="center">DOWN001</td>
+			<td align="center">Filename</td>
 			<td>Letter from Lionel Quest - 1 of 2</td>
 			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
 		</tr>
@@ -202,7 +202,7 @@
 			<td align="center"><img src="../../images/save_vmi.png"></td>
 			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
 			<td align="center">??</td>
-			<td align="center">THEME001</td>
+			<td align="center">Filename</td>
 			<td>Letter from Lionel Quest - 2 of 2</td>
 			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
 		</tr>

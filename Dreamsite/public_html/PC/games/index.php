@@ -1,8 +1,8 @@
 <?php
 	// index.php for games/
 	$homeDir = "../";
-	include $homeDir . "pc_globals.php";
-	include $homeDir . "format.php";
+	require_once $homeDir . 'pc_directories.php';
+	require_once $homeDir . $root . 'format.php';
 	global $tHead, $tBG;
 
 	$pageTitle = "Games";
@@ -19,19 +19,19 @@
 	</tr>
 
 	<tr bgcolor="<?php echo ac(); ?>">
-	  <td align='center'><a href='<?php echo $dSA2; ?>/index.php' style='text-decoration:none'>Sonic Adventure 2</a></td>
-	</tr>
-	<tr bgcolor="<?php echo ac(); ?>">
-	  <td align='center'><a href='<?php echo $dShen; ?>/index.php' style='text-decoration:none'>Shenmue</a></td>
-	</tr>
-	<tr bgcolor="<?php echo ac(); ?>">
-	  <td align='center'><a href='<?php echo $dPSOv2; ?>/index.php' style='text-decoration:none'>Phantasy Star Online</a></td>
+	  <td align='center'><a href='<?php echo $d4X4; ?>/index.php' style='text-decoration:none'>4x4 Evolution</a></td>
 	</tr>
 	<tr bgcolor="<?php echo ac(); ?>">
 	  <td align='center'><a href='<?php echo $dJGR; ?>/index.php' style='text-decoration:none'>Jet Grind Radio</a></td>
 	</tr>
 	<tr bgcolor="<?php echo ac(); ?>">
-	  <td align='center'><a href='<?php echo $d4X4; ?>/index.php' style='text-decoration:none'>4x4 Evolution</a></td>
+	  <td align='center'><a href='<?php echo $dPSOv2; ?>/index.php' style='text-decoration:none'>Phantasy Star Online</a></td>
+	</tr>
+	<tr bgcolor="<?php echo ac(); ?>">
+	  <td align='center'><a href='<?php echo $dShen; ?>/index.php' style='text-decoration:none'>Shenmue</a></td>
+	</tr>
+	<tr bgcolor="<?php echo ac(); ?>">
+	  <td align='center'><a href='<?php echo $dSA2; ?>/index.php' style='text-decoration:none'>Sonic Adventure 2</a></td>
 	</tr>
   </table>
 </p>

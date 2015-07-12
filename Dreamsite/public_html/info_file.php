@@ -58,7 +58,7 @@ function getUniqueInfo( $vms ) {
 		?>
 		<tr bgcolor='<?php echo ac(); ?>'>
 			<th>Screenshot</th>
-			<th><img src='$imgName'></th>
+			<th><img src='<?php echo $imgName; ?>'></th>
 		</tr>
 		<?php
 	} else if ( strpos( $vms->getVMStext(), "SHENMUE" ) !== false ) {

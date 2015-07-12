@@ -1,5 +1,5 @@
 <?php
-	include 'globals.php';
+	require_once 'format.php';
 
 	$pageTitle = "VMU Upload";
 	include 'dc_header.php';

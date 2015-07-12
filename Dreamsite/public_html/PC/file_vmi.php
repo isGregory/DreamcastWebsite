@@ -1,7 +1,7 @@
 <?php
 	// file_vmi.php
-	include 'pc_globals.php';
-	include 'format.php';
+	require_once 'pc_directories.php';
+	require_once $root . 'format.php';
 
 	$pageTitle = "VMI File";
 	$homeDir = "";
@@ -21,11 +21,11 @@
 
 <p>
 	A VMI file is 108 bytes in size, and organized as follows:
-	<table cellpadding="3" cellspacing="1" border="0" style="max-width:640px;" bgcolor="#6E6E6E">
-		<tr bgcolor="#CCCCCC">
+	<table cellpadding="3" cellspacing="1" border="0" style="max-width:640px;" bgcolor="<?php echo $tBG; ?>">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th colspan="2">Offset</th><th rowspan="2">Size (bytes)</th><th rowspan="2">Datatype</th><th rowspan="2">Contents</th>
 		</tr>
-		<tr bgcolor="#CCCCCC">
+		<tr bgcolor="<?php echo $tHead; ?>">
 			<th>Byte</th><th>Hex</th>
 		</tr>
 		<?php
@@ -51,8 +51,8 @@
 			<td align="center">2</td>
 			<td>Integer</td>
 			<td>File mode bitfield<br>
-				<table cellpadding="3" cellspacing="1" border="0" bgcolor="#6E6E6E">
-					<tr bgcolor="#CCCCCC">
+				<table cellpadding="3" cellspacing="1" border="0" bgcolor="<?php echo $tBG; ?>">
+					<tr bgcolor="<?php echo $tHead; ?>">
 						<th width="80">15 ... 2</th><th>1</th><th>0</th>
 					</tr>
 					<tr bgcolor="#FFFFFF">

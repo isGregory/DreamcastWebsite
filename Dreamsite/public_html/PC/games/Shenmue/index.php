@@ -1,8 +1,8 @@
 <?php
 	// index.php
 	$homeDir = "../../";
-	include $homeDir . "pc_globals.php";
-	include $homeDir . "format.php";
+	require_once $homeDir . 'pc_directories.php';
+	require_once $homeDir . $root . 'format.php';
 	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Shenmue";

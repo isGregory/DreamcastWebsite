@@ -1,12 +1,13 @@
 <?php
 //dc_footer.php
+require_once 'format.php';
 ?>
 							</td>
 						</tr>
 					</table>
 
 				</tr>
-				<tr bgcolor="#CCCCCC">
+				<tr bgcolor="<?php echo $tHead; ?>">
 					<td align="center">
 						<font size="1">
 							<br>

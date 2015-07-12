@@ -2,7 +2,7 @@
 //pc_footer.php
 ?>
 				</tr>
-				<tr bgcolor="#CCCCCC">
+				<tr bgcolor="<?php echo $tHead; ?>">
 					<td align="center">
 						<font size="1">
 							<br>
