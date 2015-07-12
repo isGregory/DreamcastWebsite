@@ -1,6 +1,5 @@
 <?php
 //dc_header.php
-require_once 'format.php';
 ?>
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 
@@ -28,39 +27,34 @@ require_once 'format.php';
 								<!-- Left Directory Box -->
 								<td style="padding:0px;"><span style="height:100%; width:120px; display:block;overflow:auto">
 									<table cellpadding="3" cellspacing="1" border="0" width="120" height="100%" bgcolor="<?php echo $tBG; ?>">
-										<tr align="center" bgcolor="#BBBBBB">
+										<tr align="center" bgcolor="<?php echo $indexHead; ?>">
 											<td><b>Contents</b></td>
 										</tr>
-										<tr align="center" bgcolor="#DDDDDD">
+										<tr align="center" bgcolor="<?php echo $indexSub; ?>">
 											<td>Files</td>
 										</tr>
-										<tr bgcolor="#CEEBF5">
+										<tr bgcolor="<?php echo ac(); ?>">
 											<td><a href="index.php">Upload</a></td>
 										</tr>
-										<tr bgcolor="#FFFFFF">
+										<tr bgcolor="<?php echo ac(); ?>">
 											<td><a href="browse.php">Browse</a></td>
 										</tr>
-										<tr bgcolor="#CEEBF5">
+										<tr bgcolor="<?php echo ac(); ?>">
 											<td><a href="dlc.php">DLC</a></td>
 										</tr>
-										<tr bgcolor="#FFFFFF">
+										<tr bgcolor="<?php echo ac(); ?>">
 											<td><a href="dc_sites.php">DC Sites</a></td>
 										</tr>
-										<tr rowspan="2" align="center" bgcolor="#DDDDDD">
+										<tr rowspan="2" align="center" bgcolor="<?php echo $indexSub; ?>">
 											<td>Other</td>
 										</tr>
-										<tr bgcolor="#CEEBF5">
+										<tr bgcolor="<?php echo ac(); ?>">
 											<td><a href="PC/index.php">PC Site</a></td>
 										</tr>
-										<tr bgcolor="#FFFFFF">
+										<tr bgcolor="<?php echo ac(); ?>">
 											<td><a href="http://sonic.dricas.ne.jp">Sonic</a></td>
 										</tr>
-										<!--
-										<tr bgcolor="#CEEBF5">
-											<td><a href="#gweb">Shenmue</a></td>
-										</tr>
-										-->
 									</table>
 								</td>
-								<!-- Right Size Body Content -->
+								<!-- Right Side Body Content -->
 								<td>
