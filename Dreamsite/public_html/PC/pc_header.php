@@ -27,7 +27,6 @@
 							<th><a href="<?php echo $homeDir; ?>../index.php" style="text-decoration:none">DC Site</a></th>
 							<th><a href="<?php echo $homeDir; ?>games/index.php" style="text-decoration:none">Games</a></th>
 							<th><a href="<?php echo $homeDir; ?>vmu.php" style="text-decoration:none">VMU</a></th>
-							<th><a href="<?php echo $homeDir; ?>links.php" style="text-decoration:none">Links</a></th>
 							<th><a href="<?php echo $homeDir; ?>thanks.php" style="text-decoration:none">Thanks</a></th>
 						</tr></table>
 					</th>

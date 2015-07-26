@@ -1,11 +1,14 @@
 <?php
+	// index.php
+	$homeDir = "";
+	require_once 'directories.php';
 	require_once 'format.php';
 
 	$pageTitle = "VMU Upload";
 	include 'dc_header.php';
 ?>
 
-<h3 align="left"><u><a id="dlc">Upload File</a></u></h3>
+<h3 align="left"><u><?php echo $pageTitle; ?></u></h3>
 <table align="center" bgcolor="#9BB8C2" cellspacing="2" cellpadding="0" border="0">
 	<tr><td align="center"><b>VMU File Uploader</b></td></tr>
 	<tr><td bgcolor="#CEEBF5" align="center"><br>

@@ -168,7 +168,7 @@ class saveLookup {
 			"aee1b12e" => array(
 				'game'=>"Star Wars Episode 1 Podracer",
 				'type'=>"Main Save"),
-			"301fa090" => array(
+			"0ac9f428" => array(
 				'game'=>"Starlancer",
 				'type'=>"Main Save"),
 			"505b6027" => array(

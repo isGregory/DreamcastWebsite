@@ -1,5 +1,6 @@
 <?php
 	//info.php
+	$homeDir = "";
 	require_once 'directories.php';
 	require_once 'format.php';
 

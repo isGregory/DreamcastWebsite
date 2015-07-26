@@ -23,7 +23,7 @@
 	// Index sub header color
 	$indexSub = "#E0E0E0";
 
-	$dcBGimg = "images/tile.png";
+	$dcBGimg = "tile.png";
 
 	// Get browser information
 	// Example. Planetweb 2.6 returns:
@@ -149,11 +149,38 @@
 		<?php
 	}
 
+	function dlcOpenTable() {
+		global $dreamBrowser, $tHead, $tBG;
+		$span = 2;
+		if ( $dreamBrowser ) {
+			$span = 1;
+		}
+		?>
+			<table align="center" cellpadding="3" cellspacing="1" border="0" width="90%" bgcolor="<?php echo $tBG; ?>">
+				<tr bgcolor="<?php echo $tHead; ?>">
+					<th colspan="<?php echo $span; ?>">Downloads</th><th width="65px" rowspan="2">Size<br>(Blocks)</th><th width="100px" rowspan="2">File Name</th><th rowspan="2">Description</th><th width="34px" rowspan="2">Icon</th>
+				</tr>
+				<tr bgcolor="<?php echo $tHead; ?>">
+					<th width="34px">VMI</th>
+					<?php if ( !$dreamBrowser ) { ?>
+						<th width="34px">VMS</th>
+					<?php } ?>
+				</tr>
+		<?php
+	}
+
+	// Formats DLC information taking in just a string filename.
+	// This is seen on PC site game pages.
+	// To load DLC file "ABC.vmi" $file would be "ABC"
+	// $file     String of file name.
 	function dlcEntry( $file ) {
 		require_once dirname(__FILE__) . '/dc_tools.php';
-		global $homeDir, $root, $dirDLC, $dirImages;
+		global $homeDir, $root, $dirDLC, $dirImages, $dreamBrowser;
 
 		$filename = $homeDir . $dirDLC . $file . ".vmi";
+		if ( ! file_exists( $filename ) ) {
+			return;
+		}
 		$VMSname = getVMSnamefromVMI( $filename );
 		$VMIfile = end( explode( "/", $filename ) );
 
@@ -172,16 +199,28 @@
 						<img src="<?php echo $homeDir . $dirImages . "save_vmi.png"?>">
 					</a>
 				</td>
-				<td align="center">
-					<a href="<?php echo $homeDir . $root . "vmidl.php?id=dlc/$VMIfile&t=s" ?>">
-						<img src="<?php echo $homeDir . $dirImages . "save_vms.png"?>">
-					</a>
-				</td>
+				<?php
+					if ( !$dreamBrowser ) {
+				?>
+					<td align="center">
+						<a href="<?php echo $homeDir . $root . "vmidl.php?id=dlc/$VMIfile&t=s" ?>">
+							<img src="<?php echo $homeDir . $dirImages . "save_vms.png"?>">
+						</a>
+					</td>
+				<?php
+					}
+				?>
 				<td align="center"><?php echo $blocks; ?></td>
 				<td align="center"><?php echo $file; ?></td>
 				<td><?php echo $luType; ?></td>
 				<td align="center"><img src='<?php echo $imgName; ?>'></td>
 			</tr>
+		<?php
+	}
+
+	function dlcCloseTable() {
+		?>
+			</table>
 		<?php
 	}
 ?>

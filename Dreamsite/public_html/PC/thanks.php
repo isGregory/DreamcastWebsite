@@ -1,5 +1,7 @@
 <?php
 	// thanks.php
+	require_once 'pc_directories.php';
+	require_once $root . 'format.php';
 
 	$pageTitle = "Special Thanks";
 	$homeDir = "";

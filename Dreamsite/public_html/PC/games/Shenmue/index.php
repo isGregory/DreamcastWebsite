@@ -59,7 +59,7 @@
 			<td align="center"><a href="saves_file.php" style="text-decoration:none">Main Data</a></td>
 			<td align="center">80</td>
 			<td>Save file for the main game data.</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "2f24bef9-a.gif"?>"></td>
+			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4b47328b-a.gif"?>"></td>
 		</tr>
 	</table>
 </p>

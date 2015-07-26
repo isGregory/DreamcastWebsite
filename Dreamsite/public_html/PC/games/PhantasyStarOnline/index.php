@@ -72,19 +72,19 @@
 			<td align="center"><a href="saves_file.php" style="text-decoration:none"><font color="#FF0000">Main Data</font></a></td>
 			<td align="center">15</td>
 			<td>Save file for the main game character.</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "aa684f21.gif"?>"></td>
+			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "737ed5a6.gif"?>"></td>
 		</tr>
 		<tr bgcolor="<?php echo ac(); ?>">
 			<td align="center"><a href="saves_file.php" style="text-decoration:none"><font color="#FF0000">Guild Card</font></a></td>
 			<td align="center">30</td>
 			<td>Save file for PSO Guild Card.</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "d18229c3.gif"?>"></td>
+			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "45a6132d.gif"?>"></td>
 		</tr>
 		<tr bgcolor="<?php echo ac(); ?>">
 			<td align="center"><a href="saves_photo.php" style="text-decoration:none">Screen Image</a></td>
 			<td align="center">195</td>
 			<td>Save file for an in-game screenshot.</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "5744bd39.gif"?>"></td>
+			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "8ce2e2d9.gif"?>"></td>
 		</tr>
 	</table>
 </p>

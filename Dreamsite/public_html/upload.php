@@ -20,6 +20,7 @@
 
 // Include to check if they're using a dreamcast web-browser
 // and get the specified upload directory.
+$homeDir = "";
 require_once 'directories.php';
 require_once 'format.php';
 

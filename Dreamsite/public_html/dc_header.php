@@ -9,50 +9,53 @@
 			<title><?php echo $pageTitle; ?></title>
 		</head>
 
-		<body link="#0022EE" vlink="#0022EE" alink="red" text="black" bgcolor="grey" background='<?php echo $dcBGimg; ?>'>
+		<body link="#0022EE" vlink="#0022EE" alink="red" text="black" bgcolor="grey" background='<?php echo $homeDir . $dirImages . $dcBGimg; ?>'>
 
 			<font face="Helvetica">
 				<table cellpadding="2" cellspacing="0" border="1" width="500" align="center" bgcolor="#FFFFFF">
 
 					<!-- Main Title Image -->
 					<tr bgcolor="<?php echo $tHead; ?>">
-						<th align="center"><img src="images/title_dc.png" alt="" align="center" width="500" height="50"></th>
+						<th align="center"><img src="<?php echo $homeDir . $dirImages; ?>title_dc.png" alt="" align="center" width="500" height="50"></th>
 					</tr>
 
 					<!-- Body -->
-					<tr background="images/tile2.png"><td align="center">
+					<tr background="<?php echo $homeDir . $dirImages; ?>tile2.png"><td align="center">
 
 						<table cellpadding="2" cellspacing="0" border"0" width="100%">
 							<tr>
 								<!-- Left Directory Box -->
 								<td style="padding:0px;"><span style="height:100%; width:120px; display:block;overflow:auto">
 									<table cellpadding="3" cellspacing="1" border="0" width="120" height="100%" bgcolor="<?php echo $tBG; ?>">
-										<tr align="center" bgcolor="<?php echo $indexHead; ?>">
+										<tr align="center" height="20px" bgcolor="<?php echo $indexHead; ?>">
 											<td><b>Contents</b></td>
 										</tr>
-										<tr align="center" bgcolor="<?php echo $indexSub; ?>">
+										<tr align="center" height="20px" bgcolor="<?php echo $indexSub; ?>">
 											<td>Files</td>
 										</tr>
-										<tr bgcolor="<?php echo ac(); ?>">
-											<td><a href="index.php">Upload</a></td>
+										<tr height="20px" bgcolor="<?php echo ac(); ?>">
+											<td><a href="<?php echo $homeDir; ?>index.php">Upload</a></td>
 										</tr>
-										<tr bgcolor="<?php echo ac(); ?>">
-											<td><a href="browse.php">Browse</a></td>
+										<tr height="20px" bgcolor="<?php echo ac(); ?>">
+											<td><a href="<?php echo $homeDir; ?>browse.php">Browse</a></td>
 										</tr>
-										<tr bgcolor="<?php echo ac(); ?>">
-											<td><a href="dlc.php">DLC</a></td>
+										<tr height="20px" bgcolor="<?php echo ac(); ?>">
+											<td><a href="<?php echo $homeDir; ?>DLC/index.php">DLC</a></td>
 										</tr>
-										<tr bgcolor="<?php echo ac(); ?>">
-											<td><a href="dc_sites.php">DC Sites</a></td>
+										<tr height="20px" bgcolor="<?php echo ac(); ?>">
+											<td><a href="<?php echo $homeDir; ?>dc_sites.php">DC Sites</a></td>
 										</tr>
-										<tr rowspan="2" align="center" bgcolor="<?php echo $indexSub; ?>">
+										<tr height="20px" rowspan="2" align="center" bgcolor="<?php echo $indexSub; ?>">
 											<td>Other</td>
 										</tr>
-										<tr bgcolor="<?php echo ac(); ?>">
-											<td><a href="PC/index.php">PC Site</a></td>
+										<tr height="20px" bgcolor="<?php echo ac(); ?>">
+											<td><a href="<?php echo $homeDir; ?>PC/index.php">PC Site</a></td>
 										</tr>
-										<tr bgcolor="<?php echo ac(); ?>">
+										<tr height="20px" bgcolor="<?php echo ac(); ?>">
 											<td><a href="http://sonic.dricas.ne.jp">Sonic</a></td>
+										</tr>
+										<tr bgcolor="<?php echo $indexSub; ?>">
+											<td></td>
 										</tr>
 									</table>
 								</td>

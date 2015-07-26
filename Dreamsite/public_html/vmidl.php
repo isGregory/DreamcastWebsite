@@ -1,6 +1,8 @@
 <?php
-
+// vmidl.php
+$homeDir = "";
 require_once 'directories.php';
+require_once 'format.php';
 require_once 'dc_tools.php';
 global $dirSave, $homeDir;
 

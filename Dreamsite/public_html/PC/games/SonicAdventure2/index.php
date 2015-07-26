@@ -74,13 +74,13 @@
 			<td align="center"><a href="saves_main.php" style="text-decoration:none"><font color="#FF0000">Main Game</font></a></td>
 			<td align="center">18</td>
 			<td>Save file for the main game story.</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "7aadd2f3.gif"?>"></td>
+			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "b7d2cbf3.gif"?>"></td>
 		</tr>
 		<tr bgcolor="<?php echo ac(); ?>">
 			<td align="center"><a href="saves_chao.php" style="text-decoration:none">Chao Save</a></td>
 			<td align="center">52</td>
 			<td>Save file for Chao world.</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "86df7f16-a.gif"?>"></td>
+			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "657c7762-a.gif"?>"></td>
 		</tr>
 	</table>
 </p>
@@ -92,15 +92,9 @@
 		Various downloadable content was released for this
 		game as follows.
 	</p>
-	<table align="center" cellpadding="3" cellspacing="1" border="0" width="90%" bgcolor="<?php echo $tBG; ?>">
-		<tr bgcolor="<?php echo $tHead; ?>">
-			<th colspan="2">Downloads</th><th width="65px" rowspan="2">Size<br>(Blocks)</th><th width="100px" rowspan="2">File Name</th><th rowspan="2">Description</th><th width="34px" rowspan="2">Icon</th>
-		</tr>
-		<tr bgcolor="<?php echo $tHead; ?>">
-			<th width="34px">VMI</th><th width="34px">VMS</th>
-		</tr>
 
-		<?php
+	<?php
+		dlcOpenTable();
 			dlcEntry('DOWN001');
 			dlcEntry('DOWN002');
 			dlcEntry('DOWN003');
@@ -116,8 +110,8 @@
 			dlcEntry('THEME010');
 			dlcEntry('THEME011');
 			dlcEntry('THEME012');
-		?>
-	</table>
+		dlcCloseTable();
+	?>
 </p>
 
 <hr>

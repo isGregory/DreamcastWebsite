@@ -1,5 +1,7 @@
 <?php
 	// index.php
+	require_once 'pc_directories.php';
+	require_once $root . 'format.php';
 
 	$pageTitle = "Home";
 	$homeDir = "";

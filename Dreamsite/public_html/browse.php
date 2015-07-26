@@ -1,10 +1,11 @@
 <?php
 	//browse.php
+	$homeDir = "";
 	require_once 'directories.php';
 	require_once 'format.php';
 
 	$p = isset($_GET["p"]) ? $_GET["p"] : false;
-	if ($p === false) {
+	if ( false === $p ) {
 		$p = 1;
 	}
 
@@ -37,7 +38,32 @@
 			echo "<a href='browse.php?p=$prev'>Page $prev</a>";
 			echo "< - - - ";
 		}
-		echo "Page $p";
+		$range = 8;
+		$start = $p - ( $range / 2 );
+		$end = $p + ( $range / 2 );
+		if ( $start < 1 ) {
+			$start = 1;
+			$end = $start + $range;
+			if ( $end > $pages ) {
+				$end = $pages;
+			}
+		} else if ( $end > $pages ) {
+			$end = $pages;
+			$start = $end - $range;
+			if ( $start < 1 ) {
+				$start = 1;
+			}
+		}
+
+		// echo "Page $p";
+		for ( $i = $start; $i <= $end; $i++ ){
+			if ( 0 === $p - $i ) {
+				echo " $i ";
+			} else {
+				echo " <a href='browse.php?p=$i'>$i</a> ";
+			}
+		}
+
 		if ( $p < $pages ) {
 			$next = $p + 1;
 			echo " - - - >";
@@ -53,11 +79,12 @@
 	Click the blocks size to download each file.
 </p>
 <?php
+	echo "Page $p of $pages";
 	drawPageNavBar();
 ?>
 
-<table cellpadding="3" cellspacing="1" border="0" width="100%" bgcolor="#6E6E6E">
-	<tr bgcolor="#CCCCCC">
+<table cellpadding="3" cellspacing="1" border="0" width="100%" bgcolor="<?php echo $tBG; ?>">
+	<tr bgcolor="<?php echo $tHead; ?>">
 		<th>File</th><th>Blocks</th><th>Date Added</th><th>Icon</th>
 	</tr>
 	<?php
@@ -69,6 +96,7 @@
 
 				$VMSname = getVMSnamefromVMI( $filefound );
 				$VMIfile = end( explode( "/", $filefound ) );
+				$filehead = current( explode( ".", $VMIfile ) );
 
 				$vms = new VMS;
 				$vms->load( $dirSave . $VMSname );
@@ -78,7 +106,7 @@
 				$blocks = $vms->getBlocks();
 				?>
 					<tr bgcolor="<?php echo ac(); ?>">
-						<td><a href='<?php echo "info.php?s=" . $VMIfile; ?>'><?php echo $VMIfile; ?></a></td>
+						<td><a href='<?php echo "info.php?s=" . $VMIfile; ?>'><?php echo $filehead; ?></a></td>
 						<td align='center'>
 							<a href='<?php echo "vmidl.php?id=" . $VMIfile . "&t=i"; ?>'><?php echo $blocks; ?></a>
 						</td>
