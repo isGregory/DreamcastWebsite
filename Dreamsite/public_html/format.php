@@ -108,6 +108,7 @@
 	}
 
 	function memoryTable() {
+		global $tHead, $tBG;
 		?>
 			<table cellpadding='3' cellspacing='1' border='0' style='max-width:640px;' bgcolor='<?php echo $tBG; ?>'>
 				<tr bgcolor='<?php echo $tHead; ?>'>
@@ -179,6 +180,13 @@
 
 		$filename = $homeDir . $dirDLC . $file . ".vmi";
 		if ( ! file_exists( $filename ) ) {
+			?>
+			<tr bgcolor="<?php echo ac(); ?>">
+				<td align="center" colspan="6">
+					Currently missing <?php echo "$file"; ?>
+				</td>
+			</tr>
+			<?php
 			return;
 		}
 		$VMSname = getVMSnamefromVMI( $filename );
@@ -194,7 +202,7 @@
 		$luType = $luSaves->getType( $vms );
 		?>
 			<tr bgcolor="<?php echo ac(); ?>">
-				<td align="center">
+				<td align="center" <?php if ( $dreamBrowser ) { echo 'colspan="2"'; } ?> >
 					<a href="<?php echo $homeDir . $root . "vmidl.php?id=dlc/$VMIfile&t=i" ?>">
 						<img src="<?php echo $homeDir . $dirImages . "save_vmi.png"?>">
 					</a>

@@ -79,7 +79,10 @@ function iconcreatefromvms( $vms, $frameNum ) {
 	return $image;
 }
 
+// This function will get the specific icon frame
+//
 // $vms = VMS object
+// $frameNum = which icon to get [ 0 - 2 ]
 function getvmsframe( $vms, $frameNum ) {
 	global $dirIcons;
 	$imgName = $dirIcons . $vms->getIconHash();
