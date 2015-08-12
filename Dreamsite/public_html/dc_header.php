@@ -42,22 +42,21 @@
 										<tr height="20px" bgcolor="<?php echo ac(); ?>">
 											<td><a href="<?php echo $homeDir; ?>DLC/index.php">DLC</a></td>
 										</tr>
-										<tr height="20px" bgcolor="<?php echo ac(); ?>">
-											<td><a href="<?php echo $homeDir; ?>dc_sites.php">DC Sites</a></td>
-										</tr>
-										<tr height="20px" rowspan="2" align="center" bgcolor="<?php echo $indexSub; ?>">
+										<tr align="center" height="20px" bgcolor="<?php echo $indexSub; ?>">
 											<td>Other</td>
+										</tr>
+										<tr height="20px" bgcolor="<?php echo ac(); ?>">
+											<td><a href="<?php echo $homeDir; ?>links/index.php">DC Links</a></td>
 										</tr>
 										<tr height="20px" bgcolor="<?php echo ac(); ?>">
 											<td><a href="<?php echo $homeDir; ?>PC/index.php">PC Site</a></td>
 										</tr>
-										<tr height="20px" bgcolor="<?php echo ac(); ?>">
-											<td><a href="http://sonic.dricas.ne.jp">Sonic</a></td>
-										</tr>
+										<?php // The following row is a buffer ?>
 										<tr bgcolor="<?php echo $indexSub; ?>">
 											<td></td>
 										</tr>
 									</table>
 								</td>
+								<?php resetAC(); ?>
 								<!-- Right Side Body Content -->
 								<td>

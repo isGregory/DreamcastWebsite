@@ -7,7 +7,7 @@
 	$s = isset($_GET["s"]) ? $_GET["s"] : false;
 
 	require_once 'dc_tools.php';
-	require_once 'savefile_lookup.php';
+	require_once 'lookup_savefile.php';
 	$luSaves = new saveLookup();
 
 	$pageTitle = "File Info";

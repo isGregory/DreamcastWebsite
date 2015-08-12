@@ -2,7 +2,9 @@
 	// index.php
 	$homeDir = "../../";
 	require_once $homeDir . 'pc_directories.php';
+	require_once $homeDir . $root . 'lookup_game.php';
 	require_once $homeDir . $root . 'format.php';
+	require_once $homeDir . $root . 'format_links.php';
 	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Shenmue";
@@ -66,22 +68,7 @@
 
 <hr>
 
-<p align="left"><h3 align="left"><u><a id="gweb">In-Game Websites</a></u></h3>
-	<p align="left">
-		These are websites that are accessable through
-		the Passport included as Disk 4.
-	</p>
-	<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:600px;max-width:640px;" bgcolor="<?php echo $tBG; ?>">
-		<tr bgcolor="<?php echo $tHead; ?>">
-			<th align="center">Site</th><th align="center">URL</th><th align="center">Link</th>
-		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td>USA Site</td>
-			<td align="right"><code>passport.shenmue.com</code></td>
-			<td align="center"><code><a href="passport.shenmue.com">Link</a></code></td>
-		</tr>
-	</table>
-</p>
+<?php callLinkFunction( SHENMUE ); ?>
 
 <?php
 	$from = getcwd() . "/index.php";

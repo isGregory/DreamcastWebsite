@@ -1,18 +1,22 @@
 <?php
 	// DLC/index.php
 	$homeDir = "../";
-	require_once 'dlc_directories.php';
+	require_once 'links_directories.php';
 	require_once $homeDir . 'lookup_game.php';
 	require_once $homeDir . 'format.php';
-	require_once $homeDir . 'format_dlc.php';
+	require_once $homeDir . 'format_links.php';
 
-	$pageTitle = "Downloadable Content";
+	$pageTitle = "Dreamcast Websites";
 	include $homeDir . 'dc_header.php';
 ?>
 
 <h3 align="left"><u><?php echo $pageTitle; ?></u></h3>
 <p align="left">
-	The following are games with official DLC. Click to see files available.
+	The following are links to sites made for the dreamcast.
+	Many of these sites are no longer active, but various users
+	have been rebuilding these sites which can be added to your server.
+	<br>
+	<br>
 
 	<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:300px;max-width:540px;" bgcolor="<?php echo $tBG; ?>">
 		<tr>
@@ -20,11 +24,12 @@
 		</tr>
 
 		<?php
-			printDLCEntry( PHANTASY_STAR_ONLINE_V1 );
-			printDLCEntry( SONIC_ADVENTURE );
-			printDLCEntry( SONIC_ADVENTURE_2 );
+			printLinkEntry( JET_GRIND_RADIO );
+			printLinkEntry( PHANTASY_STAR_ONLINE_V1 );
+			printLinkEntry( PHANTASY_STAR_ONLINE_V2 );
+			printLinkEntry( SHENMUE );
+			printLinkEntry( SONIC_ADVENTURE_2 );
 		?>
-
 	</table>
 </p>
 <br>

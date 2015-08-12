@@ -1,8 +1,8 @@
 <?php
-// savefile_lookup.php
+// lookup_savefile.php
 //
 // Usage:
-// require_once 'savefile_lookup.php';
+// require_once 'lookup_savefile.php';
 // $saveInfo = new saveLookup();
 
 class saveLookup {

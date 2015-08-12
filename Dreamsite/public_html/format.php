@@ -39,6 +39,11 @@
 		$dreamBrowser = false;
 	}
 
+	function resetAC() {
+		global $cur, $C1;
+		$cur = $C1;
+	}
+
 	// Used to alternate colors (ac) between the
 	// two main ones for the rows of tables.
 	function ac() {
@@ -130,6 +135,15 @@
 		fiveEntry( hexdec( $hex ), $hex, $size, $type, $contents );
 	}
 
+	function memoryHeader( $content ) {
+		global $indexSub;
+		?>
+			<tr bgcolor='<?php echo $indexSub; ?>'>
+				<td colspan='5' align='center'><?php echo $content; ?></td>
+			</tr>
+		<?php
+	}
+
 	function fourColorPalette() {
 		global $tBG;
 		?>
@@ -178,11 +192,16 @@
 		require_once dirname(__FILE__) . '/dc_tools.php';
 		global $homeDir, $root, $dirDLC, $dirImages, $dreamBrowser;
 
+		$span = 6;
+		if ( $dreamBrowser ) {
+			$span = 5;
+		}
+
 		$filename = $homeDir . $dirDLC . $file . ".vmi";
 		if ( ! file_exists( $filename ) ) {
 			?>
 			<tr bgcolor="<?php echo ac(); ?>">
-				<td align="center" colspan="6">
+				<td align="center" colspan="<?php echo $span; ?>">
 					Currently missing <?php echo "$file"; ?>
 				</td>
 			</tr>
@@ -197,7 +216,7 @@
 		$imgName = createVMSicons( $vms );
 		$blocks = $vms->getBlocks();
 
-		require_once dirname(__FILE__) . '/savefile_lookup.php';
+		require_once dirname(__FILE__) . '/lookup_savefile.php';
 		$luSaves = new saveLookup();
 		$luType = $luSaves->getType( $vms );
 		?>
@@ -220,13 +239,65 @@
 				?>
 				<td align="center"><?php echo $blocks; ?></td>
 				<td align="center"><?php echo $file; ?></td>
-				<td><?php echo $luType; ?></td>
+				<td>
+					<?php echo $luType; ?>
+					<a href='link'>Read More</a>
+				</td>
 				<td align="center"><img src='<?php echo $imgName; ?>'></td>
 			</tr>
 		<?php
 	}
 
 	function dlcCloseTable() {
+		?>
+			</table>
+		<?php
+	}
+
+
+	function linkOpenTable() {
+		global $tHead, $tBG;
+
+		if ( $dreamBrowser ) {
+		?>
+			<table align="center" cellpadding="3" cellspacing="1" border="0" width="90%" bgcolor="<?php echo $tBG; ?>">
+				<tr bgcolor="<?php echo $tHead; ?>">
+					<th>Site</th>
+				</tr>
+
+		<?php } else { ?>
+
+			<table align="center" cellpadding="3" cellspacing="1" border="0" width="90%" bgcolor="<?php echo $tBG; ?>">
+				<tr bgcolor="<?php echo $tHead; ?>">
+					<th width="140px" align="center">Site</th><th align="center">URL</th><th width="35px" align="center">Link</th>
+				</tr>
+		<?php
+		}
+	}
+
+	function linkEntry( $name, $link ) {
+		global $dreamBrowser;
+
+		if ( $dreamBrowser ) {
+		?>
+
+			<tr bgcolor="<?php echo altc(); ?>">
+				<td align="center"><a href="http://<?php echo $link;?>"><?php echo $name; ?></a></td>
+			</tr>
+
+		<?php } else { ?>
+
+			<tr bgcolor="<?php echo altc(); ?>">
+				<td><?php echo $name; ?></td>
+				<td align="right"><code><?php echo $link; ?></code></td>
+				<td align="center"><code><a href="http://<?php echo $link;?>">Link</a></code></td>
+			</tr>
+
+		<?php
+		}
+	}
+
+	function linkCloseTable() {
 		?>
 			</table>
 		<?php

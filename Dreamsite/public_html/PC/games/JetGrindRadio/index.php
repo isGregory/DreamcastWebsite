@@ -2,7 +2,9 @@
 	// index.php
 	$homeDir = "../../";
 	require_once $homeDir . 'pc_directories.php';
+	require_once $homeDir . $root . 'lookup_game.php';
 	require_once $homeDir . $root . 'format.php';
+	require_once $homeDir . $root . 'format_links.php';
 	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Jet Grind Radio";
@@ -118,33 +120,7 @@
 
 <hr>
 
-<p><h3 align="left"><u><a id="gweb">In-Game Websites</a></u></h3>
-	<p align="left">
-		These are websites that are accessable through
-		in-game menus. Only the Japanese site is known to have been
-		backed up.
-	</p>
-	<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:600px;max-width:640px;" bgcolor="<?php echo $tBG; ?>">
-		<tr bgcolor="<?php echo $tHead; ?>">
-			<th align="center">Site</th><th align="center">URL</th><th align="center">Link</th>
-		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td>USA Site</td>
-			<td align="right"><code>jetgrindradio.web.dreamcast.com</code></td>
-			<td align="center"><code><a href="http://jetgrindradio.web.dreamcast.com">Link</a></code></td>
-		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td>Europe Site</td>
-			<td align="right"><code>jetsetradio.dream-key.com</code></td>
-			<td align="center"><code><a href="http://jetsetradio.dream-key.com">Link</a></code></td>
-		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td>Japanese Site</td>
-			<td align="right"><code>jet.dricas.ne.jp</code></td>
-			<td align="center"><code><a href="http://jet.dricas.ne.jp">Link</a></code></td>
-		</tr>
-	</table>
-</p>
+<?php callLinkFunction( JET_GRIND_RADIO ); ?>
 
 <?php
 	$from = getcwd() . "/index.php";

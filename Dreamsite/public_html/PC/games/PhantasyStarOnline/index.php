@@ -2,7 +2,9 @@
 	// index.php
 	$homeDir = "../../";
 	require_once $homeDir . 'pc_directories.php';
+	require_once $homeDir . $root . 'lookup_game.php';
 	require_once $homeDir . $root . 'format.php';
+	require_once $homeDir . $root . 'format_links.php';
 	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Phantasy Star Online";
@@ -269,7 +271,7 @@
 		<br><br>
 		<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:400px;max-width:640px;" bgcolor="<?php echo $tBG; ?>">
 			<tr bgcolor="<?php echo $tHead; ?>">
-				<th align="center">Shot Type</th><th align="center">">Instructions</th>
+				<th align="center">Shot Type</th><th align="center">Instructions</th>
 			</tr>
 			<tr bgcolor="<?php echo ac(); ?>">
 				<td>Closeup of Screen</td>
@@ -292,50 +294,7 @@
 
 <hr>
 
-<p><h3 align="left"><u><a id="gweb">In-Game Websites</a></u></h3>
-	<p align="left">
-		These are websites that are accessable through in-game menus.
-	</p>
-	<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:600px;max-width:640px;" bgcolor="<?php echo $tBG; ?>">
-		<tr bgcolor="<?php echo $tHead; ?>">
-			<th align="center">Site</th><th align="center">">URL</th><th align="center">Link</th>
-		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td>Main Site</td>
-			<td align="right"><code>pso.dricas.ne.jp</code></td>
-			<td align="center"><code><a href="http://pso.dricas.ne.jp">Link</a></code></td>
-		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td>Buying a Hunter License</td>
-			<td align="right"><code>www.dricas.com/pso/signup_top.html</code></td>
-			<td align="center"><code><a href="http://www.dricas.com/pso/signup_top.html">Link</a></code></td>
-		</tr>
-	</table>
-</p>
-
-<hr>
-
-<p><h3 align="left"><u><a id="eweb">External Websites</a></u></h3>
-	<p align="left">
-		These are links to official websites that hosted
-		supplemental information about the game.
-	</p>
-	<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:600px;max-width:640px;" bgcolor="<?php echo $tBG; ?>">
-		<tr bgcolor="<?php echo $tHead; ?>">
-			<th align="center">Site</th><th align="center">URL</th><th align="center">Link</th>
-		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td>Sega Game Page</td>
-			<td align="right"><code>score.sega.com/games/phantasystaronline/</code></td>
-			<td align="center"><code><a href="http://score.sega.com/games/phantasystaronline/">Link</a></code></td>
-		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td>Sonic Team Site</td>
-			<td align="right"><code>www.sonicteam.com/pso/english/home.html</code></td>
-			<td align="center"><code><a href="http://www.sonicteam.com/pso/english/home.html">Link</a></code></td>
-		</tr>
-	</table>
-</p>
+<?php callLinkFunction( PHANTASY_STAR_ONLINE_V1 ); ?>
 
 <hr>
 

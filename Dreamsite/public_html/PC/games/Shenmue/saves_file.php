@@ -49,11 +49,7 @@
 			memoryEntry( '0x00', 1664, 'Bytes', '<a href="../../file_vms.html">Header</a> with 3-frame animated icon.' );
 			memoryEntry( '0x680', 32, 'Bytes', 'Unknown' );
 
-			?>
-				<tr bgcolor='<?php $indexSub; ?>'>
-					<td colspan='5' align='center'>Start "Resume" - Save File Times</td>
-				</tr>
-			<?php
+			memoryHeader( 'Start "Resume" - Save File Times' );
 
 			memoryEntry( '0x700', 2, 'Integer', 'SaveTime - Year <span style=\"float:right;\">( 4 Digit Year - ie 1998 )</span>' );
 			memoryEntry( '0x702', 1, 'Integer', 'SaveTime - Month <span style=\"float:right;\">( 1 - 12 )</span>' );
@@ -73,19 +69,11 @@
 			memoryEntry( '0x710', 8, 'Bytes', 'Unknown' );
 			memoryEntry( '0x718', 4, 'Text', 'Entry Point?' );
 
-			?>
-				<tr bgcolor='<?php $indexSub; ?>'>
-					<td colspan='5' align='center'>End "Resume" - Save File Times</td>
-				</tr>
-			<?php
+			memoryHeader( 'End "Resume" - Save File Times' );
 
 			memoryEntry( '0x71C', 36, 'Bytes', 'Unknown' );
 
-			?>
-				<tr bgcolor='<?php $indexSub; ?>'>
-					<td colspan='5' align='center'>Start Slot 1 - Save File Times</td>
-				</tr>
-			<?php
+			memoryHeader( 'Start Slot 1 - Save File Times' );
 
 			memoryEntry( '0x740', 2, 'Integer', 'SaveTime - Year <span style=\"float:right;\">( 4 Digit Year - ie 1998 )</span>' );
 			memoryEntry( '0x742', 1, 'Integer', 'SaveTime - Month <span style=\"float:right;\">( 1 - 12 )</span>' );
@@ -105,19 +93,11 @@
 			memoryEntry( '0x750', 8, 'Bytes', 'Unknown' );
 			memoryEntry( '0x758', 4, 'Text', 'Entry Point?' );
 
-			?>
-				<tr bgcolor='<?php $indexSub; ?>'>
-					<td colspan='5' align='center'>End Slot 1 - Save File Times</td>
-				</tr>
-			<?php
+			memoryHeader( 'End Slot 1 - Save File Times' );
 
 			memoryEntry( '0x75C', 36, 'Bytes', 'Unknown' );
 
-			?>
-				<tr bgcolor='<?php $indexSub; ?>'>
-					<td colspan='5' align='center'>Start Slot 2 - Save File Times</td>
-				</tr>
-			<?php
+			memoryHeader( 'Start Slot 2 - Save File Times' );
 
 			memoryEntry( '0x780', 2, 'Integer', 'SaveTime - Year <span style=\"float:right;\">( 4 Digit Year - ie 1998 )</span>' );
 			memoryEntry( '0x782', 1, 'Integer', 'SaveTime - Month <span style=\"float:right;\">( 1 - 12 )</span>' );
@@ -137,19 +117,11 @@
 			memoryEntry( '0x790', 8, 'Bytes', 'Unknown' );
 			memoryEntry( '0x798', 4, 'Text', 'Entry Point?' );
 
-			?>
-				<tr bgcolor='<?php $indexSub; ?>'>
-					<td colspan='5' align='center'>End Slot 2 - Save File Times</td>
-				</tr>
-			<?php
+			memoryHeader( 'End Slot 2 - Save File Times' );
 
 			memoryEntry( '0x79C', 36, 'Bytes', 'Unknown' );
 
-			?>
-				<tr bgcolor='<?php $indexSub; ?>'>
-					<td colspan='5' align='center'>Start Slot 3 - Save File Times</td>
-				</tr>
-			<?php
+			memoryHeader( 'Start Slot 3 - Save File Times' );
 
 			memoryEntry( '0x7C0', 2, 'Integer', 'SaveTime - Year <span style=\"float:right;\">( 4 Digit Year - ie 1998 )</span>' );
 			memoryEntry( '0x7C2', 1, 'Integer', 'SaveTime - Month <span style=\"float:right;\">( 1 - 12 )</span>' );
@@ -169,11 +141,7 @@
 			memoryEntry( '0x7D0', 8, 'Bytes', 'Unknown' );
 			memoryEntry( '0x7D8', 4, 'Text', 'Entry Point?' );
 
-			?>
-				<tr bgcolor='<?php $indexSub; ?>'>
-					<td colspan='5' align='center'>End Slot 3 - Save File Times</td>
-				</tr>
-			<?php
+			memoryHeader( 'End Slot 3 - Save File Times' );
 
 			memoryEntry( '0x818', '2-4?', 'Integer', 'Resume - Money' );
 			memoryEntry( '0x1000', '2?', 'Integer', 'Resume - Number of Times Saved' );

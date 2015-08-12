@@ -2,7 +2,9 @@
 	// index.php
 	$homeDir = "../../";
 	require_once $homeDir . 'pc_directories.php';
+	require_once $homeDir . $root . 'lookup_game.php';
 	require_once $homeDir . $root . 'format.php';
+	require_once $homeDir . $root . 'format_links.php';
 	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Sonic Adventure 2";
@@ -116,56 +118,7 @@
 
 <hr>
 
-<p><h3 align="left"><u><a id="gweb">In-Game Websites</a></u></h3>
-	<p align="left">
-		These are websites that are accessable through
-		in-game menus.
-	</p>
-	<table align="center" cellpadding="3" cellspacing="1" border="0" width="90%" bgcolor="<?php echo $tBG; ?>">
-		<tr bgcolor="<?php echo $tHead; ?>">
-			<th width="140px" align="center">Site</th><th align="center">URL</th><th width="35px" align="center">Link</th>
-		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td>Main Site</td>
-			<td align="right"><code>sonic.dricas.ne.jp</code></td>
-			<td align="center"><code><a href="http://sonic.dricas.ne.jp">Link</a></code></td>
-		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td>Chao Daycare</td>
-			<td align="right"><code>tails03.sonicteam.com/daycare/en/index.html</code></td>
-			<td align="center"><code><a href="http://tails03.sonicteam.com/daycare/en/index.html">Link</a></code></td>
-		</tr>
-	</table>
-</p>
-
-<hr>
-
-<p><h3 align="left"><u><a id="eweb">External Websites</a></u></h3>
-	<p align="left">
-		These are links to official websites that hosted
-		supplemental information about the game.
-	</p>
-	<table align="center" cellpadding="3" cellspacing="1" border="0" width="90%" bgcolor="<?php echo $tBG; ?>">
-		<tr bgcolor="<?php echo $tHead; ?>">
-			<th width="140px" align="center">Site</th><th align="center">URL</th><th width="35px" align="center">Link</th>
-		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td>Sega Launch Page</td>
-			<td align="right"><code>www.sega.com/sega/game/sonic2_launch.jhtml</code></td>
-			<td align="center"><code><a href="http://www.sega.com/sega/game/sonic2_launch.jhtml">Link</a></code></td>
-		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td>Sega Game Page</td>
-			<td align="right"><code>score.sega.com/games/Sonic2/Sonic2.html</code></td>
-			<td align="center"><code><a href="http://score.sega.com/games/Sonic2/Sonic2.html">Link</a></code></td>
-		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td>Sonic Team Site</td>
-			<td align="right"><code>www.sonicteam.com/sonicadv2/index_e.html</code></td>
-			<td align="center"><code><a href="http://www.sonicteam.com/sonicadv2/index_e.html">Link</a></code></td>
-		</tr>
-	</table>
-</p>
+<?php callLinkFunction( SONIC_ADVENTURE_2 ); ?>
 
 <?php
 	$from = getcwd() . "/index.php";
