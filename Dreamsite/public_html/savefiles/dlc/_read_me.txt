@@ -1,0 +1,1 @@
+This directory is set up to hold DLC files.

@@ -217,7 +217,7 @@
 	</p>
 	<table align="center" cellpadding="3" cellspacing="1" border="0" width="90%" bgcolor="<?php echo $tBG; ?>">
 		<tr bgcolor="<?php echo $tHead; ?>">
-			<th colspan="5">PSO Version 2</th>
+			<th colspan="4">PSO Version 2</th>
 		</tr>
 		<tr bgcolor="<?php echo $tHead; ?>">
 			<th width="65px">Size<br>(Blocks)</th><th width="100px">File Name</th><th>Description</th><th width="34px">Icon</th>

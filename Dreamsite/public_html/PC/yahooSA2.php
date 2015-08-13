@@ -1,6 +1,8 @@
 <?php
 	// yahooSA2.php
 	require_once 'pc_directories.php';
+	require_once $root . 'format.php';
+	global $tHead, $tBG;
 
 	$pageTitle = "SA2 Yahoo";
 	$homeDir = "";

@@ -9,18 +9,18 @@
 			<title><?php echo $pageTitle; ?></title>
 		</head>
 
-		<body link="#0022EE" vlink="#0022EE" alink="red" text="black" bgcolor="grey" background='<?php echo $homeDir . $dirImages . $dcBGimg; ?>'>
+		<body link="#0022EE" vlink="#0022EE" alink="red" text="black" bgcolor="grey" background='<?php echo $dirImages . $dcBGimg; ?>'>
 
 			<font face="Helvetica">
-				<table cellpadding="2" cellspacing="0" border="1" width="500" align="center" bgcolor="#FFFFFF">
+				<table cellpadding="2" cellspacing="1" border="0" width="500" align="center" bgcolor="#555555">
 
 					<!-- Main Title Image -->
 					<tr bgcolor="<?php echo $tHead; ?>">
-						<th align="center"><img src="<?php echo $homeDir . $dirImages; ?>title_dc.png" alt="" align="center" width="500" height="50"></th>
+						<th align="center"><img src="<?php echo $dirImages; ?>title_dc.png" alt="" align="center" width="500" height="50"></th>
 					</tr>
 
 					<!-- Body -->
-					<tr background="<?php echo $homeDir . $dirImages; ?>tile2.png"><td align="center">
+					<tr background="<?php echo $dirImages; ?>tile2.png"><td align="center">
 
 						<table cellpadding="2" cellspacing="0" border"0" width="100%">
 							<tr>
@@ -34,22 +34,22 @@
 											<td>Files</td>
 										</tr>
 										<tr height="20px" bgcolor="<?php echo ac(); ?>">
-											<td><a href="<?php echo $homeDir; ?>index.php">Upload</a></td>
+											<td><a href="<?php echo $root; ?>index.php">Upload</a></td>
 										</tr>
 										<tr height="20px" bgcolor="<?php echo ac(); ?>">
-											<td><a href="<?php echo $homeDir; ?>browse.php">Browse</a></td>
+											<td><a href="<?php echo $root; ?>browse.php">Browse</a></td>
 										</tr>
 										<tr height="20px" bgcolor="<?php echo ac(); ?>">
-											<td><a href="<?php echo $homeDir; ?>DLC/index.php">DLC</a></td>
+											<td><a href="<?php echo $root; ?>DLC/index.php">DLC</a></td>
 										</tr>
 										<tr align="center" height="20px" bgcolor="<?php echo $indexSub; ?>">
 											<td>Other</td>
 										</tr>
 										<tr height="20px" bgcolor="<?php echo ac(); ?>">
-											<td><a href="<?php echo $homeDir; ?>links/index.php">DC Links</a></td>
+											<td><a href="<?php echo $root; ?>links/index.php">DC Links</a></td>
 										</tr>
 										<tr height="20px" bgcolor="<?php echo ac(); ?>">
-											<td><a href="<?php echo $homeDir; ?>PC/index.php">PC Site</a></td>
+											<td><a href="<?php echo $root; ?>PC/index.php">PC Site</a></td>
 										</tr>
 										<?php // The following row is a buffer ?>
 										<tr bgcolor="<?php echo $indexSub; ?>">

@@ -190,14 +190,14 @@
 	// $file     String of file name.
 	function dlcEntry( $file ) {
 		require_once dirname(__FILE__) . '/dc_tools.php';
-		global $homeDir, $root, $dirDLC, $dirImages, $dreamBrowser;
+		global $dirDLC, $dirImages, $dreamBrowser;
 
 		$span = 6;
 		if ( $dreamBrowser ) {
 			$span = 5;
 		}
 
-		$filename = $homeDir . $dirDLC . $file . ".vmi";
+		$filename = $dirDLC . $file . ".vmi";
 		if ( ! file_exists( $filename ) ) {
 			?>
 			<tr bgcolor="<?php echo ac(); ?>">
@@ -212,7 +212,7 @@
 		$VMIfile = end( explode( "/", $filename ) );
 
 		$vms = new VMS;
-		$vms->load( $homeDir . $dirDLC . $VMSname );
+		$vms->load( $dirDLC . $VMSname );
 		$imgName = createVMSicons( $vms );
 		$blocks = $vms->getBlocks();
 
@@ -222,16 +222,16 @@
 		?>
 			<tr bgcolor="<?php echo ac(); ?>">
 				<td align="center" <?php if ( $dreamBrowser ) { echo 'colspan="2"'; } ?> >
-					<a href="<?php echo $homeDir . $root . "vmidl.php?id=dlc/$VMIfile&t=i" ?>">
-						<img src="<?php echo $homeDir . $dirImages . "save_vmi.png"?>">
+					<a href="<?php echo $root . "vmidl.php?id=dlc/$VMIfile&t=i" ?>">
+						<img src="<?php echo $dirImages . "save_vmi.png"?>">
 					</a>
 				</td>
 				<?php
 					if ( !$dreamBrowser ) {
 				?>
 					<td align="center">
-						<a href="<?php echo $homeDir . $root . "vmidl.php?id=dlc/$VMIfile&t=s" ?>">
-							<img src="<?php echo $homeDir . $dirImages . "save_vms.png"?>">
+						<a href="<?php echo $root . "vmidl.php?id=dlc/$VMIfile&t=s" ?>">
+							<img src="<?php echo $dirImages . "save_vms.png"?>">
 						</a>
 					</td>
 				<?php
@@ -240,7 +240,7 @@
 				<td align="center"><?php echo $blocks; ?></td>
 				<td align="center"><?php echo $file; ?></td>
 				<td>
-					<?php echo $luType; ?>
+					<?php echo $luType; ?><br>
 					<a href='link'>Read More</a>
 				</td>
 				<td align="center"><img src='<?php echo $imgName; ?>'></td>

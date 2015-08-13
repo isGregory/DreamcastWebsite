@@ -2,9 +2,10 @@
 	//directories.php
 
 	// Directories
-	$dirSave    = "savefiles/";
-	$dirImages  = "images/";
-	$dirIcons   = "images/icons/";
-	$dirEC      = "images/eyecatch/";
-	$dirPSO     = "images/psoscreenshots/";
+	$dirSave    = $root . "savefiles/";
+	$dirDLC     = $dirSave . "dlc/";
+	$dirImages  = $root . "images/";
+	$dirIcons   = $dirImages . "icons/";
+	$dirEC      = $dirImages . "eyecatch/";
+	$dirPSO     = $dirImages . "psoscreenshots/";
 ?>
