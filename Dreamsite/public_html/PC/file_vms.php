@@ -249,6 +249,14 @@ void separateColors( ifstream &file )
 	</table>
 </p>
 
+<hr>
+
+<p>
+	Information based on and taken from
+	<a href="http://mc.pp.se/dc/">Dreamcast Programming</a>
+	by Marcus Comstedt.
+</p>
+
 <?php
 	$from = "file_vms.php";
 	include 'pc_footer.php';

@@ -2,7 +2,7 @@
 	// index.php for games/
 	$homeDir = "../";
 	require_once $homeDir . 'pc_directories.php';
-	require_once $homeDir . $root . 'format.php';
+	require_once $root . 'format.php';
 	global $tHead, $tBG;
 
 	$pageTitle = "Games";
@@ -32,6 +32,12 @@
 		</tr>
 		<tr bgcolor="<?php echo ac(); ?>">
 			<td align='center'><a href='<?php echo $dSA2; ?>/index.php' style='text-decoration:none'>Sonic Adventure 2</a></td>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>">
+			<td align='center'><a href='<?php echo $dStar; ?>/index.php' style='text-decoration:none'>Starlancer</a></td>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>">
+			<td align='center'><a href='<?php echo $dQ3A; ?>/index.php' style='text-decoration:none'>Quake 3 Arena</a></td>
 		</tr>
 	</table>
 </p>

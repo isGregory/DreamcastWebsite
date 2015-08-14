@@ -2,7 +2,7 @@
 	// saves_file_example.php
 	$homeDir = "../../";
 	require_once $homeDir . 'pc_directories.php';
-	require_once $homeDir . $root . 'format.php';
+	require_once $root . 'format.php';
 	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Games";
@@ -20,7 +20,7 @@
 					<td>Contents</td>
 				</tr>
 				<tr bgcolor="<?php echo ac(); ?>">
-					<td><a href="<?php echo $homeDir . $root; ?>file_vms.php">VMS Header</a></td>
+					<td><a href="<?php echo $homeDir; ?>file_vms.php">VMS Header</a></td>
 				</tr>
 				<tr bgcolor="<?php echo ac(); ?>">
 					<td><a href="#body">Body</a></td>

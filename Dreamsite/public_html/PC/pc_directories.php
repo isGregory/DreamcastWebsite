@@ -1,8 +1,8 @@
 <?php
 	//pc_directories.php
 
-	$root      = "../";
-	require_once $homeDir . $root . 'directories.php';
+	$root      = $homeDir . "../";
+	require_once $root . 'directories.php';
 
 	$pcBGimg   = "tile.png";
 
@@ -12,4 +12,6 @@
 	$dPSOv2 = "PhantasyStarOnline";
 	$dJGR   = "JetGrindRadio";
 	$d4X4   = "4x4Evolution";
+	$dStar  = "Starlancer";
+	$dQ3A    = "Quake3Arena";
 ?>

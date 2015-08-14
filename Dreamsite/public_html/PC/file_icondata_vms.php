@@ -71,6 +71,7 @@
 	contains 1024 (32 * 32) nybbles, or 512 bytes.
 </p>
 
+<hr>
 
 <p>
 	Information based on and taken from

@@ -2,7 +2,7 @@
 	// saves_chao.php
 	$homeDir = "../../";
 	require_once $homeDir . 'pc_directories.php';
-	require_once $homeDir . $root . 'format.php';
+	require_once $root . 'format.php';
 	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Sonic Adventure 2 Chao Save";

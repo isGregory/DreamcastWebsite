@@ -2,10 +2,10 @@
 	// index.php
 	$homeDir = "../../";
 	require_once $homeDir . 'pc_directories.php';
-	require_once $homeDir . $root . 'lookup_game.php';
-	require_once $homeDir . $root . 'format.php';
-	require_once $homeDir . $root . 'format_dlc.php';
-	require_once $homeDir . $root . 'format_links.php';
+	require_once $root . 'lookup_game.php';
+	require_once $root . 'format.php';
+	require_once $root . 'format_dlc.php';
+	require_once $root . 'format_links.php';
 	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Sonic Adventure 2";
@@ -96,9 +96,7 @@
 		game as follows.
 	</p>
 
-	<?php
-		dlc_sa2();
-	?>
+	<?php dlc_sa2(); ?>
 </p>
 
 <hr>

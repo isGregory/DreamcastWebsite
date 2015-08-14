@@ -2,9 +2,9 @@
 	// index.php
 	$homeDir = "../../";
 	require_once $homeDir . 'pc_directories.php';
-	require_once $homeDir . $root . 'lookup_game.php';
-	require_once $homeDir . $root . 'format.php';
-	require_once $homeDir . $root . 'format_links.php';
+	require_once $root . 'lookup_game.php';
+	require_once $root . 'format.php';
+	require_once $root . 'format_links.php';
 	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Jet Grind Radio";

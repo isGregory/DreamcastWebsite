@@ -1,5 +1,7 @@
 <?php
 	// vmu_mapping.php
+	require_once 'pc_directories.php';
+	require_once $root . 'format.php';
 
 	$pageTitle = "VMU Memory Mapping";
 	$homeDir = "";
