@@ -3,6 +3,7 @@
 
 	$root      = "../";
 	require_once $homeDir . $root . 'directories.php';
+
 	$pcBGimg   = "tile.png";
 
 	// Game Directory Folder Names

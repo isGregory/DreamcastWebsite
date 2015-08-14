@@ -78,9 +78,19 @@ AAAAAAAAAYAAAAAAAJR9O...
 
 <h3>Header Section</h3>
 <p>
-	VMI files are communicated though 7 pairs. All of the pairs are
+	<a href="file_vmi.php">VMI files</a> are communicated though 7 pairs. All of the pairs are
 	separated by '&' characters. Each individual pair is separated
 	by '='. The left pair specifies the field and the right is the value.
+	<br><br>
+	Example:
+	<table bgcolor="<?php echo $tHead; ?>" align="center" border="0">
+		<tr>
+			<td>
+				<pre>filename=SONIC2___S01&fs=9216&bl=18&tp=0&fl=0&of=0&tm=199811270132165</pre>
+			</td>
+		</tr>
+	</table>
+	<br>
 	<table cellpadding="3" cellspacing="1" border="0" align="center" style="max-width:640px;" bgcolor="<?php echo $tBG; ?>">
 		<tr bgcolor="<?php echo $tHead; ?>">
 			<th>Specifier</th><th>Definition</th>

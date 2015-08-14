@@ -49,7 +49,20 @@
 	function dlc_sa2() {
 		dlcOpenTable();
 			dlcEntry('DOWN001');
-			dlcEntry('Potato');
+			dlcEntry('DOWN002');
+			dlcEntry('DOWN003');
+			dlcEntry('THEME001');
+			dlcEntry('THEME002');
+			dlcEntry('THEME003');
+			dlcEntry('THEME004');
+			dlcEntry('THEME005');
+			dlcEntry('THEME006');
+			dlcEntry('THEME007');
+			dlcEntry('THEME008');
+			dlcEntry('THEME009');
+			dlcEntry('THEME010');
+			dlcEntry('THEME011');
+			dlcEntry('THEME012');
 		dlcCloseTable();
 	}
 ?>
