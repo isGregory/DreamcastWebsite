@@ -2,6 +2,7 @@
 	// yahooSA2.php
 	require_once 'pc_directories.php';
 	require_once $root . 'format.php';
+	require_once $root . 'lookup_game.php';
 	global $tHead, $tBG;
 
 	$pageTitle = "SA2 Yahoo";
@@ -16,7 +17,7 @@ This message was backed up from
 <a href="https://groups.yahoo.com/neo/groups/vmu-dev/conversations/messages/875">this site</a>.
 <br>
 It talks about the Chao
-<a href="games/<?php echo $dSA2; ?>/saves_chao.php">save file structure</a>
+<a href="games/<?php echo SONIC_ADVENTURE_2; ?>/saves_chao.php">save file structure</a>
 from Sonic Adventure 2.
 <br>
 Thanks to Stephanie Rogerson for asking the question, and Paul Kratt for

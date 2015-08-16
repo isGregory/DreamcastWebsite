@@ -9,14 +9,14 @@
 		$p = 1;
 	}
 
-	include 'dc_tools.php';
+	require_once 'dc_tools.php';
 
 	$pageTitle = "VMU Browse";
 	include 'dc_header.php';
 
 	$perPage = 10;
 
-	validateVMIs();
+	validateVMIs( $dirSave );
 
 	$filename = "*.[vV][mM][iI]";
 	$files = glob( $dirSave . $filename );
@@ -100,9 +100,13 @@
 
 				$vms = new VMS;
 				$vms->load( $dirSave . $VMSname );
+
 				$imgName = createVMSicons( $vms );
+
+				date_default_timezone_set('UTC');
 				$fileDate = date( "g:i:s A<\b\\r>Y-M-d",
 					filemtime( $dirSave . $VMSname ) );
+
 				$blocks = $vms->getBlocks();
 				?>
 					<tr bgcolor="<?php echo ac(); ?>">

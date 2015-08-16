@@ -7,6 +7,9 @@
 	require_once $root . 'format_dlc.php';
 
 	$check = isset($_GET["n"]) ? $_GET["n"] : false;
+	if ( !$check ) {
+		header( 'Location: index.php' );
+	}
 
 	$game = getGameName( $check );
 	$pageTitle = $game . " DLC";

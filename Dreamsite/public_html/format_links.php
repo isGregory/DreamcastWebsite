@@ -12,6 +12,8 @@
 			links_PSO();
 		} else if ( SHENMUE === $name ) {
 			links_shenmue();
+		} else if ( SONIC_ADVENTURE === $name ) {
+			links_sa1();
 		} else if ( SONIC_ADVENTURE_2 === $name ) {
 			links_sa2();
 		} else {
@@ -97,6 +99,37 @@
 			<?php
 				linkOpenTable();
 					linkEntry( 'USA Site', 'passport.shenmue.com');
+				linkCloseTable();
+			?>
+		</p>
+		<?php
+	}
+
+	// Website links of Sonic Adventure 1
+	function links_sa1() {
+		?>
+		<p><h3 align="left"><u><a id="gweb">In-Game Websites</a></u></h3>
+			<p align="left">
+				These are websites that are accessable through
+				in-game menus.
+			</p>
+			<?php
+				linkOpenTable();
+					linkEntry( 'Name', 'www.link.com' );
+				linkCloseTable();
+			?>
+		</p>
+
+		<hr>
+
+		<p><h3 align="left"><u><a id="eweb">External Websites</a></u></h3>
+			<p align="left">
+				These are links to official websites that hosted
+				supplemental information about the game.
+			</p>
+			<?php
+				linkOpenTable();
+					linkEntry( 'Name', 'www.link.com');
 				linkCloseTable();
 			?>
 		</p>

@@ -1,0 +1,1 @@
+This directory is set up to collect dlc based .VMI files that lack a paired .VMS file.

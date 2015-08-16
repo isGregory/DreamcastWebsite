@@ -3,7 +3,7 @@
 //
 // Usage:
 // require_once 'lookup_savefile.php';
-// $saveInfo = new saveLookup();
+// $luSaves = new saveLookup();
 
 class saveLookup {
 	private $savefiles = array();
@@ -52,6 +52,8 @@ class saveLookup {
 
 		$this->isBuilt = true;
 
+		require_once $root . 'lookup_game.php';
+
 		// Table is sorted alphebetically by 'game' name.
 		$this->savefiles = array(
 			"03faaf1d" => array(
@@ -82,13 +84,13 @@ class saveLookup {
 				'game'=>"Headhunter",
 				'type'=>"Game Options"),
 			"2a9cfdfd" => array(
-				'game'=>"Jet Grind Radio",
+				'game'=>getGameName( JET_GRIND_RADIO ),
 				'type'=>"Main Save"),
 			"a603dae7" => array(
-				'game'=>"Jet Grind Radio",
+				'game'=>getGameName( JET_GRIND_RADIO ),
 				'type'=>"Small Graffiti"),
 			"2e4026b8" => array(
-				'game'=>"Jet Grind Radio",
+				'game'=>getGameName( JET_GRIND_RADIO ),
 				'type'=>"Large Graffiti"),
 			"96c5f9b3" => array(
 				'game'=>"Max Steel",
@@ -97,73 +99,73 @@ class saveLookup {
 				'game'=>"Nightmare Creatures II",
 				'type'=>"Main Save"),
 			"5744bd39" => array(
-				'game'=>"Phantasy Star Online",
+				'game'=>getGameName( PHANTASY_STAR_ONLINE_V2 ),
 				'type'=>"Screenshot"),
 			"aa684f21" => array(
-				'game'=>"Phantasy Star Online: Version 2",
+				'game'=>getGameName( PHANTASY_STAR_ONLINE_V2 ),
 				'type'=>"Main Save"),
 			"d18229c3" => array(
-				'game'=>"Phantasy Star Online: Version 2",
+				'game'=>getGameName( PHANTASY_STAR_ONLINE_V2 ),
 				'type'=>"Guild Card"),
 			"4ff15894" => array(
-				'game'=>"Phantasy Star Online: Version 2",
+				'game'=>getGameName( PHANTASY_STAR_ONLINE_V2 ),
 				'type'=>"Downloadable Content"),
 			"42973ff7" => array(
 				'game'=>"Psychic Force 2012",
 				'type'=>"Main Save"),
 			"2f24bef9" => array(
-				'game'=>"Shenmue",
+				'game'=>getGameName( SHENMUE ),
 				'type'=>"Main Save"),
 			"7aadd2f3" => array(
-				'game'=>"Sonic Adventure 2",
+				'game'=>getGameName( SONIC_ADVENTURE_2 ),
 				'type'=>"Main Save"),
 			"86df7f16" => array(
-				'game'=>"Sonic Adventure 2",
+				'game'=>getGameName( SONIC_ADVENTURE_2 ),
 				'type'=>"Chao Garden"),
 			"3a7d695f" => array(
-				'game'=>"Sonic Adventure 2",
+				'game'=>getGameName( SONIC_ADVENTURE_2 ),
 				'type'=>"High-Speed Trial Kart Map"),
 			"945bca5b" => array(
-				'game'=>"Sonic Adventure 2",
+				'game'=>getGameName( SONIC_ADVENTURE_2 ),
 				'type'=>"Opa Opa Kart Map"),
 			"6ae0a7e2" => array(
-				'game'=>"Sonic Adventure 2",
+				'game'=>getGameName( SONIC_ADVENTURE_2 ),
 				'type'=>"Eggrobo Kart Map"),
 			"44a59e3b" => array(
-				'game'=>"Sonic Adventure 2",
+				'game'=>getGameName( SONIC_ADVENTURE_2 ),
 				'type'=>"Sonic Theme"),
 			"f92754c1" => array(
-				'game'=>"Sonic Adventure 2",
+				'game'=>getGameName( SONIC_ADVENTURE_2 ),
 				'type'=>"Tails Theme"),
 			"a695ba79" => array(
-				'game'=>"Sonic Adventure 2",
+				'game'=>getGameName( SONIC_ADVENTURE_2 ),
 				'type'=>"Knuckles Theme"),
 			"4295e2c7" => array(
-				'game'=>"Sonic Adventure 2",
+				'game'=>getGameName( SONIC_ADVENTURE_2 ),
 				'type'=>"Shadow Theme"),
 			"633ad529" => array(
-				'game'=>"Sonic Adventure 2",
-				'type'=>"Eggman Theme"),
+				'game'=>getGameName( SONIC_ADVENTURE_2 ),
+				'type'=>"Dr. Eggman Theme"),
 			"2bf7beac" => array(
-				'game'=>"Sonic Adventure 2",
+				'game'=>getGameName( SONIC_ADVENTURE_2 ),
 				'type'=>"Rouge Theme"),
 			"a647f369" => array(
-				'game'=>"Sonic Adventure 2",
+				'game'=>getGameName( SONIC_ADVENTURE_2 ),
 				'type'=>"Amy Theme"),
 			"cacf34bf" => array(
-				'game'=>"Sonic Adventure 2",
+				'game'=>getGameName( SONIC_ADVENTURE_2 ),
 				'type'=>"Omochao Theme"),
 			"8d178fc7" => array(
-				'game'=>"Sonic Adventure 2",
+				'game'=>getGameName( SONIC_ADVENTURE_2 ),
 				'type'=>"Maria Theme"),
 			"03ff64e8" => array(
-				'game'=>"Sonic Adventure 2",
+				'game'=>getGameName( SONIC_ADVENTURE_2 ),
 				'type'=>"Secretary Theme"),
 			"79faff25" => array(
-				'game'=>"Sonic Adventure 2",
+				'game'=>getGameName( SONIC_ADVENTURE_2 ),
 				'type'=>"Halloween Theme"),
 			"966b8a74" => array(
-				'game'=>"Sonic Adventure 2",
+				'game'=>getGameName( SONIC_ADVENTURE_2 ),
 				'type'=>"Christmas Theme"),
 			"aee1b12e" => array(
 				'game'=>"Star Wars Episode 1 Podracer",

@@ -3,7 +3,22 @@
 	$homeDir = "../";
 	require_once $homeDir . 'pc_directories.php';
 	require_once $root . 'format.php';
+	require_once $root . 'lookup_game.php';
 	global $tHead, $tBG;
+
+	// Print the entry for the index.
+	function printGameEntry( $name ) {
+		?>
+			<tr bgcolor="<?php echo ac(); ?>">
+				<td align='center'>
+					<a href='<?php echo $name; ?>/index.php'
+						style='text-decoration:none'>
+						<?php echo getGameName( $name ); ?>
+					</a>
+				</td>
+			</tr>
+		<?php
+	}
 
 	$pageTitle = "Games";
 	include $homeDir . "pc_header.php";
@@ -18,31 +33,20 @@
 			<th bgcolor="<?php echo $tHead; ?>">Game</th>
 		</tr>
 
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align='center'><a href='<?php echo $d4X4; ?>/index.php' style='text-decoration:none'>4x4 Evolution</a></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align='center'><a href='<?php echo $dJGR; ?>/index.php' style='text-decoration:none'>Jet Grind Radio</a></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align='center'><a href='<?php echo $dPSOv2; ?>/index.php' style='text-decoration:none'>Phantasy Star Online</a></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align='center'><a href='<?php echo $dShen; ?>/index.php' style='text-decoration:none'>Shenmue</a></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align='center'><a href='<?php echo $dSA2; ?>/index.php' style='text-decoration:none'>Sonic Adventure 2</a></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align='center'><a href='<?php echo $dStar; ?>/index.php' style='text-decoration:none'>Starlancer</a></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align='center'><a href='<?php echo $dQ3A; ?>/index.php' style='text-decoration:none'>Quake 3 Arena</a></td>
-		</tr>
+		<?php
+			printGameEntry( _4X4_EVOLUTION );
+			printGameEntry( JET_GRIND_RADIO );
+			printGameEntry( PHANTASY_STAR_ONLINE_V2 );
+			printGameEntry( SHENMUE );
+			printGameEntry( SONIC_ADVENTURE );
+			printGameEntry( SONIC_ADVENTURE_2 );
+			printGameEntry( STARLANCER );
+			printGameEntry( QUAKE_3_ARENA );
+		?>
 	</table>
 </p>
 
 <?php
-	$from = "index.php";
+	$from = getcwd() . "/index.php";
 	include $homeDir . "pc_footer.php";
 ?>

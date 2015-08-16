@@ -96,7 +96,7 @@
 		game as follows.
 	</p>
 
-	<?php dlc_sa2(); ?>
+	<?php callDLCFunction( SONIC_ADVENTURE_2 ); ?>
 </p>
 
 <hr>

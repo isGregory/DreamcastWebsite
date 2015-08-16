@@ -188,7 +188,7 @@
 	// This is seen on PC site game pages.
 	// To load DLC file "ABC.vmi" $file would be "ABC"
 	// $file     String of file name.
-	function dlcEntry( $file ) {
+	function dlcEntry( $file, $game ) {
 		require_once dirname(__FILE__) . '/dc_tools.php';
 		global $dirDLC, $dirImages, $dreamBrowser;
 
@@ -197,7 +197,7 @@
 			$span = 5;
 		}
 
-		$filename = $dirDLC . $file . ".vmi";
+		$filename = $dirDLC . $game . "/" . $file . ".vmi";
 		if ( ! file_exists( $filename ) ) {
 			?>
 			<tr bgcolor="<?php echo ac(); ?>">
@@ -212,13 +212,23 @@
 		$VMIfile = end( explode( "/", $filename ) );
 
 		$vms = new VMS;
-		$vms->load( $dirDLC . $VMSname );
+		$vms->load( $dirDLC . $game . "/" . $VMSname );
 		$imgName = createVMSicons( $vms );
 		$blocks = $vms->getBlocks();
 
 		require_once dirname(__FILE__) . '/lookup_savefile.php';
 		$luSaves = new saveLookup();
 		$luType = $luSaves->getType( $vms );
+
+		$location = isset($_GET["n"]) ? $_GET["n"] : false;
+		$readMoreLink = "";
+		if ( false === $location ) {
+			// We're in the PC side of things
+
+		} else {
+			// We're at /DLC/dlc_list.php
+			$readMoreLink = "dlc_info.php?n=$location&s=$VMIfile";
+		}
 		?>
 			<tr bgcolor="<?php echo ac(); ?>">
 				<td align="center" <?php if ( $dreamBrowser ) { echo 'colspan="2"'; } ?> >
@@ -240,8 +250,16 @@
 				<td align="center"><?php echo $blocks; ?></td>
 				<td align="center"><?php echo $file; ?></td>
 				<td>
-					<?php echo $luType; ?><br>
-					<a href='link'>Read More</a>
+				<?php
+					echo $luType;
+					// Check for more info
+					if ( "" !== $readMoreLink ) {
+				?>
+						<br>
+						<a href='<?php echo $readMoreLink; ?>'>Read More</a>
+				<?php
+					}
+				?>
 				</td>
 				<td align="center"><img src='<?php echo $imgName; ?>'></td>
 			</tr>

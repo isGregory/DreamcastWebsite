@@ -3,6 +3,9 @@
 
 	// Names defined in "lookup_game.php"
 	function callDLCFunction( $name ) {
+		global $dirDLC;
+		require_once $root . 'dc_tools.php';
+		validateVMIs( $dirDLC . $name . "/" );
 		if ( PHANTASY_STAR_ONLINE_V1 === $name ) {
 			dlc_PSO_V1();
 		} else if ( SONIC_ADVENTURE === $name ) {
@@ -32,37 +35,37 @@
 	// Website links of Phantasy Star Online
 	function dlc_PSO_V1() {
 		dlcOpenTable();
-			dlcEntry('PS0');
-			dlcEntry('Potato');
+			dlcEntry( 'PS0', PHANTASY_STAR_ONLINE_V1 );
+			dlcEntry( 'Potato', PHANTASY_STAR_ONLINE_V1);
 		dlcCloseTable();
 	}
 
 	// DLC of Sonic Adventure 1
 	function dlc_sa1() {
 		dlcOpenTable();
-			dlcEntry('SA1');
-			dlcEntry('Potato');
+			dlcEntry( 'SA1', SONIC_ADVENTURE);
+			dlcEntry( 'Potato', SONIC_ADVENTURE);
 		dlcCloseTable();
 	}
 
 	// DLC of Sonic Adventure 2
 	function dlc_sa2() {
 		dlcOpenTable();
-			dlcEntry('DOWN001');
-			dlcEntry('DOWN002');
-			dlcEntry('DOWN003');
-			dlcEntry('THEME001');
-			dlcEntry('THEME002');
-			dlcEntry('THEME003');
-			dlcEntry('THEME004');
-			dlcEntry('THEME005');
-			dlcEntry('THEME006');
-			dlcEntry('THEME007');
-			dlcEntry('THEME008');
-			dlcEntry('THEME009');
-			dlcEntry('THEME010');
-			dlcEntry('THEME011');
-			dlcEntry('THEME012');
+			dlcEntry( 'DOWN001', SONIC_ADVENTURE_2);
+			dlcEntry( 'DOWN002', SONIC_ADVENTURE_2);
+			dlcEntry( 'DOWN003', SONIC_ADVENTURE_2);
+			dlcEntry( 'THEME001', SONIC_ADVENTURE_2);
+			dlcEntry( 'THEME002', SONIC_ADVENTURE_2);
+			dlcEntry( 'THEME003', SONIC_ADVENTURE_2);
+			dlcEntry( 'THEME004', SONIC_ADVENTURE_2);
+			dlcEntry( 'THEME005', SONIC_ADVENTURE_2);
+			dlcEntry( 'THEME006', SONIC_ADVENTURE_2);
+			dlcEntry( 'THEME007', SONIC_ADVENTURE_2);
+			dlcEntry( 'THEME008', SONIC_ADVENTURE_2);
+			dlcEntry( 'THEME009', SONIC_ADVENTURE_2);
+			dlcEntry( 'THEME010', SONIC_ADVENTURE_2);
+			dlcEntry( 'THEME011', SONIC_ADVENTURE_2);
+			dlcEntry( 'THEME012', SONIC_ADVENTURE_2);
 		dlcCloseTable();
 	}
 ?>
