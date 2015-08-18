@@ -501,6 +501,7 @@ class VMS {
 
 	var $fname;
 	var $data;
+	var $fileHash = false;
 
 	function load( $fname ) {
 		$this->fname = basename( $fname );
@@ -533,8 +534,30 @@ class VMS {
 	function getIconHash() {
 
 		$toGet = "";
-		// Put the first icon's data into a string.
-		for( $i = 0x80; $i < 512; $i++ ) {
+		// Put the first icon's palette and data into a string.
+		// 0x60 is where the color palette starts.
+		// 512 is the size of an image.
+		// 32 is the size of the color palette.
+		for( $i = 0x60; $i < 0x60 + 512 + 32; $i++ ) {
+			$toGet .= $this->get( $i );
+		}
+		// Encode the string and get a hash from it.
+		return hash( 'crc32', base64_encode( $toGet ) );
+	}
+
+	// DLC for games such as Phantasy star online have the
+	// exact same VMS text, DC Boot Rom text, and icon images.
+	// In this case the only way to differentiate is by
+	// hashing the whole file.
+	function getFileHash() {
+
+		// Variable to cut down on calculation time.
+		if ( $fileHash ) {
+			return $fileHash;
+		}
+		$toGet = "";
+		$size = $this->getSize();
+		for( $i = 0; $i < $size; $i++ ) {
 			$toGet .= $this->get( $i );
 		}
 		// Encode the string and get a hash from it.

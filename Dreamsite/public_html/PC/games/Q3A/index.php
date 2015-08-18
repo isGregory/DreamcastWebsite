@@ -57,7 +57,7 @@
 			<td align="center"><a href="saves_file.php" style="text-decoration:none"><font color="#FF0000">Main Data</font></a></td>
 			<td align="center">??</td>
 			<td>Save file for the main game.</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "d3603d8c.gif"?>"></td>
+			<td align="center"><img src="<?php echo $dirIcons . "d3603d8c.gif"?>"></td>
 		</tr>
 	</table>
 </p>
@@ -72,7 +72,19 @@
 			<th align="center" bgcolor="<?php echo $tHead; ?>">Game Servers</th>
 		</tr>
 		<tr bgcolor="<?php echo altc(); ?>">
-			<td align="center" ><code>master.quake3arena.com</code></td>
+			<td align="center"><code>master.quake3arena.com</code></td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<p align="left">
+	Here are the ports that Quake III Arena connects to:</p>
+	<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:450px;max-width:640px;" bgcolor="<?php echo $tBG; ?>">
+		<tr>
+			<th align="center" bgcolor="<?php echo $tHead; ?>">Ports</th>
+		</tr>
+		<tr bgcolor="<?php echo altc(); ?>">
+			<td align="center">UDP?: <code>27960 - 27969</code></td>
 		</tr>
 	</table>
 </p>

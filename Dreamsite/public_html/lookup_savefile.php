@@ -21,7 +21,12 @@ class saveLookup {
 			$hash = $vms->getIconHash();
 			$toReturn = $this->savefiles[ $hash ][ 'game' ];
 			if ( NULL === $toReturn ) {
-				return "Game/Save";
+
+				$hash = $vms->getFileHash();
+				$toReturn = $this->savefiles[ $hash ][ 'game' ];
+				if ( NULL === $toReturn ) {
+					return "Game/Save";
+				}
 			}
 		}
 		return $toReturn;
@@ -40,9 +45,16 @@ class saveLookup {
 			$hash = $vms->getIconHash();
 			$toReturn = $this->savefiles[ $hash ][ 'type' ];
 			if ( NULL === $toReturn ) {
-				return "Info: $firstHash"
-					. "<br>Icon: $hash"
-					. "<br>Not Documented";
+
+				$secondHash = $hash;
+				$hash = $vms->getFileHash();
+				$toReturn = $this->savefiles[ $hash ][ 'type' ];
+				if ( NULL === $toReturn ) {
+					return "Info: $firstHash"
+						. "<br>Icon: $secondHash"
+						. "<br>File: $hash"
+						. "<br>Not Documented";
+				}
 			}
 		}
 		return $toReturn;
@@ -98,6 +110,39 @@ class saveLookup {
 			"b0150787" => array(
 				'game'=>"Nightmare Creatures II",
 				'type'=>"Main Save"),
+			"f70c77d9" => array(
+				'game'=>getGameName( PHANTASY_STAR_ONLINE_V1 ),
+				'type'=>"Easter Quest - 1 of 3"),
+			"668de97c" => array(
+				'game'=>getGameName( PHANTASY_STAR_ONLINE_V1 ),
+				'type'=>"Easter Quest - 2 of 3"),
+			"e64630a4" => array(
+				'game'=>getGameName( PHANTASY_STAR_ONLINE_V1 ),
+				'type'=>"Easter Quest - 3 of 3"),
+			"aa77632f" => array(
+				'game'=>getGameName( PHANTASY_STAR_ONLINE_V1 ),
+				'type'=>"Famitsu Cup Quest - 2 of 3?"),
+			"a6c9f449" => array(
+				'game'=>getGameName( PHANTASY_STAR_ONLINE_V1 ),
+				'type'=>"Famitsu Cup Quest - 3 of 3?"),
+			"ece18718" => array(
+				'game'=>getGameName( PHANTASY_STAR_ONLINE_V1 ),
+				'type'=>"Letter from Lionel Quest 1 of 2"),
+			"6406f13c" => array(
+				'game'=>getGameName( PHANTASY_STAR_ONLINE_V1 ),
+				'type'=>"Letter from Lionel Quest 2 of 2"),
+			"1e3d9a3e" => array(
+				'game'=>getGameName( PHANTASY_STAR_ONLINE_V1 ),
+				'type'=>"Retired Hunter Quest 1 of 2"),
+			"545995e9" => array(
+				'game'=>getGameName( PHANTASY_STAR_ONLINE_V1 ),
+				'type'=>"Retired Hunter Quest 2 of 2"),
+			"dc38a93c" => array(
+				'game'=>getGameName( PHANTASY_STAR_ONLINE_V1 ),
+				'type'=>"Raw Material Quest 1 of 2"),
+			"db2eb49c" => array(
+				'game'=>getGameName( PHANTASY_STAR_ONLINE_V1 ),
+				'type'=>"Raw Material Quest 2 of 2"),
 			"5744bd39" => array(
 				'game'=>getGameName( PHANTASY_STAR_ONLINE_V2 ),
 				'type'=>"Screenshot"),
@@ -116,6 +161,81 @@ class saveLookup {
 			"2f24bef9" => array(
 				'game'=>getGameName( SHENMUE ),
 				'type'=>"Main Save"),
+			"aa0df537" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"Japanese Christmas Event"),
+			"e51ee355" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"Hidekazu Yukawa Quo Card Contest"),
+			"e9ae53ff" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"Famitsu Magazine Contest"),
+			"bf9d8406" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"Halloween Event"),
+			"0220cb3e" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"European Halloween Event"),
+			"56eee6fc" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"Christmas Event"),
+			"2d27bbd5" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"New Years Event"),
+			"f9da3aa1" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"US Launch Party"),
+			"d00e749a" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"Europe Launch Party"),
+			"ab447a02" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"Japanese Launch Party"),
+			"d19e1dcc" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"AT&T Contest - Part 1"),
+			"44443b73" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"AT&T Contest - Part 2"),
+			"31925cf2" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"AT&T Contest - Part 3"),
+			"e2daf453" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"Reebok Contest"),
+			"a2f835d5" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"Samba De Amigo Course"),
+			"75904acc" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"Unknown, possibly early Samba De Amigo Course?"),
+			"db76a752" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"Sonic Voice Theme"),
+			"66f46da8" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"Tails Voice Theme"),
+			"39468310" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"Knuckles Voice Theme"),
+			"3994ca00" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"Amy Voice Theme"),
+			"6eff27f5" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"Gamma Voice Theme"),
+			"ad11f4c3" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"Big Voice Theme"),
+			"80e64c0e" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"Dr. Eggman Voice Theme"),
+			"5d284e2f" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"Tikal Voice Theme"),
+			"562c15c8" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"Random Voice Theme"),
 			"7aadd2f3" => array(
 				'game'=>getGameName( SONIC_ADVENTURE_2 ),
 				'type'=>"Main Save"),

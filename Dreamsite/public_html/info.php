@@ -21,6 +21,7 @@
 		$vms = new VMS;
 		$vms->load($dirSave . $VMSname);
 		$imgName = createVMSicons( $vms );
+		$fileHash = $vms->getFileHash();
 		$luGame = $luSaves->getGame( $vms );
 		$luType = $luSaves->getType( $vms );
 
@@ -42,7 +43,7 @@
 			<tr bgcolor='<?php echo ac(); ?>'>
 				<th colspan='2'><?php echo "$luGame<br>$luType"; ?></th>
 			</tr>
-			<tr bgcolor='<?php echo ac(); ?>'>
+			<tr align='center' bgcolor='<?php echo ac(); ?>'>
 				<th>Download:
 					<?php
 						echo " <a href='vmidl.php?id=$s&t=i'><img src='images/save_vmi.png'></a> ";
@@ -51,7 +52,10 @@
 						}
 					?>
 				</th>
-				<th><?php echo "$blocks Blocks"; ?></th>
+				<td><?php echo "$blocks Blocks"; ?></td>
+			</tr>
+			<tr align='center' bgcolor='<?php echo ac(); ?>'>
+				<th>File Hash:</th><td><?php echo $fileHash; ?></td>
 			</tr>
 			<?php
 				require_once 'info_file.php';
@@ -60,28 +64,28 @@
 			<tr bgcolor='<?php echo $tHead; ?>'>
 				<th colspan='2'>Header Info</th>
 			</tr>
-			<tr bgcolor='<?php echo ac(); ?>'>
-				<th>Menu Description</th><th><?php echo $Dmenu; ?></th>
+			<tr align='center' bgcolor='<?php echo ac(); ?>'>
+				<th>Menu Description</th><td><?php echo $Dmenu; ?></td>
 			</tr>
-			<tr bgcolor='<?php echo ac(); ?>'>
-				<th>File Description</th><th><?php echo $Dfile; ?></th>
+			<tr align='center' bgcolor='<?php echo ac(); ?>'>
+				<th>File Description</th><td><?php echo $Dfile; ?></td>
 			</tr>
-			<tr bgcolor='<?php echo ac(); ?>'>
-				<th>App Description</th><th><?php echo $Dapp; ?></th>
+			<tr align='center' bgcolor='<?php echo ac(); ?>'>
+				<th>App Description</th><td><?php echo $Dapp; ?></td>
 			</tr>
-			<tr bgcolor='<?php echo ac(); ?>'>
-				<th>Num Icons</th><th><?php echo $nI; ?></th>
+			<tr align='center' bgcolor='<?php echo ac(); ?>'>
+				<th>Num Icons</th><td><?php echo $nI; ?></td>
 			</tr>
-			<tr bgcolor='<?php echo ac(); ?>'>
-				<th>Animation Speed</th><th><?php echo $aS; ?></th>
+			<tr align='center' bgcolor='<?php echo ac(); ?>'>
+				<th>Animation Speed</th><td><?php echo $aS; ?></td>
 			</tr>
 
 			<?php
 				for ( $f = 0; $f < $nI; $f++ ) {
 					?>
-						<tr bgcolor='<?php echo ac(); ?>'>
+						<tr align='center' bgcolor='<?php echo ac(); ?>'>
 							<th><?php echo "Icon " . ( $f + 1 ); ?></th>
-							<th><img src='<?php echo getvmsframe( $vms, $f ); ?>'></th>
+							<td><img src='<?php echo getvmsframe( $vms, $f ); ?>'></td>
 						</tr>
 					<?php
 				}
@@ -89,16 +93,16 @@
 				$ecMode = $vms->getEyecatchMode();
 			?>
 
-			<tr bgcolor='<?php echo ac(); ?>'>
-				<th>Eyecatch Mode</th><th><?php echo $ecMode; ?></th>
+			<tr align='center' bgcolor='<?php echo ac(); ?>'>
+				<th>Eyecatch Mode</th><td><?php echo $ecMode; ?></td>
 			</tr>
 
 			<?php
 				if ( $ecMode != 0 ) {
 					?>
-						<tr bgcolor='<?php echo ac(); ?>'>
+						<tr align='center' bgcolor='<?php echo ac(); ?>'>
 							<th>Eyecatch</th>
-							<th><img src='<?php echo createVMSeyecatch( $vms ); ?>'></th>
+							<td><img src='<?php echo createVMSeyecatch( $vms ); ?>'></td>
 						</tr>
 					<?php
 				}

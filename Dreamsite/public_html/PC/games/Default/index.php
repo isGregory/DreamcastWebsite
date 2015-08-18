@@ -78,13 +78,13 @@
 			<th align="center" bgcolor="<?php echo $tHead; ?>">Game Servers</th>
 		</tr>
 		<tr bgcolor="<?php echo altc(); ?>">
-			<td align="center" ><code>master.4x4evolution.com</code></td>
+			<td align="center"><code>master.4x4evolution.com</code></td>
 		</tr>
 		<tr bgcolor="<?php echo altc(); ?>">
-			<td align="center" ><code>master1.4x4evolution.com</code></td>
+			<td align="center"><code>master1.4x4evolution.com</code></td>
 		</tr>
 		<tr bgcolor="<?php echo altc(); ?>">
-			<td align="center" ><code>master2.4x4evolution.com</code></td>
+			<td align="center"><code>master2.4x4evolution.com</code></td>
 		</tr>
 	</table>
 </p>

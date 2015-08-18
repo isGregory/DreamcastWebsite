@@ -115,7 +115,7 @@
 			</p>
 			<?php
 				linkOpenTable();
-					linkEntry( 'Name', 'www.link.com' );
+					linkEntry( 'Main Site', 'sonic.games.dreamcast.com' );
 				linkCloseTable();
 			?>
 		</p>

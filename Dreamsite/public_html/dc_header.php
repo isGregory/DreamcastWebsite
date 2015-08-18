@@ -51,6 +51,9 @@
 										<tr height="20px" bgcolor="<?php echo ac(); ?>">
 											<td><a href="<?php echo $root; ?>PC/index.php">PC Site</a></td>
 										</tr>
+										<tr height="20px" bgcolor="<?php echo ac(); ?>">
+											<td><a href="<?php echo $root; ?>about.php">About</a></td>
+										</tr>
 										<?php // The following row is a buffer ?>
 										<tr bgcolor="<?php echo $indexSub; ?>">
 											<td></td>

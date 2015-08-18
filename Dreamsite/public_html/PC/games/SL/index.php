@@ -57,7 +57,7 @@
 			<td align="center"><a href="saves_file.php" style="text-decoration:none"><font color="#FF0000">Main Data</font></a></td>
 			<td align="center">??</td>
 			<td>Save file for the main game.</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "0ac9f428.gif"?>"></td>
+			<td align="center"><img src="<?php echo $dirIcons . "0ac9f428.gif"?>"></td>
 		</tr>
 	</table>
 </p>
@@ -72,10 +72,40 @@
 			<th align="center" bgcolor="<?php echo $tHead; ?>">Game Servers</th>
 		</tr>
 		<tr bgcolor="<?php echo altc(); ?>">
-			<td align="center" ><code>master.gamespy.com</code></td>
+			<td align="center"><code>master.gamespy.com</code></td>
 		</tr>
 		<tr bgcolor="<?php echo altc(); ?>">
-			<td align="center" ><code>peerchat.gamespy.com</code></td>
+			<td align="center"><code>peerchat.gamespy.com</code></td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<p align="left">
+	Here is the list of ports Starlancer connects to:</p>
+	<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:450px;max-width:640px;" bgcolor="<?php echo $tBG; ?>">
+		<tr>
+			<th align="center" bgcolor="<?php echo $tHead; ?>">Ports</th>
+		</tr>
+		<tr bgcolor="<?php echo altc(); ?>">
+			<td align="center">UDP?: <code>2300 - 2400</code></td>
+		</tr>
+		<tr bgcolor="<?php echo altc(); ?>">
+			<td align="center">UDP?: <code>6500</code></td>
+		</tr>
+		<tr bgcolor="<?php echo altc(); ?>">
+			<td align="center">UDP?: <code>6667</code></td>
+		</tr>
+		<tr bgcolor="<?php echo altc(); ?>">
+			<td align="center">UDP?: <code>6900 - 7500</code></td>
+		</tr>
+		<tr bgcolor="<?php echo altc(); ?>">
+			<td align="center">UDP?: <code>27900</code></td>
+		</tr>
+		<tr bgcolor="<?php echo altc(); ?>">
+			<td align="center">UDP?: <code>28900</code></td>
+		</tr>
+		<tr bgcolor="<?php echo altc(); ?>">
+			<td align="center">UDP?: <code>47624</code></td>
 		</tr>
 	</table>
 </p>

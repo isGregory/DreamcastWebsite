@@ -13,7 +13,8 @@
 <h3 align="left"><u><?php echo $pageTitle; ?></u></h3>
 <p align="left">
 	The following are games with official DLC. Click to see files available.
-
+	<br>
+	<br>
 	<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:300px;max-width:540px;" bgcolor="<?php echo $tBG; ?>">
 		<tr>
 			<th bgcolor="<?php echo $tHead; ?>">Game</th>

@@ -4,6 +4,7 @@
 	require_once $homeDir . 'pc_directories.php';
 	require_once $root . 'lookup_game.php';
 	require_once $root . 'format.php';
+	require_once $root . 'format_dlc.php';
 	require_once $root . 'format_links.php';
 	global $tHead, $tBG, $indexHead, $indexSub;
 
@@ -74,19 +75,19 @@
 			<td align="center"><a href="saves_file.php" style="text-decoration:none"><font color="#FF0000">Main Data</font></a></td>
 			<td align="center">15</td>
 			<td>Save file for the main game character.</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "737ed5a6.gif"?>"></td>
+			<td align="center"><img src="<?php echo $dirIcons . "737ed5a6.gif"?>"></td>
 		</tr>
 		<tr bgcolor="<?php echo ac(); ?>">
 			<td align="center"><a href="saves_file.php" style="text-decoration:none"><font color="#FF0000">Guild Card</font></a></td>
 			<td align="center">30</td>
 			<td>Save file for PSO Guild Card.</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "45a6132d.gif"?>"></td>
+			<td align="center"><img src="<?php echo $dirIcons . "45a6132d.gif"?>"></td>
 		</tr>
 		<tr bgcolor="<?php echo ac(); ?>">
 			<td align="center"><a href="saves_photo.php" style="text-decoration:none">Screen Image</a></td>
 			<td align="center">195</td>
 			<td>Save file for an in-game screenshot.</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "8ce2e2d9.gif"?>"></td>
+			<td align="center"><img src="<?php echo $dirIcons . "8ce2e2d9.gif"?>"></td>
 		</tr>
 	</table>
 </p>
@@ -105,110 +106,9 @@
 		<tr bgcolor="<?php echo $tHead; ?>">
 			<th colspan="6">PSO Version 1</th>
 		</tr>
-		<tr bgcolor="<?php echo $tHead; ?>">
-			<th colspan="2">Downloads</th><th width="65px" rowspan="2">Size<br>(Blocks)</th><th width="100px" rowspan="2">File Name</th><th rowspan="2">Description</th><th width="34px" rowspan="2">Icon</th>
-		</tr>
-		<tr bgcolor="<?php echo $tHead; ?>">
-			<th width="34px">VMI</th><th width="34px">VMS</th>
-		</tr>
-
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">??</td>
-			<td align="center">Filename</td>
-			<td>Easter Quest - 1 of 3</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">??</td>
-			<td align="center">Filename</td>
-			<td>Easter Quest - 2 of 3</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">??</td>
-			<td align="center">Filename</td>
-			<td>Easter Quest - 3 of 3</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">??</td>
-			<td align="center">Filename</td>
-			<td>Famitsu Quest - 1 of 3</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">??</td>
-			<td align="center">Filename</td>
-			<td>Famitsu Quest - 2 of 3</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">??</td>
-			<td align="center">Filename</td>
-			<td>Famitsu Quest - 3 of 3</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">??</td>
-			<td align="center">Filename</td>
-			<td>Retired Hunter Quest - 1 of 2</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">??</td>
-			<td align="center">Filename</td>
-			<td>Retired Hunter Quest - 2 of 2</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">??</td>
-			<td align="center">Filename</td>
-			<td>Raw Material Quest - 1 of 2</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">??</td>
-			<td align="center">Filename</td>
-			<td>Raw Material Quest - 2 of 2</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">??</td>
-			<td align="center">Filename</td>
-			<td>Letter from Lionel Quest - 1 of 2</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
-		</tr>
-		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><img src="../../images/save_vmi.png"></td>
-			<td align="center"><a href="../files/DLC/PSO/xx.vms"><img src="../../images/save_vms.png"></a></td>
-			<td align="center">??</td>
-			<td align="center">Filename</td>
-			<td>Letter from Lionel Quest - 2 of 2</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
-		</tr>
 	</table>
+	<?php callDLCFunction( PHANTASY_STAR_ONLINE_V1 ); ?>
+	
 
 	<br><br>
 	<p align="left">
@@ -227,31 +127,31 @@
 			<td align="center">??</td>
 			<td align="center">???</td>
 			<td>Central Dome Fire Swirl</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
+			<td align="center"><img src="<?php echo $dirIcons . "4ff15894.gif"?>"></td>
 		</tr>
 		<tr bgcolor="<?php echo ac(); ?>">
 			<td align="center">??</td>
 			<td align="center">???</td>
 			<td>Lionel's Letter</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
+			<td align="center"><img src="<?php echo $dirIcons . "4ff15894.gif"?>"></td>
 		</tr>
 		<tr bgcolor="<?php echo ac(); ?>">
 			<td align="center">??</td>
 			<td align="center">???</td>
 			<td>Soul of a Blacksmith</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
+			<td align="center"><img src="<?php echo $dirIcons . "4ff15894.gif"?>"></td>
 		</tr>
 		<tr bgcolor="<?php echo ac(); ?>">
 			<td align="center">??</td>
 			<td align="center">???</td>
 			<td>Soul of Steel</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
+			<td align="center"><img src="<?php echo $dirIcons . "4ff15894.gif"?>"></td>
 		</tr>
 		<tr bgcolor="<?php echo ac(); ?>">
 			<td align="center">??</td>
 			<td align="center">???</td>
 			<td>The Retired Hunter</td>
-			<td align="center"><img src="<?php echo $homeDir . $dirIcons . "4ff15894.gif"?>"></td>
+			<td align="center"><img src="<?php echo $dirIcons . "4ff15894.gif"?>"></td>
 		</tr>
 	</table>
 </p>
@@ -338,6 +238,37 @@
 		<tr bgcolor="<?php echo altc(); ?>">
 			<td>Game Server:</td>
 			<td align="right"><code>pso01.dricas.ne.jp:9200</code></td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<p align="left">
+		Here is the list of ports that Phantasy Star Online
+		<b>Version 2</b> uses.<br><br>The odd port numbers when
+		read in little endian order rather than network byte order
+		read as 4000, 4001, 4002, 4003. The resulting ports are
+		most likely a mistake.
+	</p>
+	<!--
+		Special thanks to:
+		http://arda.kisafilm.org/fish/members/mterlouw/pmapserv.htm
+		for the port information
+	-->
+	<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:450px;max-width:640px;" bgcolor="<?php echo $tBG; ?>">
+		<tr bgcolor="<?php echo $tHead; ?>">
+			<th align="center">Ports</th>
+		</tr>
+		<tr bgcolor="<?php echo altc(); ?>">
+			<td align="center">UDP: <code>40975</code></td>
+		</tr>
+		<tr bgcolor="<?php echo altc(); ?>">
+			<td align="center">UDP: <code>41231</code></td>
+		</tr>
+		<tr bgcolor="<?php echo altc(); ?>">
+			<td align="center">UDP: <code>41487</code></td>
+		</tr>
+		<tr bgcolor="<?php echo altc(); ?>">
+			<td align="center">UDP: <code>41743</code></td>
 		</tr>
 	</table>
 </p>
