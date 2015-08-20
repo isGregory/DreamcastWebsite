@@ -1,6 +1,10 @@
 <?php
 	//directories.php
 
+	if ( !isset( $root ) ) {
+		$root = "";
+	}
+
 	// Directories
 	$dirSave    = $root . "savefiles/";
 	$dirDLC     = $dirSave . "dlc/";

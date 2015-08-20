@@ -42,17 +42,17 @@
 			<th>Mode</th><th>Game</th><th>Eyecatch</th>
 		</tr>
 		<?php
-			rowEC( 3, "4 Wheel Thunder", "03faaf1d-EC.bmp" );
-			rowEC( 3, "AeroWings", "17f3394c-EC.bmp" );
-			rowEC( 3, "Aqua GT", "6c689992-EC.bmp" );
-			rowEC( 3, "Buggy Heat", "a7d9691c-EC.bmp" );
-			rowEC( 1, "Draconus:<br>Cult of the Wyrm", "159cc866-EC.bmp" );
-			rowEC( 3, "Fur Fighters", "bdc9b427-EC.bmp" );
-			rowEC( 3, "Headhunter", "1bec1593-EC.bmp" );
-			rowEC( 1, "Max Steel", "96c5f9b3-EC.bmp" );
-			rowEC( 2, "Nightmare Creatures II", "b0150787-EC.bmp" );
-			rowEC( 3, "Psychic Force 2012", "42973ff7-EC.bmp" );
-			rowEC( 3, "The King of Fighters:<br>Dream Match 1999", "505b6027-EC.bmp" );
+			rowEC( 3, "4 Wheel Thunder", "eceea645-EC.gif" );
+			rowEC( 3, "AeroWings", "503bb174-EC.gif" );
+			rowEC( 3, "Aqua GT", "2e4c6343-EC.gif" );
+			rowEC( 3, "Buggy Heat", "d03347d1-EC.gif" );
+			rowEC( 1, "Draconus:<br>Cult of the Wyrm", "30679c45-EC.gif" );
+			rowEC( 3, "Fur Fighters", "4ce76af9-EC.gif" );
+			rowEC( 3, "Headhunter", "a99c42e8-EC.gif" );
+			rowEC( 1, "Max Steel", "9ec07700-EC.gif" );
+			rowEC( 2, "Nightmare Creatures II", "f8ccb59e-EC.gif" );
+			rowEC( 3, "Psychic Force 2012", "8a0c7e71-EC.gif" );
+			rowEC( 3, "The King of Fighters:<br>Dream Match 1999", "461cefc5-EC.gif" );
 		?>
 	</table>
 </p>

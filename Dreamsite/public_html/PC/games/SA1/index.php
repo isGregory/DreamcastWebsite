@@ -69,7 +69,7 @@
 			<td align="center"><a href="" style="text-decoration:none"><font color="#FF0000">Main Game</font></a></td>
 			<td align="center">??</td>
 			<td>Save file for the main game story.</td>
-			<td align="center"><img src="<?php echo $dirIcons . ".gif"?>"></td>
+			<td align="center"><img src="<?php echo $dirIcons . "f20dbd98.gif"?>"></td>
 		</tr>
 		<tr bgcolor="<?php echo ac(); ?>">
 			<td align="center"><a href="" style="text-decoration:none"><font color="#FF0000">Chao Save</font</a></td>

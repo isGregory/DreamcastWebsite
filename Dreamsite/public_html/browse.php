@@ -110,10 +110,10 @@
 				$blocks = $vms->getBlocks();
 				?>
 					<tr bgcolor="<?php echo ac(); ?>">
-						<td><a href='<?php echo "info.php?s=" . $VMIfile; ?>'><?php echo $filehead; ?></a></td>
-						<td align='center'>
+						<td><a href='<?php echo "info.php?s=" . $VMIfile . "&p=" . $p; ?>'><?php echo $filehead; ?></a></td>
+						<th align='center'>
 							<a href='<?php echo "vmidl.php?id=" . $VMIfile . "&t=i"; ?>'><?php echo $blocks; ?></a>
-						</td>
+						</th>
 						<td align='right'><?php echo $fileDate; ?></td>
 						<td align='center'><img src='<?php echo $imgName; ?>'></td>
 					</tr>

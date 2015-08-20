@@ -57,7 +57,7 @@
 			<td align="center"><a href="saves_file.php" style="text-decoration:none"><font color="#FF0000">Main Data</font></a></td>
 			<td align="center">??</td>
 			<td>Save file for the main game.</td>
-			<td align="center"><img src="<?php echo $dirIcons . "0ac9f428.gif"?>"></td>
+			<td align="center"><img src="<?php echo $dirIcons . "2e56c9d4.gif"?>"></td>
 		</tr>
 	</table>
 </p>
@@ -83,29 +83,45 @@
 	<p align="left">
 	Here is the list of ports Starlancer connects to:</p>
 	<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:450px;max-width:640px;" bgcolor="<?php echo $tBG; ?>">
-		<tr>
-			<th align="center" bgcolor="<?php echo $tHead; ?>">Ports</th>
+		<tr bgcolor="<?php echo $tHead; ?>">
+			<th>Protocol</th>
+			<th>Ports</th>
+			<th>Usage</th>
 		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td align="center">UDP?: <code>2300 - 2400</code></td>
+		<tr align="center" bgcolor="<?php echo altc(); ?>">
+			<td>UDP?</td>
+			<td><code>2300 - 2400</code></td>
+			<td>Unknown</td>
 		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td align="center">UDP?: <code>6500</code></td>
+		<tr align="center" bgcolor="<?php echo altc(); ?>">
+			<td>UDP?</td>
+			<td><code>6500</code></td>
+			<td>Unknown</td>
 		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td align="center">UDP?: <code>6667</code></td>
+		<tr align="center" bgcolor="<?php echo altc(); ?>">
+			<td>UDP?</td>
+			<td><code>6667</code></td>
+			<td>Unknown</td>
 		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td align="center">UDP?: <code>6900 - 7500</code></td>
+		<tr align="center" bgcolor="<?php echo altc(); ?>">
+			<td>UDP?</td>
+			<td><code>6900 - 7500</code></td>
+			<td>Unknown</td>
 		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td align="center">UDP?: <code>27900</code></td>
+		<tr align="center" bgcolor="<?php echo altc(); ?>">
+			<td>UDP?</td>
+			<td><code>27900</code></td>
+			<td>Unknown</td>
 		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td align="center">UDP?: <code>28900</code></td>
+		<tr align="center" bgcolor="<?php echo altc(); ?>">
+			<td>UDP?</td>
+			<td><code>28900</code></td>
+			<td>Unknown</td>
 		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td align="center">UDP?: <code>47624</code></td>
+		<tr align="center" bgcolor="<?php echo altc(); ?>">
+			<td>UDP?</td>
+			<td><code>47624</code></td>
+			<td>Unknown</td>
 		</tr>
 	</table>
 </p>

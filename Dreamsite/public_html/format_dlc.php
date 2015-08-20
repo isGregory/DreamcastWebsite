@@ -3,7 +3,7 @@
 
 	// Names defined in "lookup_game.php"
 	function callDLCFunction( $name ) {
-		global $dirDLC;
+		global $dirDLC, $root;
 		require_once $root . 'dc_tools.php';
 		validateVMIs( $dirDLC . $name . "/" );
 		if ( PHANTASY_STAR_ONLINE_V1 === $name ) {

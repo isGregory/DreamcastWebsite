@@ -16,7 +16,7 @@
 
 				<!-- Main Title Image -->
 				<tr bgcolor="<?php echo $tHead; ?>">
-					<th align="center"><img src='<?php echo $dirImages; ?>title_pc.png' alt="" align="center" width="640" height="160"></th>
+					<th align="center"><img src='<?php echo $dirImages; ?>title_pc.gif' alt="" align="center" width="640" height="160"></th>
 				</tr>
 
 				<!-- Header Links -->
@@ -33,4 +33,4 @@
 				</tr>
 
 				<!-- Body -->
-				<tr bgcolor="#FFFFFF"><td align="left" background="<?php echo $dirImages; ?>tile2.png">
+				<tr bgcolor="#FFFFFF"><td align="left" background="<?php echo $dirImages; ?>tile2.gif">

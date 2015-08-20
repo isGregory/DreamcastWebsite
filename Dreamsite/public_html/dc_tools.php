@@ -552,8 +552,8 @@ class VMS {
 	function getFileHash() {
 
 		// Variable to cut down on calculation time.
-		if ( $fileHash ) {
-			return $fileHash;
+		if ( $this->fileHash ) {
+			return $this->fileHash;
 		}
 		$toGet = "";
 		$size = $this->getSize();
@@ -561,7 +561,8 @@ class VMS {
 			$toGet .= $this->get( $i );
 		}
 		// Encode the string and get a hash from it.
-		return hash( 'crc32', base64_encode( $toGet ) );
+		$this->fileHash = hash( 'crc32', base64_encode( $toGet ) );
+		return $this->fileHash;
 	}
 
 	function getSize() {

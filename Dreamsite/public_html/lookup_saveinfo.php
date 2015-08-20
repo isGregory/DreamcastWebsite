@@ -15,15 +15,15 @@ class saveInfo {
 		}
 
 		$hash = $vms->getTypeHash();
-		$toReturn = $this->savefiles[ $hash ][ 'info' ];
+		$toReturn = @$this->savefiles[ $hash ][ 'info' ];
 		if ( NULL === $toReturn ) {
 
 			$hash = $vms->getIconHash();
-			$toReturn = $this->savefiles[ $hash ][ 'info' ];
+			$toReturn = @$this->savefiles[ $hash ][ 'info' ];
 			if ( NULL === $toReturn ) {
 
 				$hash = $vms->getFileHash();
-				$toReturn = $this->savefiles[ $hash ][ 'info' ];
+				$toReturn = @$this->savefiles[ $hash ][ 'info' ];
 				if ( NULL === $toReturn ) {
 					return "Game/Save";
 				}
@@ -38,15 +38,15 @@ class saveInfo {
 		}
 
 		$hash = $vms->getTypeHash();
-		$toReturn = $this->savefiles[ $hash ][ 'release' ];
+		$toReturn = @$this->savefiles[ $hash ][ 'release' ];
 		if ( NULL === $toReturn ) {
 
 			$hash = $vms->getIconHash();
-			$toReturn = $this->savefiles[ $hash ][ 'release' ];
+			$toReturn = @$this->savefiles[ $hash ][ 'release' ];
 			if ( NULL === $toReturn ) {
 
 				$hash = $vms->getFileHash();
-				$toReturn = $this->savefiles[ $hash ][ 'release' ];
+				$toReturn = @$this->savefiles[ $hash ][ 'release' ];
 				if ( NULL === $toReturn ) {
 					return "Unknown";
 				}
@@ -294,63 +294,54 @@ class saveInfo {
 					"'Super Sonic Racing'.<br><br>" .
 					"<b>Region:</b> USA"),
 			"db76a752" => array( // Sonic Voice Theme
-				'release'=>"",
 				'info'=>
 					"This Downloadable Content was available through the " .
 					"Sonic Adventure website.<br><br>" .
 					"<u>Contains</u>:<br>" .
 					"Sonic Voice Theme"),
 			"db76a752" => array( // Tails Voice Theme
-				'release'=>"",
 				'info'=>
 					"This Downloadable Content was available through the " .
 					"Sonic Adventure website.<br><br>" .
 					"<u>Contains</u>:<br>" .
 					"Tails Voice Theme"),
 			"39468310" => array( // Knuckles Voice Theme
-				'release'=>"",
 				'info'=>
 					"This Downloadable Content was available through the " .
 					"Sonic Adventure website.<br><br>" .
 					"<u>Contains</u>:<br>" .
 					"Knuckles Voice Theme"),
 			"3994ca00" => array( // Amy Voice Theme
-				'release'=>"",
 				'info'=>
 					"This Downloadable Content was available through the " .
 					"Sonic Adventure website.<br><br>" .
 					"<u>Contains</u>:<br>" .
 					"Amy Voice Theme"),
 			"6eff27f5" => array( // Gamma Voice Theme
-				'release'=>"",
 				'info'=>
 					"This Downloadable Content was available through the " .
 					"Sonic Adventure website.<br><br>" .
 					"<u>Contains</u>:<br>" .
 					"Gamma Voice Theme"),
 			"ad11f4c3" => array( // Big Voice Theme
-				'release'=>"",
 				'info'=>
 					"This Downloadable Content was available through the " .
 					"Sonic Adventure website.<br><br>" .
 					"<u>Contains</u>:<br>" .
 					"Big Voice Theme"),
 			"80e64c0e" => array( // Dr. Eggman Voice Theme
-				'release'=>"",
 				'info'=>
 					"This Downloadable Content was available through the " .
 					"Sonic Adventure website.<br><br>" .
 					"<u>Contains</u>:<br>" .
 					"Dr. Eggman Voice Theme"),
 			"5d284e2f" => array( // Tikal Voice Theme
-				'release'=>"",
 				'info'=>
 					"This Downloadable Content was available through the " .
 					"Sonic Adventure website.<br><br>" .
 					"<u>Contains</u>:<br>" .
 					"Tikal Voice Theme"),
 			"562c15c8" => array( // Random Voice Theme
-				'release'=>"",
 				'info'=>
 					"This Downloadable Content was available through the " .
 					"Sonic Adventure website.<br><br>" .
@@ -451,11 +442,17 @@ class saveInfo {
 			"79faff25" => array( // Halloween Theme
 				'release'=>"2001-10-11",
 				'info'=>
+					"This Downloadable Content was available through the " .
+					"Sonic Adventure 2 website.<br><br>" .
+					"<u>Contents</u>:<br>" .
 					"Characters in the 2-Player select screen " .
 					"will be wearing Halloween themed costumes."),
 			"966b8a74" => array( // Christmas Theme
 				'release'=>"2001-11-30",
 				'info'=>
+					"This Downloadable Content was available through the " .
+					"Sonic Adventure 2 website.<br><br>" .
+					"<u>Contents</u>:<br>" .
 					"Characters in the 2-Player select screen " .
 					"will be wearing Christmas themed costumes."),
 		);

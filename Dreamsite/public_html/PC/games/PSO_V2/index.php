@@ -75,19 +75,19 @@
 			<td align="center"><a href="saves_file.php" style="text-decoration:none"><font color="#FF0000">Main Data</font></a></td>
 			<td align="center">15</td>
 			<td>Save file for the main game character.</td>
-			<td align="center"><img src="<?php echo $dirIcons . "737ed5a6.gif"?>"></td>
+			<td align="center"><img src="<?php echo $dirIcons . "75f25c28.gif"?>"></td>
 		</tr>
 		<tr bgcolor="<?php echo ac(); ?>">
 			<td align="center"><a href="saves_file.php" style="text-decoration:none"><font color="#FF0000">Guild Card</font></a></td>
 			<td align="center">30</td>
 			<td>Save file for PSO Guild Card.</td>
-			<td align="center"><img src="<?php echo $dirIcons . "45a6132d.gif"?>"></td>
+			<td align="center"><img src="<?php echo $dirIcons . "4f81fe65.gif"?>"></td>
 		</tr>
 		<tr bgcolor="<?php echo ac(); ?>">
 			<td align="center"><a href="saves_photo.php" style="text-decoration:none">Screen Image</a></td>
 			<td align="center">195</td>
 			<td>Save file for an in-game screenshot.</td>
-			<td align="center"><img src="<?php echo $dirIcons . "8ce2e2d9.gif"?>"></td>
+			<td align="center"><img src="<?php echo $dirIcons . "473ec5d4.gif"?>"></td>
 		</tr>
 	</table>
 </p>
@@ -108,7 +108,7 @@
 		</tr>
 	</table>
 	<?php callDLCFunction( PHANTASY_STAR_ONLINE_V1 ); ?>
-	
+
 
 	<br><br>
 	<p align="left">
@@ -256,19 +256,29 @@
 	-->
 	<table align="center" cellpadding="3" cellspacing="1" border="0" style="min-width:450px;max-width:640px;" bgcolor="<?php echo $tBG; ?>">
 		<tr bgcolor="<?php echo $tHead; ?>">
-			<th align="center">Ports</th>
+			<th>Protocol</th>
+			<th>Ports</th>
+			<th>Usage</th>
 		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td align="center">UDP: <code>40975</code></td>
+		<tr align="center" bgcolor="<?php echo altc(); ?>">
+			<td>UDP</td>
+			<td><code>40975</code></td>
+			<td>Unknown</td>
 		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td align="center">UDP: <code>41231</code></td>
+		<tr align="center" bgcolor="<?php echo altc(); ?>">
+			<td>UDP</td>
+			<td><code>41231</code></td>
+			<td>Unknown</td>
 		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td align="center">UDP: <code>41487</code></td>
+		<tr align="center" bgcolor="<?php echo altc(); ?>">
+			<td>UDP</td>
+			<td><code>41487</code></td>
+			<td>Unknown</td>
 		</tr>
-		<tr bgcolor="<?php echo altc(); ?>">
-			<td align="center">UDP: <code>41743</code></td>
+		<tr align="center" bgcolor="<?php echo altc(); ?>">
+			<td>UDP</td>
+			<td><code>41743</code></td>
+			<td>Unknown</td>
 		</tr>
 	</table>
 </p>

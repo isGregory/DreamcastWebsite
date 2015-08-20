@@ -15,15 +15,15 @@ class saveLookup {
 		}
 
 		$hash = $vms->getTypeHash();
-		$toReturn = $this->savefiles[ $hash ][ 'game' ];
+		$toReturn = @$this->savefiles[ $hash ][ 'game' ];
 		if ( NULL === $toReturn ) {
 
 			$hash = $vms->getIconHash();
-			$toReturn = $this->savefiles[ $hash ][ 'game' ];
+			$toReturn = @$this->savefiles[ $hash ][ 'game' ];
 			if ( NULL === $toReturn ) {
 
 				$hash = $vms->getFileHash();
-				$toReturn = $this->savefiles[ $hash ][ 'game' ];
+				$toReturn = @$this->savefiles[ $hash ][ 'game' ];
 				if ( NULL === $toReturn ) {
 					return "Game/Save";
 				}
@@ -38,17 +38,17 @@ class saveLookup {
 		}
 
 		$hash = $vms->getTypeHash();
-		$toReturn = $this->savefiles[ $hash ][ 'type' ];
+		$toReturn = @$this->savefiles[ $hash ][ 'type' ];
 		if ( NULL === $toReturn ) {
 
 			$firstHash = $hash;
 			$hash = $vms->getIconHash();
-			$toReturn = $this->savefiles[ $hash ][ 'type' ];
+			$toReturn = @$this->savefiles[ $hash ][ 'type' ];
 			if ( NULL === $toReturn ) {
 
 				$secondHash = $hash;
 				$hash = $vms->getFileHash();
-				$toReturn = $this->savefiles[ $hash ][ 'type' ];
+				$toReturn = @$this->savefiles[ $hash ][ 'type' ];
 				if ( NULL === $toReturn ) {
 					return "Info: $firstHash"
 						. "<br>Icon: $secondHash"
@@ -61,9 +61,10 @@ class saveLookup {
 	}
 
 	private function buildTable() {
-
+		global $root;
 		$this->isBuilt = true;
 
+		// Get the game name constants
 		require_once $root . 'lookup_game.php';
 
 		// Table is sorted alphebetically by 'game' name.
@@ -71,10 +72,10 @@ class saveLookup {
 			"03faaf1d" => array(
 				'game'=>"4 Wheel Thunder",
 				'type'=>"Main Save"),
-			"e1c65aeb" => array(
+			"0e98b99a" => array(
 				'game'=>"4x4 Evolution",
 				'type'=>"Main Save"),
-			"f98203e9" => array(
+			"0302c04a" => array(
 				'game'=>"4x4 Evolution",
 				'type'=>"Custom Track"),
 			"17f3394c" => array(
@@ -83,7 +84,7 @@ class saveLookup {
 			"6c689992" => array(
 				'game'=>"Aqua GT",
 				'type'=>"Main Save"),
-			"a7d9691c" => array(
+			"d03347d1" => array(
 				'game'=>"Buggy Heat",
 				'type'=>"Main Save"),
 			"159cc866" => array(
@@ -104,6 +105,9 @@ class saveLookup {
 			"2e4026b8" => array(
 				'game'=>getGameName( JET_GRIND_RADIO ),
 				'type'=>"Large Graffiti"),
+			"4e7ecdf6" => array(
+				'game'=>getGameName( JET_GRIND_RADIO ),
+				'type'=>"Xtra-Large Graffiti"),
 			"96c5f9b3" => array(
 				'game'=>"Max Steel",
 				'type'=>"Game Options"),
@@ -158,9 +162,21 @@ class saveLookup {
 			"42973ff7" => array(
 				'game'=>"Psychic Force 2012",
 				'type'=>"Main Save"),
+			"a35332ad" => array(
+				'game'=>"Quake III: Arena Spanish",
+				'type'=>"Main Save"),
+			"4d5cdf0f" => array(
+				'game'=>"Quake III: Arena",
+				'type'=>"Main Save"),
 			"2f24bef9" => array(
 				'game'=>getGameName( SHENMUE ),
 				'type'=>"Main Save"),
+			"929a01cd" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"Main Save"),
+			"7e82af3c" => array(
+				'game'=>getGameName( SONIC_ADVENTURE ),
+				'type'=>"Upload Data"),
 			"aa0df537" => array(
 				'game'=>getGameName( SONIC_ADVENTURE ),
 				'type'=>"Japanese Christmas Event"),
@@ -290,7 +306,7 @@ class saveLookup {
 			"aee1b12e" => array(
 				'game'=>"Star Wars Episode 1 Podracer",
 				'type'=>"Main Save"),
-			"0ac9f428" => array(
+			"2e56c9d4" => array(
 				'game'=>"Starlancer",
 				'type'=>"Main Save"),
 			"505b6027" => array(
@@ -298,12 +314,6 @@ class saveLookup {
 				'type'=>"Main Save"),
 			"bd990b36" => array(
 				'game'=>"Tony Hawks Pro Skater 2",
-				'type'=>"Main Save"),
-			"a35332ad" => array(
-				'game'=>"Quake III: Arena Spanish",
-				'type'=>"Main Save"),
-			"4d5cdf0f" => array(
-				'game'=>"Quake III: Arena",
 				'type'=>"Main Save"),
 		);
 	}

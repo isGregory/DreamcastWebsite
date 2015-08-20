@@ -27,6 +27,12 @@
 					<td><a href="#save">Game Saves</a></td>
 				</tr>
 				<tr bgcolor="<?php echo ac(); ?>">
+					<td><a href="#browse">Web Browser</a></td>
+				</tr>
+				<tr bgcolor="<?php echo ac(); ?>">
+					<td><a href="#graf">Graffiti</a></td>
+				</tr>
+				<tr bgcolor="<?php echo ac(); ?>">
 					<td><a href="#dlc">DLC</a></td>
 				</tr>
 				<tr align="center" bgcolor="<?php echo $indexSub; ?>">
@@ -111,11 +117,249 @@
 
 <hr>
 
+<?php
+	// The web browser cheat codes are thanks to lordnikon at
+	// the following forum post:
+	// http://dreamcast.onlineconsoles.com/phpBB2/viewtopic.php?t=605
+	// Additional navigation tips found at:
+	// http://www.gamefaqs.com/dreamcast/197687-jet-grind-radio/faqs/8112
+?>
+<h3 align="left"><u><a id="browse">Web Browser</a></u></h3>
+<p align="left">
+	In the main menu, the option to go to the website opens up a built-in
+	web browser. The feature-set of this browser is fairly limited.
+	<br><br>
+	In order to unlock more browsing functions:
+	<br><br>
+	<table bgcolor="<?php echo $tHead; ?>" align="center" border="0">
+		<tr>
+			<td>
+				<pre>Hold 'A' and press 'Start' 10 times.</pre>
+			</td>
+		</tr>
+	</table>
+	<br>
+
+	<b>Unlocked Controls:</b><br>
+	<table bgcolor="<?php echo $tHead; ?>" align="center" border="0">
+		<tr>
+			<td>
+				<code>
+					Press 'B' + 'Start' for Bookmarks<br>
+					Press 'Y' + 'Start' for History<br>
+					Press 'X' + 'Start' to Connect
+				</code>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<table align="center" cellpadding="3" cellspacing="1" border="0" bgcolor="<?php echo $tBG; ?>">
+		<tr bgcolor="<?php echo $tHead; ?>">
+			<th colspan="2">
+				To display a URL bar
+			</th>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>">
+			<td>
+				Controller
+			</td>
+			<td>
+				<code>
+					Place the cursor near the status bar at the<br>
+					bottom of the screen and press 'X' + 'A'
+				</code>
+			</td>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>">
+			<td>
+				Keyboard
+			</td>
+			<td>
+				<code>
+					Control + 'O'
+				</code>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<b>To bookmark a page:</b><br>
+	Navigate to the desired page and then enter the following in the URL bar:<br><br>
+	<table bgcolor="<?php echo $tHead; ?>" align="center" border="0">
+		<tr>
+			<td>
+				<pre>x-avefront://---.dream/proc/menu/add-bookmark</pre>
+			</td>
+		</tr>
+	</table>
+</p>
+
+<hr>
+
+<h3 align="left"><u><a id="graf">Graffiti</a></u></h3>
+<p align="left">
+	This game has the ability to use saved
+	images from the web as graffiti (tags).
+	<br><br>
+	<table align="center" cellpadding="3" cellspacing="1" border="0" bgcolor="<?php echo $tBG; ?>">
+		<tr>
+			<th bgcolor="<?php echo $tHead; ?>">
+				Note
+			</th>
+			<td bgcolor="<?php echo ac(); ?>">
+				1. Only JPEG files can be used for tags.<br>
+				2. Image names can not cantain spaces.
+			</td>
+		</tr>
+	</table>
+	<br><br>
+	<table align="center" cellpadding="3" cellspacing="1" border="0" bgcolor="<?php echo $tBG; ?>">
+		<tr bgcolor="<?php echo $tHead; ?>">
+			<th colspan="3">
+				Graffiti Dimensions
+			</th>
+		</tr>
+		<tr bgcolor="<?php echo $indexSub; ?>">
+			<th>Size</th>
+			<th>Pixels</th>
+			<th>Template</th>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>" align="center">
+			<td>
+				Small
+			</td>
+			<td>
+				<code>
+					128 x 128
+				</code>
+			</td>
+			<td>
+				<img height="64" src="tagSmall.png">
+			</td>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>" align="center">
+			<td>
+				Large
+			</td>
+			<td>
+				<code>
+					256 x 128
+				</code>
+			</td>
+			<td>
+				<img height="64" src="tagLarge.png">
+			</td>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>" align="center">
+			<td>
+				Xtra-Large
+			</td>
+			<td>
+				<code>
+					512 x 128
+				</code>
+			</td>
+			<td>
+				<img height="64" src="tagXtraLarge.png">
+			</td>
+		</tr>
+	</table>
+	<br><br>
+	<table align="center" cellpadding="3" cellspacing="1" border="0" bgcolor="<?php echo $tBG; ?>">
+		<tr bgcolor="<?php echo $tHead; ?>">
+			<th colspan="2">
+				JPEG Compatibility Chart
+			</th>
+		</tr>
+		<tr bgcolor="<?php echo $indexSub; ?>">
+			<th>Setting</th>
+			<th>Does it work with the game?</th>
+		</tr>
+		<tr bgcolor="<?php echo $indexSub; ?>">
+			<th colspan="2">Compression</th>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>" align="center">
+			<td>Progressive Scan 3</td>
+			<td>No</td>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>" align="center">
+			<td>Progressive Scan 4</td>
+			<td>No</td>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>" align="center">
+			<td>Progressive Scan 5</td>
+			<td>No</td>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>" align="center">
+			<td>Baseline Optimized</td>
+			<td>Yes</td>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>" align="center">
+			<td>Baseline ('Standard')</td>
+			<td>Yes</td>
+		</tr>
+		<tr bgcolor="<?php echo $indexSub; ?>">
+			<th colspan="2">Color Modes</th>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>" align="center">
+			<td>CMYK</td>
+			<td>No</td>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>" align="center">
+			<td>RGB</td>
+			<td>Yes</td>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>" align="center">
+			<td>Grayscale</td>
+			<td>No</td>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>" align="center">
+			<td>72dpi</td>
+			<td>Yes</td>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>" align="center">
+			<td>300dpi (or higher)</td>
+			<td>Yes</td>
+		</tr>
+		<tr bgcolor="<?php echo $indexSub; ?>">
+			<th colspan="2">Extensions</th>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>" align="center">
+			<td>.JPG</td>
+			<td>Yes</td>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>" align="center">
+			<td>.JPEG</td>
+			<td>Yes</td>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>" align="center">
+			<td>.JPE</td>
+			<td>Yes</td>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>" align="center">
+			<td>.jpg</td>
+			<td>Yes</td>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>" align="center">
+			<td>.jpeg</td>
+			<td>Yes</td>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>" align="center">
+			<td>.jpe</td>
+			<td>Yes</td>
+		</tr>
+	</table>
+	<br>
+	To download an image, place the cursor over
+	it, while holding 'X' press 'A'.
+</p>
+
+<hr>
+
 <h3 align="left"><u><a id="dlc">Downloadable Content</a></u></h3>
 <p align="left">
 	Various downloadable content were released for this
 	game in the form of images on the website to be used as graffiti.
-	None of this art work is known to have survived.
+	None of this artwork is known to have survived.
 </p>
 
 <hr>

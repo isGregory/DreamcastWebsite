@@ -48,7 +48,6 @@
 		Return to <?php echo $game; ?> DLC
 	</a></u>
 </p>
-<h3 align="left"><u><?php echo $pageTitle; ?></u></h3>
 <p align="left">
 
 <?php
@@ -56,24 +55,31 @@
 ?>
 	<table align="center" cellpadding="3" cellspacing="1" border="0" width="90%" bgcolor="<?php echo $tBG; ?>">
 		<tr bgcolor="<?php echo $tHead; ?>">
-			<th>Release Date:</th>
-			<td align="center"><?php echo $release; ?></td>
-			<th rowspan="2"><img src='<?php echo $imgName; ?>'></th>
+			<th colspan="2"><?php echo $pageTitle; ?></th>
+			<th bgcolor="<?php echo $tHead; ?>" rowspan="2"><img src='<?php echo $imgName; ?>'></th>
 		</tr>
-		<tr bgcolor="<?php echo $tHead; ?>">
+		<tr bgcolor="<?php echo ac(); ?>">
 			<th>Download:<br>(<?php echo $blocks; ?> Blocks)</th>
-			<th align="center">
+			<td align="center">
 				<a href="<?php echo $root . "vmidl.php?id=dlc/$VMIfile&t=i" ?>">
-					<img src="<?php echo $dirImages . "save_vmi.png"?>"></a>
+					<img src="<?php echo $dirImages . "save_vmi.gif"?>"></a>
 			<?php
 				if ( !$dreamBrowser ) {
 			?>
 				<a href="<?php echo $root . "vmidl.php?id=dlc/$VMIfile&t=s" ?>">
-					<img src="<?php echo $dirImages . "save_vms.png"?>"></a>
+					<img src="<?php echo $dirImages . "save_vms.gif"?>"></a>
 			<?php
 				}
 			?>
-			</th>
+			</td>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>">
+			<th>Release Date:</th>
+			<td align="center" colspan="2"><?php echo $release; ?></td>
+		</tr>
+		<tr bgcolor="<?php echo ac(); ?>">
+			<th>Filename:</th>
+			<td align="center" colspan="2"><?php echo $VMSname; ?></td>
 		</tr>
 		<tr bgcolor="<?php echo $tHead; ?>">
 			<th colspan="3">Description</th>

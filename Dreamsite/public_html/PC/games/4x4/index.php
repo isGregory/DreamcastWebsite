@@ -60,13 +60,13 @@
 			<td align="center"><a href="saves_file.php" style="text-decoration:none"><font color="#FF0000">Main Data</font></a></td>
 			<td align="center">30</td>
 			<td>Save file for the main game.</td>
-			<td align="center"><img src="e1c65aeb.gif"></td>
+			<td align="center"><img src="0e98b99a.gif"></td>
 		</tr>
 		<tr bgcolor="<?php echo ac(); ?>">
 			<td align="center"><a href="saves_file.php" style="text-decoration:none"><font color="#FF0000">Custom Track</font></a></td>
 			<td align="center">10-200</td>
 			<td>Custom Race Track</td>
-			<td align="center"><img src="f98203e9.gif"></td>
+			<td align="center"><img src="0302c04a.gif"></td>
 		</tr>
 	</table>
 </p>

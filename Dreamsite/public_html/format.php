@@ -23,17 +23,19 @@
 	// Index sub header color
 	$indexSub = "#E0E0E0";
 
-	$dcBGimg = "tile.png";
+	$dcBGimg = "tile.gif";
 
 	// Get browser information
 	// Example. Planetweb 2.6 returns:
 	// Mozilla/3.0 (Planetweb/2.606 JS SSL VoIP US; Dreamcast US)
+	// Example. Jet Grind Radio returns:
+	// Mozilla/3.0 (DreamKey/1.0; SEGA/JETSETRADIO)
 	$browser = $_SERVER['HTTP_USER_AGENT'];
 
 	// Check if their browser is dreamcast.
 	// This allows us the option to serve pages
 	// differently to dreamcast than we would to a PC
-	if ( false !== strpos( strtolower( $browser ), 'dreamcast' ) ) {
+	if ( false !== strpos( strtolower( $browser ), 'dream' ) ) {
 		$dreamBrowser = true;
 	} else {
 		$dreamBrowser = false;
@@ -170,10 +172,23 @@
 		if ( $dreamBrowser ) {
 			$span = 1;
 		}
+
+		$location = isset($_GET["n"]) ? $_GET["n"] : false;
+		$sizeHeader = "Size<br>(Blocks)";
+		$nameHeader = "<th width='100px' rowspan='2'>File Name</th>";
+		if ( false !== $location ) {
+			// We're at /DLC/dlc_list.php
+			$sizeHeader = "Blocks";
+			$nameHeader = "";
+		}
 		?>
 			<table align="center" cellpadding="3" cellspacing="1" border="0" width="90%" bgcolor="<?php echo $tBG; ?>">
 				<tr bgcolor="<?php echo $tHead; ?>">
-					<th colspan="<?php echo $span; ?>">Downloads</th><th width="65px" rowspan="2">Size<br>(Blocks)</th><th width="100px" rowspan="2">File Name</th><th rowspan="2">Description</th><th width="34px" rowspan="2">Icon</th>
+					<th colspan="<?php echo $span; ?>">Downloads</th>
+					<th width="65px" rowspan="2"><?php echo $sizeHeader; ?></th>
+					<?php echo $nameHeader; ?>
+					<th rowspan="2">Description</th>
+					<th width="34px" rowspan="2">Icon</th>
 				</tr>
 				<tr bgcolor="<?php echo $tHead; ?>">
 					<th width="34px">VMI</th>
@@ -195,6 +210,11 @@
 		$span = 6;
 		if ( $dreamBrowser ) {
 			$span = 5;
+		}
+
+		$location = isset($_GET["n"]) ? $_GET["n"] : false;
+		if ( false !== $location ) {
+			$span--;
 		}
 
 		$filename = $dirDLC . $game . "/" . $file . ".vmi";
@@ -220,7 +240,6 @@
 		$luSaves = new saveLookup();
 		$luType = $luSaves->getType( $vms );
 
-		$location = isset($_GET["n"]) ? $_GET["n"] : false;
 		$readMoreLink = "";
 		if ( false === $location ) {
 			// We're in the PC side of things
@@ -229,11 +248,12 @@
 			// We're at /DLC/dlc_list.php
 			$readMoreLink = "dlc_info.php?n=$location&s=$VMIfile";
 		}
+
 		?>
 			<tr bgcolor="<?php echo ac(); ?>">
 				<td align="center" <?php if ( $dreamBrowser ) { echo 'colspan="2"'; } ?> >
 					<a href="<?php echo $root . "vmidl.php?id=dlc/$VMIfile&t=i" ?>">
-						<img src="<?php echo $dirImages . "save_vmi.png"?>">
+						<img src="<?php echo $dirImages . "save_vmi.gif"?>">
 					</a>
 				</td>
 				<?php
@@ -241,23 +261,27 @@
 				?>
 					<td align="center">
 						<a href="<?php echo $root . "vmidl.php?id=dlc/$VMIfile&t=s" ?>">
-							<img src="<?php echo $dirImages . "save_vms.png"?>">
+							<img src="<?php echo $dirImages . "save_vms.gif"?>">
 						</a>
 					</td>
 				<?php
 					}
 				?>
 				<td align="center"><?php echo $blocks; ?></td>
+				<?php
+					if ( false === $location ) {
+				?>
 				<td align="center"><?php echo $file; ?></td>
+				<?php
+					}
+				?>
 				<td>
 				<?php
-					echo $luType;
 					// Check for more info
 					if ( "" !== $readMoreLink ) {
-				?>
-						<br>
-						<a href='<?php echo $readMoreLink; ?>'>Read More</a>
-				<?php
+						echo "<a href='$readMoreLink'>$luType</a>";
+					} else {
+						echo $luType;
 					}
 				?>
 				</td>
@@ -274,7 +298,7 @@
 
 
 	function linkOpenTable() {
-		global $tHead, $tBG;
+		global $dreamBrowser, $tHead, $tBG;
 
 		if ( $dreamBrowser ) {
 		?>

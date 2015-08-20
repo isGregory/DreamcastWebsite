@@ -6,10 +6,10 @@
 	DirectoryIndex index.php
 	DocumentRoot /var/www/SITE_NAME/public_html
 
-	Redirect 301 /dcreg http://www.SITE_NAME
+	Redirect 302 /dcreg http://www.SITE_NAME
 
 	<Directory />
-		AddHandler cgi-script .cgi .pl
+		AddHandler cgi-script .cgi
 		Options Indexes FollowSymLinks Includes ExecCGI
 		Order allow,deny
 		Allow from all
@@ -29,12 +29,11 @@
 		Allow from all
 	</Directory>
 	<Directory /var/www/SITE_NAME/public_html/>
-		AddHandler cgi-script .cgi .pl
+		AddHandler cgi-script .cgi
 		Options Indexes FollowSymLinks Includes ExecCGI
 		Order allow,deny
 		Allow from all
 	</Directory>
-
 
 	ErrorLog ${APACHE_LOG_DIR}/error.log
 

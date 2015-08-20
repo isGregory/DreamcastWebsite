@@ -2,7 +2,7 @@
 /*
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::
-::	GIFEncoder Version 2.0 by László Zsidi, http://gifs.hu
+::	GIFEncoder Version 2.0 by Laszlo Zsidi, http://gifs.hu
 ::
 ::	This class is a rewritten 'GifMerge.class.php' version.
 ::
@@ -35,10 +35,10 @@ Class GIFEncoder {
 	var $IMG = -1;
 
 	var $ERR = Array (
-		ERR00=>"Does not supported function for only one image!",
-		ERR01=>"Source is not a GIF image!",
-		ERR02=>"Unintelligible flag ",
-		ERR03=>"Does not make animation from animated GIF source",
+		'ERR00'=>"Does not supported function for only one image!",
+		'ERR01'=>"Source is not a GIF image!",
+		'ERR02'=>"Unintelligible flag ",
+		'ERR03'=>"Does not make animation from animated GIF source",
 	);
 
 	/*

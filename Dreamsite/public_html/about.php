@@ -21,6 +21,18 @@
 			<td bgcolor='<?php echo ac(); ?>' align='center'>2015-8-17</td>
 		</tr>
 		<tr bgcolor='<?php echo $tHead; ?>'>
+			<th>Display Mode</th>
+			<td bgcolor='<?php echo ac(); ?>' align='center'>
+				<?php
+					if ($dreamBrowser ) {
+						echo "Dreamcast";
+					} else {
+						echo "Computer";
+					}
+				?>
+			</td>
+		</tr>
+		<tr bgcolor='<?php echo $tHead; ?>'>
 			<th colspan='2'>Browser</th>
 		</tr>
 		<tr bgcolor='<?php echo ac(); ?>'>

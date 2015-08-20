@@ -67,7 +67,7 @@
 			memoryEntry( '0x70E', 1, 'Integer', 'GameTime - Seconds <span style=\"float:right;\">( 0 - 59 )</span>' );
 			memoryEntry( '0x70F', 1, 'Integer', 'GameTime - Day of Week <span style=\"float:right;\">( 0 = sunday - 6 = saturday )</span>' );
 			memoryEntry( '0x710', 8, 'Bytes', 'Unknown' );
-			memoryEntry( '0x718', 4, 'Text', 'Entry Point?' );
+			memoryEntry( '0x718', 4, 'Text', '<a href="#entry">Entry Point</a>?' );
 
 			memoryHeader( 'End "Resume" - Save File Times' );
 
@@ -91,7 +91,7 @@
 			memoryEntry( '0x74E', 1, 'Integer', 'GameTime - Seconds <span style=\"float:right;\">( 0 - 59 )</span>' );
 			memoryEntry( '0x74F', 1, 'Integer', 'GameTime - Day of Week <span style=\"float:right;\">( 0 = sunday - 6 = saturday )</span>' );
 			memoryEntry( '0x750', 8, 'Bytes', 'Unknown' );
-			memoryEntry( '0x758', 4, 'Text', 'Entry Point?' );
+			memoryEntry( '0x758', 4, 'Text', '<a href="#entry">Entry Point</a>?' );
 
 			memoryHeader( 'End Slot 1 - Save File Times' );
 
@@ -115,7 +115,7 @@
 			memoryEntry( '0x78E', 1, 'Integer', 'GameTime - Seconds <span style=\"float:right;\">( 0 - 59 )</span>' );
 			memoryEntry( '0x78F', 1, 'Integer', 'GameTime - Day of Week <span style=\"float:right;\">( 0 = sunday - 6 = saturday )</span>' );
 			memoryEntry( '0x790', 8, 'Bytes', 'Unknown' );
-			memoryEntry( '0x798', 4, 'Text', 'Entry Point?' );
+			memoryEntry( '0x798', 4, 'Text', '<a href="#entry">Entry Point</a>?' );
 
 			memoryHeader( 'End Slot 2 - Save File Times' );
 
@@ -139,7 +139,7 @@
 			memoryEntry( '0x7CE', 1, 'Integer', 'GameTime - Seconds <span style=\"float:right;\">( 0 - 59 )</span>' );
 			memoryEntry( '0x7CF', 1, 'Integer', 'GameTime - Day of Week <span style=\"float:right;\">( 0 = sunday - 6 = saturday )</span>' );
 			memoryEntry( '0x7D0', 8, 'Bytes', 'Unknown' );
-			memoryEntry( '0x7D8', 4, 'Text', 'Entry Point?' );
+			memoryEntry( '0x7D8', 4, 'Text', '<a href="#entry">Entry Point</a>?' );
 
 			memoryHeader( 'End Slot 3 - Save File Times' );
 
@@ -158,6 +158,7 @@
 </p>
 
 <p>
+	<h3><a id="entry">Entry</a> Points</h3>
 	<pre>
 Thanks to: <br>http://www.shenmuedojo.net/forum/viewtopic.php?f=3&t=43133<br>
 Disc 1 Scenes
