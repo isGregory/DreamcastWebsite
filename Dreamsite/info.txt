@@ -42,7 +42,15 @@ Site:	sega.com
 # Usage:
 # Writable:	folder_name
 Writable:	savefiles
+Writable:	savefiles/lost
+Writable:	savefiles/dlc/SA2
+Writable:	savefiles/dlc/SA2/lost
 Writable:	images
 Writable:	images/icons
-Writable:	images/eyecatch
-Writable:	images/psoscreenshots
+Writable:	images/eyecatch/DC
+Writable:	images/eyecatch/PC
+Writable:	images/psoscreenshots/DC
+Writable:	images/psoscreenshots/PC
+Writable:	images/tags/DC
+Writable:	images/tags/PC
+Writable:	images/tags/mask

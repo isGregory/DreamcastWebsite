@@ -3,7 +3,7 @@
 	require_once 'directories.php';
 	require_once 'format.php';
 
-	// This website is currently a testbed for
+	// This webpage is currently a testbed for
 	// trying to check the status of a server
 	// or websites.
 

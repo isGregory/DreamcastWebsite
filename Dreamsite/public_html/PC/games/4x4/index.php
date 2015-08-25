@@ -3,7 +3,6 @@
 	$homeDir = "../../";
 	require_once $homeDir . 'pc_directories.php';
 	require_once $root . 'format.php';
-	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "4x4 Evolution";
 	include $homeDir . "pc_header.php";

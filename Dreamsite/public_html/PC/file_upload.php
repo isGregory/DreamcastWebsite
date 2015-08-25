@@ -3,13 +3,50 @@
 	require_once 'pc_directories.php';
 	require_once $root . 'format.php';
 
-	$pageTitle = "VMU Uploading";
+	$pageTitle = "Web Browser";
 	$homeDir = "";
 	include 'pc_header.php';
 
 ?>
+<h1 align="left"><?php echo $pageTitle; ?></h1>
 
-<h1>VMU Downloading</h1>
+<table cellpadding="3" cellspacing="1" border"0">
+	<tr>
+		<td>
+			<table cellpadding="3" cellspacing="1" border="0" width="150" bgcolor="<?php echo $tBG; ?>">
+				<tr align="center" bgcolor="<?php echo $indexHead; ?>">
+					<td><b>Contents</b></td>
+				</tr>
+				<tr bgcolor="<?php echo ac(); ?>">
+					<td><a href="#down">Downloading</a></td>
+				</tr>
+				<tr bgcolor="<?php echo $indexSub; ?>">
+					<td><a href="#up">Uploading</a></td>
+				</tr>
+				<tr bgcolor="<?php echo ac(); ?>">
+					<td> -> <a href="#head">Header</a></td>
+				</tr>
+				<tr bgcolor="<?php echo ac(); ?>">
+					<td> -> <a href="#data">Data</a></td>
+				</tr>
+				<tr bgcolor="<?php echo ac(); ?>">
+					<td><a href="#home">Homepages</a></td>
+				</tr>
+			</table>
+		</td>
+		<td>
+			<label>
+				<br>
+				This page provides information related to web browsing
+				on the dreamcast, specifically with respect to uploading
+				from and downloading files to a VMU.
+				<br><br>
+			</label>
+		</td>
+	</tr>
+</table>
+
+<h1><a id="down">VMU Downloading</a></h1>
 <p>
 	For the dreamcast to recognize a file to be downloaded it needs the
 	correct MIME types specified in the "Content-type" of the header.
@@ -32,10 +69,10 @@
 	</table>
 </p>
 
-<h1>VMU Uploading</h1>
+<h1><a id="up">VMU Uploading</a></h1>
 
 <p>
-	Dreamcast webbrowsers look for a special input type called "VMFILE"
+	Most Dreamcast webbrowsers look for a special input type called "VMFILE"
 	that allow the browser to search for and upload files to the server.
 	<br>Example in HTML:
 	<table bgcolor="<?php echo $tHead; ?>" align="center" border="0">
@@ -76,7 +113,7 @@ AAAAAAAAAYAAAAAAAJR9O...
 	<a href="example/Example-Upload-File.html">here</a>.
 </p>
 
-<h3>Header Section</h3>
+<h3><a id="head">Header Section</a></h3>
 <p>
 	<a href="file_vmi.php">VMI files</a> are communicated though 7 pairs. All of the pairs are
 	separated by '&' characters. Each individual pair is separated
@@ -115,7 +152,7 @@ AAAAAAAAAYAAAAAAAJR9O...
 	</table>
 </p>
 
-<h3>Data Section</h3>
+<h3><a id="data">Data Section</a></h3>
 <p>
 	The save data is communicated through Base64 but is also jumbled
 	requring a table to convert values before a Base64 Decode is used.

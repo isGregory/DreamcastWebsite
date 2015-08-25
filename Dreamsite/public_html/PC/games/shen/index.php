@@ -5,7 +5,6 @@
 	require_once $root . 'lookup_game.php';
 	require_once $root . 'format.php';
 	require_once $root . 'format_links.php';
-	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Shenmue";
 	include $homeDir . "pc_header.php";
@@ -37,9 +36,7 @@
 		<td>
 			<label>
 				<br>
-				Here is some quick information about this game. Be sure to
-				push the content of this paragraph over the limit of a single
-				line or it will look funny.
+				Shenmue description goes here.
 				<br><br>
 			</label>
 		</td>

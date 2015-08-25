@@ -3,7 +3,6 @@
 	require_once 'pc_directories.php';
 	require_once $root . 'format.php';
 	require_once $root . 'lookup_game.php';
-	global $tHead, $tBG;
 
 	$pageTitle = "SA2 Yahoo";
 	$homeDir = "";

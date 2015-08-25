@@ -38,7 +38,7 @@
 	$aS = $vms->getAniSpeed();
 
 	if ( false !== $p ) {
-		echo "<a href='browse.php?p=$p'>Return to previous page</a>";
+		echo "<a href='browse.php?p=$p'>Return to previous page</a><br><br>";
 	}
 	?>
 	<table cellpadding='3' cellspacing='1' border='0' width='100%' bgcolor='<?php echo $tBG; ?>'>
@@ -54,9 +54,9 @@
 		<tr align='center' bgcolor='<?php echo ac(); ?>'>
 			<th>Download:
 				<?php
-					echo " <a href='vmidl.php?id=$s&t=i'><img src='images/save_vmi.gif'></a> ";
+					echo " <a href='" . $dirSave . "vmidl.php?id=$s&t=i'><img src='images/save_vmi.gif'></a> ";
 					if ( !$dreamBrowser ) {
-							echo "<a href='vmidl.php?id=$s&t=s'><img src='images/save_vms.gif'></a>";
+							echo "<a href='" . $dirSave . "vmidl.php?id=$s&t=s'><img src='images/save_vms.gif'></a>";
 					}
 				?>
 			</th>

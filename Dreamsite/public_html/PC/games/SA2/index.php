@@ -6,7 +6,6 @@
 	require_once $root . 'format.php';
 	require_once $root . 'format_dlc.php';
 	require_once $root . 'format_links.php';
-	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Sonic Adventure 2";
 	include $homeDir . "pc_header.php";

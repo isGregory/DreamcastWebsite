@@ -3,7 +3,6 @@
 	$homeDir = "../../";
 	require_once $homeDir . 'pc_directories.php';
 	require_once $root . 'format.php';
-	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "PSO - Screenshot";
 	include $homeDir . "pc_header.php";
@@ -72,14 +71,12 @@
 			<th>Byte</th><th>Hex</th>
 		</tr>
 		<?php
-			memoryEntry( '0x00', 640, 'Header', "Test" );
-			memoryEntry( '0x00', 640, 'Header', "Test" );
 			memoryEntry( '0x00', 640, 'Header', "<a href='" . $homeDir
 					. "file_vms.php#head'>VMS header</a> Information." );
 			memoryEntry( '0x280', 1, 'Unknown', "Unknown - Image Width? (256)" );
 			memoryEntry( '0x281', 1, 'Unknown', "Unknown - Pixel Count + 1? (49,153)" );
 			memoryEntry( '0x282', 2, 'Unknown', "Unknown" );
-			memoryEntry( '0x284', 98,304, 'Pixel Data', "Pixel Data for "
+			memoryEntry( '0x284', '98,304', 'Pixel Data', "Pixel Data for "
 					. "the screenshot. Pixels are 16-bits "
 					. "and thus every two bytes." );
 			memoryEntry( '0x18284', 2, 'Unknown', "Unknown" );

@@ -6,7 +6,6 @@
 	require_once $root . 'format.php';
 	require_once $root . 'format_dlc.php';
 	require_once $root . 'format_links.php';
-	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Sonic Adventure";
 	include $homeDir . "pc_header.php";
@@ -44,9 +43,7 @@
 		<td>
 			<label>
 				<br>
-				Sonic Adventure description goes here. Hope is that you
-				can extend the description to multiple lines so the
-				formating doesn't look odd.
+				Sonic Adventure description goes here.
 				<br><br>
 			</label>
 		</td>

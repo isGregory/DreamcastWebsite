@@ -1,0 +1,1 @@
+This directory is set up to collect compressed extracted graffiti from jet grind radio .VMS files for display on a dreamcast browser.

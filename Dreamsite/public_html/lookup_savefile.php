@@ -99,10 +99,10 @@ class saveLookup {
 			"2a9cfdfd" => array(
 				'game'=>getGameName( JET_GRIND_RADIO ),
 				'type'=>"Main Save"),
-			"a603dae7" => array(
+			"ee87c2d9" => array(
 				'game'=>getGameName( JET_GRIND_RADIO ),
 				'type'=>"Small Graffiti"),
-			"2e4026b8" => array(
+			"a101d800" => array(
 				'game'=>getGameName( JET_GRIND_RADIO ),
 				'type'=>"Large Graffiti"),
 			"4e7ecdf6" => array(

@@ -3,7 +3,6 @@
 	$homeDir = "../../";
 	require_once $homeDir . 'pc_directories.php';
 	require_once $root . 'format.php';
-	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Shenmue - Save File";
 	include $homeDir . "pc_header.php";
@@ -45,7 +44,7 @@
 
 <p>
 	<?php
-		memoryTable();
+		memoryTable( $dirIcons . "014dfa94-a.gif" );
 			memoryEntry( '0x00', 1664, 'Bytes', '<a href="../../file_vms.html">Header</a> with 3-frame animated icon.' );
 			memoryEntry( '0x680', 32, 'Bytes', 'Unknown' );
 

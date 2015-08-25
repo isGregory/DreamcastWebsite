@@ -3,7 +3,6 @@
 	$homeDir = "../../";
 	require_once $homeDir . 'pc_directories.php';
 	require_once $root . 'format.php';
-	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Starlancer";
 	include $homeDir . "pc_header.php";
@@ -35,8 +34,7 @@
 		<td>
 			<label>
 				<br>
-				Starlancer description goes here, preferably extending past a single
-				line so the page doesn't have goofy formatting.
+				Starlancer description goes here.
 				<br><br>
 			</label>
 		</td>

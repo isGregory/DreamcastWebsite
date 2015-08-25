@@ -44,7 +44,7 @@ function iconcreatefromvms( $vms, $frameNum ) {
 
 
 	// Set up blank image
-	$image = imagecreatetruecolor($width,$height);
+	$image = imagecreatetruecolor( $width, $height );
 
 	// Palette Offset = 0x60
 	// Palette Size = 16
@@ -192,7 +192,7 @@ function eyecatchcreatefromvms( $vms ) {
 	$height = 56;
 
 	// Set up blank image
-	$image = imagecreatetruecolor($width,$height);
+	$image = imagecreatetruecolor( $width, $height );
 
 	// Grab the color palette
 	$pal = getVMSpalette( $vms, $image, $paletteOffset, $paletteSize );
@@ -273,18 +273,175 @@ function eyecatchcreatefromvms( $vms ) {
 
 // $vms = VMS object
 function createVMSeyecatch( $vms ) {
-	global $dirEC;
-	$imgName = $dirEC . $vms->getIconHash() . "-EC";
+	global $dreamBrowser, $dirEC, $dirDC, $dirPC;
+	$imgName = $vms->getIconHash() . "-EC";
 
-	if ( !file_exists( $imgName . ".gif" ) ) {
+	if ( $dreamBrowser ) {
+		$fileType = ".jpg";
+		$dirUse = $dirDC;
+	} else {
+		$fileType = ".png";
+		$dirUse = $dirPC;
+	}
+
+	if ( !file_exists( $dirEC . $dirUse . $imgName . $fileType ) ) {
 
 		$img = eyecatchcreatefromvms( $vms );
-		imagegif( $img, $imgName . ".gif" );
+		imagepng( $img, $dirEC . $dirPC . $imgName . ".png" );
+		imagejpeg( $img, $dirEC . $dirDC . $imgName . ".jpg" );
 		imagedestroy($img);
 	}
-	return $imgName . ".gif";
+	return $dirEC . $dirUse . $imgName . $fileType;
 }
 
+// Returns image of Graffiti's alpha transparency data
+// $vms = VMS object
+function jgralphacreatefromvms( $vms ) {
+	$imageHash = $vms->getIconHash();
+
+	// Figure out the graffiti type
+	if ( "ee87c2d9" === $imageHash ) {        // Small
+		$width = 128;
+	} else if ( "a101d800" === $imageHash ) { // Large
+		$width = 256;
+	} else if ( "4e7ecdf6" === $imageHash ) { // Xtra-Large
+		$width = 512;
+		//$buffer = 56; // Japan?
+	} else { // Not graffiti so we exit
+		return false;
+	}
+
+	$height = 128;
+	$imageSize = ($width * $height) / 8;
+	$buffer = 59;
+
+
+	// Set up blank image
+	$image = imagecreatetruecolor( $width, $height );
+
+	$x = 0;
+	$y = 0;
+	// Where the transparency mask starts
+	$alphaOffset = 128 + ( 512 * $vms->getNumFrames() ) + $buffer;
+	for ( $i = 0; $i < $imageSize; $i++ ) {
+
+		$byte = $vms->get( $i + $alphaOffset );
+
+		for ( $b = 0; $b < 8; $b++ ) {
+
+			$bit = ($byte & ( 1 << $b )) >> $b;
+
+			if ( 0 === $bit ) {
+				$next = 0;
+			} else {
+				$next = 0xFFFFFF;
+			}
+
+			imagesetpixel( $image, $x, $y, $next );
+
+			$x++;
+			if ( $x >= $width ) {
+				$y++;
+				$x = 0;
+			}
+		}
+	}
+	return $image;
+}
+
+// Extract graffiti alpha channel from a Jet Grind Radio file
+// $vms = VMS object
+function createVMSjgrALPHA( $vms ) {
+	global $dirTagAlpha;
+
+	$imgName = $dirTagAlpha . $vms->getFileHash() . ".gif";
+
+	if ( !file_exists( $imgName ) ) {
+
+		$img = jgralphacreatefromvms( $vms );
+		if ( !$img ) {
+			return false;
+		}
+		imagegif( $img, $imgName );
+		imagedestroy($img);
+	}
+	return $imgName;
+}
+
+// Extract graffiti from a Jet Grind Radio file
+// $vms = VMS object
+function createVMSjgr( $vms ) {
+	global $dreamBrowser, $dirTags, $dirDC, $dirPC;
+
+	// For some reason the Dreamcast has trouble reading the
+	// pure extracted image. There may be some data at the
+	// end of the image that is being grabbed and causing
+	// issues. However if we save the image as a gif or jpg
+	// things work just fine. The downside is there is
+	// additional compression that takes place. As a result,
+	// and for purity, the system currently saves off an
+	// image for use with just the dreamcast.
+	if ( $dreamBrowser ) {
+		$fileType = ".jpg";
+		$dirUse = $dirDC;
+	} else {
+		$fileType = ".png";
+		$dirUse = $dirPC;
+	}
+	$imgName = $vms->getFileHash();
+	$targetLocation = $dirTags . $dirUse . $imgName . $fileType;
+
+	if ( file_exists( $targetLocation ) ) {
+		return $targetLocation;
+	}
+
+	$imageHash = $vms->getIconHash();
+
+	// Figure out the graffiti type
+	if ( "ee87c2d9" === $imageHash ) {        // Small
+		$width = 128;
+	} else if ( "a101d800" === $imageHash ) { // Large
+		$width = 256;
+	} else if ( "4e7ecdf6" === $imageHash ) { // Xtra-Large
+		$width = 512;
+		//$preBuffer = 56; // Japan?
+	} else { // Not graffiti so we exit
+		return;
+	}
+
+	$height = 128;
+	$imageSize = ($width * $height) / 8;
+	$preBuffer = 59;
+	$postBuffer = 4;
+
+	// Where the transparency mask starts
+	// 128 header,
+	// 512 frame,
+	// $preBuffer - unknown - before alpha,
+	// $imageSize alpha,
+	// $postBuffer - unknown - after alpha
+	$imageOffset = 128 + ( 512 * $vms->getNumFrames() )
+		+ $imageSize + $postBuffer + $preBuffer;
+
+	//$jpgFile = fopen( $dirTagPure . $imgName, 'wb' )
+	//	or die("Can't create " . $dirTagPure . $imgName);
+	$fileContents = "";
+	$targetSize = $vms->getSize() - $imageOffset;
+	for ( $i = 0; $i < $targetSize; $i++ ) {
+		//$next = chr( $vms->get( $imageOffset + $i ) );
+		$fileContents .= chr( $vms->get( $imageOffset + $i ) );
+	//	fwrite( $jpgFile, $next );
+	}
+	$img = imagecreatefromstring( $fileContents );
+	imagepng( $img, $dirTags . $dirPC . $imgName . ".png" );
+	imagejpeg( $img, $dirTags . $dirDC . $imgName . ".jpg" );
+	imagedestroy($img);
+	//fclose( $jpgFile );
+
+	return $targetLocation;
+}
+
+// Extract a Phantasy Star Online screenshot
 // $vms = VMS object
 function psocreatefromvms( $vms ) {
 	// Define image parameters
@@ -292,7 +449,7 @@ function psocreatefromvms( $vms ) {
 	$height = 192;
 
 	// Set up blank image
-	$image = imagecreatetruecolor($width,$height);
+	$image = imagecreatetruecolor( $width, $height );
 
 	// Image starts this far into the VMS file
 	$offset = 0x284;
@@ -346,16 +503,25 @@ function psocreatefromvms( $vms ) {
 // PSO images are defined by
 // "PSO/SCREEN_IMAGE" at 0x00
 function createVMSpso( $vms ) {
-	global $dirPSO;
-	$imgName = $dirPSO . $vms->getName();
+	global $dreamBrowser, $dirPSO, $dirDC, $dirPC;
+	$imgName = $vms->getFileHash();
 
-	if ( !file_exists( $imgName . ".gif" ) ) {
+	if ( $dreamBrowser ) {
+		$fileType = ".jpg";
+		$dirUse = $dirDC;
+	} else {
+		$fileType = ".png";
+		$dirUse = $dirPC;
+	}
+
+	if ( !file_exists( $dirPSO . $dirUse . $imgName . $fileType ) ) {
 
 		$img = psocreatefromvms( $vms );
-		imagegif( $img, $imgName . ".gif" );
+		imagepng( $img, $dirPSO . $dirPC . $imgName . ".png" );
+		imagejpeg( $img, $dirPSO . $dirDC . $imgName . ".jpg" );
 		imagedestroy($img);
 	}
-	return $imgName . ".gif";
+	return $dirPSO . $dirUse . $imgName . $fileType;
 }
 
 // $vmiFile = location of VMI file

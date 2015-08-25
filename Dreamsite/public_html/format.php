@@ -114,12 +114,18 @@
 		<?php
 	}
 
-	function memoryTable() {
+	function memoryTable( $img = "" ) {
 		global $tHead, $tBG;
+		if ( "" !== $img ) {
+			$img = '<img align="right" src="' . $img . '">';
+		}
 		?>
 			<table cellpadding='3' cellspacing='1' border='0' style='max-width:640px;' bgcolor='<?php echo $tBG; ?>'>
 				<tr bgcolor='<?php echo $tHead; ?>'>
-					<th colspan='2'>Offset</th><th rowspan='2'>Size (bytes)</th><th rowspan='2'>Datatype</th><th rowspan='2' width='400px'>Contents</th>
+					<th colspan='2'>Offset</th>
+					<th rowspan='2'>Size (bytes)</th>
+					<th rowspan='2'>Datatype</th>
+					<th rowspan='2' width='400px'>Contents<?php echo $img; ?></th>
 				</tr>
 				<tr bgcolor='<?php echo $tHead; ?>'>
 					<th>Byte</th><th>Hex</th>
@@ -252,7 +258,7 @@
 		?>
 			<tr bgcolor="<?php echo ac(); ?>">
 				<td align="center" <?php if ( $dreamBrowser ) { echo 'colspan="2"'; } ?> >
-					<a href="<?php echo $root . "vmidl.php?id=dlc/$VMIfile&t=i" ?>">
+					<a href="<?php echo $dirDLC . $game . "/vmidl.php?id=$VMIfile&t=i" ?>">
 						<img src="<?php echo $dirImages . "save_vmi.gif"?>">
 					</a>
 				</td>
@@ -260,7 +266,7 @@
 					if ( !$dreamBrowser ) {
 				?>
 					<td align="center">
-						<a href="<?php echo $root . "vmidl.php?id=dlc/$VMIfile&t=s" ?>">
+						<a href="<?php echo $dirDLC . $game . "/vmidl.php?id=$VMIfile&t=s" ?>">
 							<img src="<?php echo $dirImages . "save_vms.gif"?>">
 						</a>
 					</td>
@@ -312,6 +318,26 @@
 			<table align="center" cellpadding="3" cellspacing="1" border="0" width="90%" bgcolor="<?php echo $tBG; ?>">
 				<tr bgcolor="<?php echo $tHead; ?>">
 					<th width="140px" align="center">Site</th><th align="center">URL</th><th width="35px" align="center">Link</th>
+				</tr>
+		<?php
+		}
+	}
+
+	function linkBrowserOpenTable() {
+		global $dreamBrowser, $tHead, $tBG;
+
+		if ( $dreamBrowser ) {
+		?>
+			<table align="center" cellpadding="3" cellspacing="1" border="0" width="90%" bgcolor="<?php echo $tBG; ?>">
+				<tr bgcolor="<?php echo $tHead; ?>">
+					<th>Browser</th>
+				</tr>
+
+		<?php } else { ?>
+
+			<table align="center" cellpadding="3" cellspacing="1" border="0" width="90%" bgcolor="<?php echo $tBG; ?>">
+				<tr bgcolor="<?php echo $tHead; ?>">
+					<th width="140px" align="center">Browser</th><th align="center">Homepage</th><th width="35px" align="center">Link</th>
 				</tr>
 		<?php
 		}

@@ -19,7 +19,7 @@
 	if ( ! file_exists( $filename ) ) {
 		header( 'Location: dlc_list.php?n=' . $returnTo );
 	}
-	require_once $root . '/dc_tools.php';
+	require_once $root . 'dc_tools.php';
 	$VMSname = getVMSnamefromVMI( $filename );
 	$VMIfile = end( explode( "/", $filename ) );
 
@@ -28,11 +28,11 @@
 	$imgName = createVMSicons( $vms );
 	$blocks = $vms->getBlocks();
 
-	require_once $root . '/lookup_savefile.php';
+	require_once $root . 'lookup_savefile.php';
 	$luSaves = new saveLookup();
 	$luType = $luSaves->getType( $vms );
 
-	require_once $root . '/lookup_saveinfo.php';
+	require_once $root . 'lookup_saveinfo.php';
 	$saveCheck = new saveInfo();
 	$release = $saveCheck->getRelease( $vms );
 	$desc = $saveCheck->getInfo( $vms );
@@ -49,10 +49,6 @@
 	</a></u>
 </p>
 <p align="left">
-
-<?php
-	global $dreamBrowser, $tHead, $tBG;
-?>
 	<table align="center" cellpadding="3" cellspacing="1" border="0" width="90%" bgcolor="<?php echo $tBG; ?>">
 		<tr bgcolor="<?php echo $tHead; ?>">
 			<th colspan="2"><?php echo $pageTitle; ?></th>
@@ -61,12 +57,12 @@
 		<tr bgcolor="<?php echo ac(); ?>">
 			<th>Download:<br>(<?php echo $blocks; ?> Blocks)</th>
 			<td align="center">
-				<a href="<?php echo $root . "vmidl.php?id=dlc/$VMIfile&t=i" ?>">
+				<a href="<?php echo $dirDLC . $game . "vmidl.php?id=$VMIfile&t=i" ?>">
 					<img src="<?php echo $dirImages . "save_vmi.gif"?>"></a>
 			<?php
 				if ( !$dreamBrowser ) {
 			?>
-				<a href="<?php echo $root . "vmidl.php?id=dlc/$VMIfile&t=s" ?>">
+				<a href="<?php echo $dirDLC . $game . "vmidl.php?id=$VMIfile&t=s" ?>">
 					<img src="<?php echo $dirImages . "save_vms.gif"?>"></a>
 			<?php
 				}

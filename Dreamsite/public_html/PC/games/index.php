@@ -4,7 +4,6 @@
 	require_once $homeDir . 'pc_directories.php';
 	require_once $root . 'format.php';
 	require_once $root . 'lookup_game.php';
-	global $tHead, $tBG;
 
 	// Print the entry for the index.
 	function printGameEntry( $name ) {
@@ -37,11 +36,11 @@
 			printGameEntry( _4X4_EVOLUTION );
 			printGameEntry( JET_GRIND_RADIO );
 			printGameEntry( PHANTASY_STAR_ONLINE_V2 );
+			printGameEntry( QUAKE_3_ARENA );
 			printGameEntry( SHENMUE );
 			printGameEntry( SONIC_ADVENTURE );
 			printGameEntry( SONIC_ADVENTURE_2 );
 			printGameEntry( STARLANCER );
-			printGameEntry( QUAKE_3_ARENA );
 		?>
 	</table>
 </p>

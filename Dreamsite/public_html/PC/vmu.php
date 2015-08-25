@@ -2,7 +2,6 @@
 	// vmu.php
 	require_once 'pc_directories.php';
 	require_once $root . 'format.php';
-	global $tHead, $tBG;
 
 	$pageTitle = "VMU";
 	$homeDir = "";

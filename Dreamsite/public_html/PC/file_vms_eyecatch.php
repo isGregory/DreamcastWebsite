@@ -7,12 +7,25 @@
 	$homeDir = "";
 	include 'pc_header.php';
 
+	if ( $dreamBrowser ) {
+		$fileType = ".jpg";
+		$dirUse = $dirDC;
+	} else {
+		$fileType = ".png";
+		$dirUse = $dirPC;
+	}
+
 	function rowEC( $type, $game, $img ) {
+		global $dirEC, $dirUse, $fileType;
 		?>
 			<tr bgcolor="<?php echo ac(); ?>">
 				<td align="center"><?php echo $type; ?></td>
 				<td><?php echo $game;?></td>
-				<td align="center"><img src="<?php echo $dirEC . $img; ?>"></td>
+				<td align="center">
+					<img src="<?php
+						echo $dirEC . $dirUse . $img . $fileType;
+					?>">
+				</td>
 			</tr>
 		<?php
 	}
@@ -42,17 +55,17 @@
 			<th>Mode</th><th>Game</th><th>Eyecatch</th>
 		</tr>
 		<?php
-			rowEC( 3, "4 Wheel Thunder", "eceea645-EC.gif" );
-			rowEC( 3, "AeroWings", "503bb174-EC.gif" );
-			rowEC( 3, "Aqua GT", "2e4c6343-EC.gif" );
-			rowEC( 3, "Buggy Heat", "d03347d1-EC.gif" );
-			rowEC( 1, "Draconus:<br>Cult of the Wyrm", "30679c45-EC.gif" );
-			rowEC( 3, "Fur Fighters", "4ce76af9-EC.gif" );
-			rowEC( 3, "Headhunter", "a99c42e8-EC.gif" );
-			rowEC( 1, "Max Steel", "9ec07700-EC.gif" );
-			rowEC( 2, "Nightmare Creatures II", "f8ccb59e-EC.gif" );
-			rowEC( 3, "Psychic Force 2012", "8a0c7e71-EC.gif" );
-			rowEC( 3, "The King of Fighters:<br>Dream Match 1999", "461cefc5-EC.gif" );
+			rowEC( 3, "4 Wheel Thunder", "eceea645-EC" );
+			rowEC( 3, "AeroWings", "503bb174-EC" );
+			rowEC( 3, "Aqua GT", "2e4c6343-EC" );
+			rowEC( 3, "Buggy Heat", "d03347d1-EC" );
+			rowEC( 1, "Draconus:<br>Cult of the Wyrm", "30679c45-EC" );
+			rowEC( 3, "Fur Fighters", "4ce76af9-EC" );
+			rowEC( 3, "Headhunter", "a99c42e8-EC" );
+			rowEC( 1, "Max Steel", "9ec07700-EC" );
+			rowEC( 2, "Nightmare Creatures II", "f8ccb59e-EC" );
+			rowEC( 3, "Psychic Force 2012", "8a0c7e71-EC" );
+			rowEC( 3, "The King of Fighters:<br>Dream Match 1999", "461cefc5-EC" );
 		?>
 	</table>
 </p>

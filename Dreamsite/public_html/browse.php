@@ -36,7 +36,7 @@
 		if ( $p > 1 ) {
 			$prev = $p - 1;
 			echo "<a href='browse.php?p=$prev'>Page $prev</a>";
-			echo "< - - - ";
+			echo " < - - - ";
 		}
 		$range = 8;
 		$start = $p - ( $range / 2 );
@@ -66,7 +66,7 @@
 
 		if ( $p < $pages ) {
 			$next = $p + 1;
-			echo " - - - >";
+			echo " - - - > ";
 			echo "<a href='browse.php?p=$next'>Page $next</a>";
 		}
 		echo "</p>";
@@ -74,12 +74,16 @@
 
 ?>
 
-<p>
+<h3 align="left">
+	<?php
+		echo $pageTitle . " Page $p of $pages";
+	?>
+</h3>
+<p align="left">
 	Click the file name for more information.<br>
 	Click the blocks size to download each file.
 </p>
 <?php
-	echo "Page $p of $pages";
 	drawPageNavBar();
 ?>
 
@@ -105,14 +109,15 @@
 
 				date_default_timezone_set('UTC');
 				$fileDate = date( "g:i:s A<\b\\r>Y-M-d",
-					filemtime( $dirSave . $VMSname ) );
+					filemtime( $filefound ) );
+					//filemtime( $dirSave . $VMSname ) );
 
 				$blocks = $vms->getBlocks();
 				?>
 					<tr bgcolor="<?php echo ac(); ?>">
 						<td><a href='<?php echo "info.php?s=" . $VMIfile . "&p=" . $p; ?>'><?php echo $filehead; ?></a></td>
 						<th align='center'>
-							<a href='<?php echo "vmidl.php?id=" . $VMIfile . "&t=i"; ?>'><?php echo $blocks; ?></a>
+							<a href='<?php echo $dirSave . "vmidl.php?id=" . $VMIfile . "&t=i"; ?>'><?php echo $blocks; ?></a>
 						</th>
 						<td align='right'><?php echo $fileDate; ?></td>
 						<td align='center'><img src='<?php echo $imgName; ?>'></td>

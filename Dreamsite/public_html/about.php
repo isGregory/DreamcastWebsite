@@ -7,7 +7,7 @@
 	include 'dc_header.php';
 ?>
 
-<h3 align="left"><u><?php echo $pageTitle; ?></u></h3>
+<h3 align="left"><?php echo $pageTitle; ?></h3>
 <p align="left">
 	This website is intended to provide tools and information to enhance
 	the abilities of the Sega Dreamcast. Tools include the ability to

@@ -1,7 +1,6 @@
 <?php
 	//pc_directories.php
 
-
 	if ( !isset( $homeDir ) ) {
 		$homeDir = "";
 	}

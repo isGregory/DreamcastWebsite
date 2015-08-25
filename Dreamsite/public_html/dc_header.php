@@ -10,7 +10,15 @@
 		</head>
 
 		<body link="#0022EE" vlink="#0022EE" alink="red" text="black" bgcolor="gray" background='<?php echo $dirImages . $dcBGimg; ?>'>
-
+			<EMBED type=application/x-dreamcast-lcdticker
+				text="Dream On"
+				behavior=alternate
+				font=24
+				loop=10
+				hidden=true>
+			<!--
+			<EMBED type=application/x-dreamcast-lcdimg src="booma.LCD" fast=true>
+			-->
 			<font face="Helvetica">
 				<table cellpadding="2" cellspacing="1" border="0" width="500" align="center" bgcolor="#EEEEEE">
 
@@ -25,7 +33,7 @@
 						<table cellpadding="2" cellspacing="0" border"0" width="100%">
 							<tr>
 								<!-- Left Directory Box -->
-								<td style="padding:0px;" valign="top" height="1">
+								<td style="padding:0px;" valign="top" width="120" height="1">
 									<table cellpadding="3" cellspacing="1" border="0" width="120" height="100%" bgcolor="<?php echo $tBG; ?>">
 										<tr align="center" height="20px" bgcolor="<?php echo $indexHead; ?>">
 											<td><b>Contents</b></td>

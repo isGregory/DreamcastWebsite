@@ -9,7 +9,7 @@
 							<?php
 								date_default_timezone_set('UTC');
 								echo "Last modified: " . date( "Y-n-j g:i:s A T", filemtime( $from ) ) . "<br>";
-								echo "Design Copyright &copy; 2014 - " . date("Y") . " Gregory Hoople<br>";
+								echo "Copyright &copy; 2014 - " . date("Y") . " Gregory Hoople and Contributors<br>";
 							?>
 							<br>
 						</font>

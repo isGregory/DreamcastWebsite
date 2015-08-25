@@ -6,7 +6,6 @@
 	require_once $root . 'format.php';
 	require_once $root . 'format_dlc.php';
 	require_once $root . 'format_links.php';
-	global $tHead, $tBG, $indexHead, $indexSub;
 
 	$pageTitle = "Phantasy Star Online";
 	include $homeDir . "pc_header.php";

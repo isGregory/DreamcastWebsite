@@ -5,9 +5,8 @@
 	require_once $root . 'lookup_game.php';
 	require_once $root . 'format.php';
 	require_once $root . 'format_links.php';
-	global $tHead, $tBG, $indexHead, $indexSub;
 
-	$pageTitle = "Jet Grind Radio";
+	$pageTitle = getGameName( JET_GRIND_RADIO );
 	include $homeDir . "pc_header.php";
 
 ?>
@@ -95,21 +94,21 @@
 			<td align="center"><img src="GAME.gif"></td>
 		</tr>
 		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><a href="saves_file.php" style="text-decoration:none"><font color="#FF0000">Small</font></a></td>
+			<td align="center"><a href="saves_small.php" style="text-decoration:none">Small</a></td>
 			<td align="center">~10</td>
 			<td>Save file for Small Custom Graffiti.</td>
 			<td align="center"><img src="SMALL.gif"></td>
 		</tr>
 		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><a href="saves_file.php" style="text-decoration:none"><font color="#FF0000">Large</font></a></td>
+			<td align="center"><a href="saves_large.php" style="text-decoration:none">Large</a></td>
 			<td align="center">~20</td>
 			<td>Save file for Large Custom Graffiti.</td>
 			<td align="center"><img src="LARGE.gif"></td>
 		</tr>
 		<tr bgcolor="<?php echo ac(); ?>">
-			<td align="center"><a href="saves_file.php" style="text-decoration:none"><font color="#FF0000">X-Large</font></a></td>
+			<td align="center"><a href="saves_xtra_large.php" style="text-decoration:none">Xtra-Large</a></td>
 			<td align="center">~40</td>
-			<td>Save file for X-Large Custom Graffiti.</td>
+			<td>Save file for Xtra-Large Custom Graffiti.</td>
 			<td align="center"><img src="XLARGE.gif"></td>
 		</tr>
 	</table>
@@ -126,8 +125,10 @@
 ?>
 <h3 align="left"><u><a id="browse">Web Browser</a></u></h3>
 <p align="left">
-	In the main menu, the option to go to the website opens up a built-in
+	In the main menu, the option to go to the internet opens up a built-in
 	web browser. The feature-set of this browser is fairly limited.
+	<br><br>
+	Pressing either the left or right trigger will open up basic navigation menus.
 	<br><br>
 	In order to unlock more browsing functions:
 	<br><br>
@@ -200,14 +201,25 @@
 	This game has the ability to use saved
 	images from the web as graffiti (tags).
 	<br><br>
+	To download an image, place the cursor over it:
+	<br><br>
+	<table bgcolor="<?php echo $tHead; ?>" align="center" border="0">
+		<tr>
+			<td>
+				<pre>Hold 'X' and press 'A'.</pre>
+			</td>
+		</tr>
+	</table>
+	<br><br>
 	<table align="center" cellpadding="3" cellspacing="1" border="0" bgcolor="<?php echo $tBG; ?>">
 		<tr>
 			<th bgcolor="<?php echo $tHead; ?>">
 				Note
 			</th>
 			<td bgcolor="<?php echo ac(); ?>">
-				1. Only JPEG files can be used for tags.<br>
-				2. Image names can not cantain spaces.
+				1. Only <b>JPEG</b> files can be used for tags.<br>
+				2. Images are loaded in game from the VMU in <b>Slot One</b>.<br>
+				3. Image names can not cantain spaces.
 			</td>
 		</tr>
 	</table>
@@ -349,8 +361,6 @@
 		</tr>
 	</table>
 	<br>
-	To download an image, place the cursor over
-	it, while holding 'X' press 'A'.
 </p>
 
 <hr>
