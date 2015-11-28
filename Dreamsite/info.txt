@@ -41,6 +41,7 @@ Site:	sega.com
 #
 # Usage:
 # Writable:	folder_name
+# Executable:	folder_name
 Writable:	savefiles
 Writable:	savefiles/lost
 Writable:	savefiles/dlc/SA2
