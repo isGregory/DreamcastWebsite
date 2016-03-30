@@ -7,6 +7,7 @@
 	// trying to check the status of a server
 	// or websites.
 
+	/*
 	// returns int responsecode, or false (if url does not exist or connection timeout occurs)
 	// NOTE: could potentially take up to 0-30 seconds, blocking further code execution (more or less depending on connection, target site, and local timeout settings))
 	// if $followredirects == false: return the FIRST known httpcode (ignore redirects)
@@ -80,6 +81,24 @@
 	// Ping example.com:80 (http) ==> SUCCESS
 	// Ping example.com:443 (https) ==> SUCCESS
 	// Ping example.com:21 (ftp) ==> ERROR: 110 - Connection timed out
+*/
+
+
+	function ping($host, $port, $timeout) {
+		$tB = microtime(true);
+		set_error_handler(function() { /* ignore errors */ });
+		$fP = fSockOpen($host, $port, $errno, $errstr, $timeout);
+		restore_error_handler();
+		if (!$fP) { return "down"; }
+		$tA = microtime(true);
+		return round((($tA - $tB) * 1000), 0)." ms";
+	}
+
+	function checkSite( $url, $port ) {
+		$result = ping( $url, $port, 2 );
+		echo "<td>".$url."</td><td>".$result."</td>";
+		return;
+	}
 
 	$pageTitle = "About Page";
 	include 'dc_header.php';
@@ -93,7 +112,12 @@
 			<th>Website</th><th>Status</th>
 		</tr>
 		<tr bgcolor='<?php echo ac(); ?>'>
-			<td>www.google.com</td><td><?php echo getHttpResponseCode_using_curl("www.websightdoosnotexist.com", false); ?></td>
+			<?php
+				checkSite("www.google.com", 80);
+			?>
+			<!--
+				<td>www.google.com</td><td><?php echo getHttpResponseCode_using_curl("www.websightdoosnotexist.com", false); ?></td>
+			-->
 		</tr>
 	<!--	<tr>
 			<td>See</td><td><?php
