@@ -219,7 +219,7 @@
 			<td bgcolor="<?php echo ac(); ?>">
 				1. Only <b>JPEG</b> files can be used for tags.<br>
 				2. Images are loaded in game from the VMU in <b>Slot One</b>.<br>
-				3. Image names can not cantain spaces.
+				3. Image names can not contain spaces.
 			</td>
 		</tr>
 	</table>

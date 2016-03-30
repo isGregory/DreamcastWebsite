@@ -31,7 +31,7 @@
 			<td align='center'><a href='file_upload.php' style='text-decoration:none'>Web Browser</a></td>
 		</tr>
 		<tr bgcolor="<?php echo ac(); ?>">
-			<td align='center'><a href='vmu_mapping.php' style='text-decoration:none'>Memory Mapping Tutorial</a></td>
+			<td align='center'><a href='vmu_mapping.php' style='text-decoration:none'>Memory Mapping Guide</a></td>
 		</tr>
 	</table>
 </p>

@@ -93,7 +93,7 @@
 		?>
 		<p align="left"><h3 align="left"><u><a id="gweb">In-Game Websites</a></u></h3>
 			<p align="left">
-				These are websites that are accessable through
+				This was a website that are accessable through
 				the Passport included as Disc 4.
 			</p>
 			<?php
