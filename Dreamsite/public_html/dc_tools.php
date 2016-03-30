@@ -752,7 +752,11 @@ class VMS {
 	}
 
 	function getNumFrames() {
-		return $this->readInt_16( 0x40 );
+		$toReturn = $this->readInt_16( 0x40 );
+		if ( $toReturn > 3 ) {
+			$toReturn = 3;
+		}
+		return $toReturn;
 	}
 
 	function getAniSpeed() {
