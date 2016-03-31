@@ -36,15 +36,27 @@ if ( $dreamBrowser ) {
 	// Get Size for later if-statement check
 	$size = (int) $_SERVER['CONTENT_LENGTH'];
 
+	// Min and Max name lengths
+	$nameMin = 4;
+	$nameMax = 8;
+
 	// Check that file name is valid; alphanumeric, and between 1 - 8 characters
 	$nameLength = strlen( $resource_name );
 	if ( !ctype_alnum( $resource_name )
-		|| $nameLength > 9 || $nameLength < 1 ) {
+		|| $nameLength > $nameMax || $nameLength < $nameMin ) {
 
 		// Either characters chosen or name length is unacceptable
 		$pageTitle = "Upload - Failed";
 		include 'dc_header.php';
-		echo "<p>The filename entered is unacceptable.</p>";
+		if ( $nameLength > $nameMax ) {
+			echo "<p>The filename entered is too long at $nameLength"
+				. " characters.<br>Max of " . $nameMax . " characters.</p>";
+		} else if ( $nameLength < 1 ) {
+			echo "<p>The filename entered is too short at $nameLength"
+				. " characters.<br>Min of " . $nameMin . " characters.</p>";
+		} else {
+			echo "<p>The filename entered is unacceptable.</p>";
+		}
 		$from = "upload.php";
 		include 'dc_footer.php';
 
