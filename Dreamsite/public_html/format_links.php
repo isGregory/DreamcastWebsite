@@ -146,7 +146,7 @@
 			</p>
 			<?php
 				linkOpenTable();
-					linkEntry( 'Main Site', 'sonic.dricas.ne.jp' );
+					linkEntry( 'Main Site', 'sonic2.dricas.ne.jp' );
 					linkEntry( 'Chao Daycare', 'tails03.sonicteam.com/daycare/en/index.html' );
 				linkCloseTable();
 			?>
