@@ -77,9 +77,9 @@ function getUniqueInfo( $vms ) {
 				<th>Transparency Mask</th>
 				<th><img src='<?php echo $imgAlphaName; ?>'></th>
 			</tr>
-			<?
+			<?php
 		}
-	}else if ( strpos( $vms->getVMStext(), "SHENMUE" ) !== false ) {
+	} else if ( getGameName( SHENMUE ) == $luGame ) {
 		printFileBar();
 		if ( shenmuePrintSlotTime( $vms, "Resume Game", 0x700 ) ) {
 			$money = $vms->readInt_16(0x818);

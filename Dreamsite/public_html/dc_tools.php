@@ -736,7 +736,7 @@ class VMS {
 	}
 
 	function getBlocks() {
-		return $this->getSize() / 512;
+		return ceil( $this->getSize() / 512 );
 	}
 
 	function getVMStext() {
